@@ -1,0 +1,3946 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg width="740" height="641"
+xmlns="http://www.w3.org/2000/svg" onload='Init(evt)'>
+<title>votegeek.org.uk</title>
+<desc></desc>
+
+   <script type="text/ecmascript"><![CDATA[
+      var SVGDocument = null;
+      var SVGRoot = null;
+      var SVGViewBox = null;
+      var svgns = 'http://www.w3.org/2000/svg';
+      var xlinkns = 'http://www.w3.org/1999/xlink';
+      var toolTip = null;
+      var TrueCoords = null;
+      var tipBox = null;
+      var tipText = null;
+      var tipTitle = null;
+      var tipDesc = null;
+
+      var lastElement = null;
+      var titleText = '';
+      var titleDesc = '';
+
+
+      function Init(evt)
+      {
+         SVGDocument = evt.target.ownerDocument;
+         SVGRoot = SVGDocument.documentElement;
+         TrueCoords = SVGRoot.createSVGPoint();
+
+         toolTip = SVGDocument.getElementById('ToolTip');
+         tipBox = SVGDocument.getElementById('tipbox');
+         tipText = SVGDocument.getElementById('tipText');
+         tipTitle = SVGDocument.getElementById('tipTitle');
+         tipDesc = SVGDocument.getElementById('tipDesc');
+         //window.status = (TrueCoords);
+
+         //create event for object
+         SVGRoot.addEventListener('mousemove', ShowTooltip, false);
+         SVGRoot.addEventListener('mouseout', HideTooltip, false);
+      };
+
+
+      function GetTrueCoords(evt)
+      {
+         // find the current zoom level and pan setting, and adjust the reported
+         //    mouse position accordingly
+         var newScale = SVGRoot.currentScale;
+         var translation = SVGRoot.currentTranslate;
+         TrueCoords.x = (evt.clientX - translation.x)/newScale;
+         TrueCoords.y = (evt.clientY - translation.y)/newScale;
+      };
+
+
+      function HideTooltip( evt )
+      {
+         toolTip.setAttributeNS(null, 'visibility', 'hidden');
+      };
+
+
+      function ShowTooltip( evt )
+      {
+         GetTrueCoords( evt );
+
+         var tipScale = 1/SVGRoot.currentScale;
+         var textWidth = 0;
+         var tspanWidth = 0;
+         var boxHeight = 20;
+
+         tipBox.setAttributeNS(null, 'transform', 'scale(' + tipScale + ',' + tipScale + ')' );
+         tipText.setAttributeNS(null, 'transform', 'scale(' + tipScale + ',' + tipScale + ')' );
+
+         var titleValue = '';
+         var descValue = '';
+         var targetElement = evt.target;
+         if ( lastElement != targetElement )
+         {
+            var targetTitle = targetElement.getElementsByTagName('title').item(0);
+            if ( targetTitle )
+            {
+               // if there is a 'title' element, use its contents for the tooltip title
+               titleValue = targetTitle.firstChild.nodeValue;
+            }
+
+            var targetDesc = targetElement.getElementsByTagName('desc').item(0);
+            if ( targetDesc )
+            {
+               // if there is a 'desc' element, use its contents for the tooltip desc
+               descValue = targetDesc.firstChild.nodeValue;
+
+               if ( '' == titleValue )
+               {
+                  // if there is no 'title' element, use the contents of the 'desc' element for the tooltip title instead
+                  titleValue = descValue;
+                  descValue = '';
+               }
+            }
+
+            // if there is still no 'title' element, use the contents of the 'id' attribute for the tooltip title
+            if ( '' == titleValue )
+            {
+               titleValue = targetElement.getAttributeNS(null, 'id');
+            }
+
+            // selectively assign the tooltip title and desc the proper values,
+            //   and hide those which don't have text values
+            //
+            var titleDisplay = 'none';
+            if ( '' != titleValue )
+            {
+               tipTitle.firstChild.nodeValue = titleValue;
+               titleDisplay = 'inline';
+            }
+            tipTitle.setAttributeNS(null, 'display', titleDisplay );
+
+
+            var descDisplay = 'none';
+            if ( '' != descValue )
+            {
+               tipDesc.firstChild.nodeValue = descValue;
+               descDisplay = 'inline';
+            }
+            tipDesc.setAttributeNS(null, 'display', descDisplay );
+         }
+
+         // if there are tooltip contents to be displayed, adjust the size and position of the box
+         if ( '' != titleValue )
+         {
+            var xPos = TrueCoords.x + (10 * tipScale);
+            var yPos = TrueCoords.y + (10 * tipScale);
+
+            //return rectangle around text as SVGRect object
+            var outline = tipText.getBBox();
+            tipBox.setAttributeNS(null, 'width', Number(outline.width) + 10);
+            tipBox.setAttributeNS(null, 'height', Number(outline.height) + 10);
+
+            // update position
+            toolTip.setAttributeNS(null, 'transform', 'translate(' + xPos + ',' + yPos + ')');
+            toolTip.setAttributeNS(null, 'visibility', 'visible');
+         }
+      };
+
+   ]]></script>
+
+<polygon points="0,0 720.0,0 360.0,623.52" fill="black"  />
+<circle cx="520.0" cy="207.84" r="4" 
+fill="red">
+<title>Con:30 Lab:50 LD:10</title><desc>Labour Majority of 226</desc></circle>
+<circle cx="516.0" cy="214.768" r="4" 
+fill="red">
+<title>Con:31 Lab:49 LD:10</title><desc>Labour Majority of 188</desc></circle>
+<circle cx="512.0" cy="221.696" r="4" 
+fill="red">
+<title>Con:32 Lab:48 LD:10</title><desc>Labour Majority of 164</desc></circle>
+<circle cx="508.0" cy="228.624" r="4" 
+fill="red">
+<title>Con:33 Lab:47 LD:10</title><desc>Labour Majority of 156</desc></circle>
+<circle cx="504.0" cy="235.552" r="4" 
+fill="red">
+<title>Con:34 Lab:46 LD:10</title><desc>Labour Majority of 142</desc></circle>
+<circle cx="500.0" cy="242.48" r="4" 
+fill="red">
+<title>Con:35 Lab:45 LD:10</title><desc>Labour Majority of 140</desc></circle>
+<circle cx="496.0" cy="249.408" r="4" 
+fill="red">
+<title>Con:36 Lab:44 LD:10</title><desc>Labour Majority of 134</desc></circle>
+<circle cx="492.0" cy="256.336" r="4" 
+fill="red">
+<title>Con:37 Lab:43 LD:10</title><desc>Labour Majority of 120</desc></circle>
+<circle cx="488.0" cy="263.264" r="4" 
+fill="red">
+<title>Con:38 Lab:42 LD:10</title><desc>Labour Majority of 92</desc></circle>
+<circle cx="484.0" cy="270.192" r="4" 
+fill="red">
+<title>Con:39 Lab:41 LD:10</title><desc>Labour Majority of 58</desc></circle>
+<circle cx="480.0" cy="277.12" r="4" 
+fill="red">
+<title>Con:40 Lab:40 LD:10</title><desc>Labour Majority of 36</desc></circle>
+<circle cx="476.0" cy="284.048" r="4" 
+fill="red">
+<title>Con:41 Lab:39 LD:10</title><desc>Labour Majority of 2</desc></circle>
+<circle cx="472.0" cy="290.976" r="4" 
+fill="#AA0000">
+<title>Con:42 Lab:38 LD:10</title><desc>Hung Parliament, Labour 15 seats short</desc></circle>
+<circle cx="468.0" cy="297.904" r="4" 
+fill="#0000AA">
+<title>Con:43 Lab:37 LD:10</title><desc>Hung Parliament, Conservatives 13 seats short</desc></circle>
+<circle cx="464.0" cy="304.832" r="4" 
+fill="blue">
+<title>Con:44 Lab:36 LD:10</title><desc>Conservative Majority of 22</desc></circle>
+<circle cx="460.0" cy="311.76" r="4" 
+fill="blue">
+<title>Con:45 Lab:35 LD:10</title><desc>Conservative Majority of 54</desc></circle>
+<circle cx="456.0" cy="318.688" r="4" 
+fill="blue">
+<title>Con:46 Lab:34 LD:10</title><desc>Conservative Majority of 90</desc></circle>
+<circle cx="452.0" cy="325.616" r="4" 
+fill="blue">
+<title>Con:47 Lab:33 LD:10</title><desc>Conservative Majority of 130</desc></circle>
+<circle cx="448.0" cy="332.544" r="4" 
+fill="blue">
+<title>Con:48 Lab:32 LD:10</title><desc>Conservative Majority of 152</desc></circle>
+<circle cx="444.0" cy="339.472" r="4" 
+fill="blue">
+<title>Con:49 Lab:31 LD:10</title><desc>Conservative Majority of 184</desc></circle>
+<circle cx="440.0" cy="346.4" r="4" 
+fill="blue">
+<title>Con:50 Lab:30 LD:10</title><desc>Conservative Majority of 208</desc></circle>
+<circle cx="516.0" cy="200.912" r="4" 
+fill="red">
+<title>Con:29 Lab:50 LD:11</title><desc>Labour Majority of 232</desc></circle>
+<circle cx="512.0" cy="207.84" r="4" 
+fill="red">
+<title>Con:30 Lab:49 LD:11</title><desc>Labour Majority of 210</desc></circle>
+<circle cx="508.0" cy="214.768" r="4" 
+fill="red">
+<title>Con:31 Lab:48 LD:11</title><desc>Labour Majority of 176</desc></circle>
+<circle cx="504.0" cy="221.696" r="4" 
+fill="red">
+<title>Con:32 Lab:47 LD:11</title><desc>Labour Majority of 160</desc></circle>
+<circle cx="500.0" cy="228.624" r="4" 
+fill="red">
+<title>Con:33 Lab:46 LD:11</title><desc>Labour Majority of 150</desc></circle>
+<circle cx="496.0" cy="235.552" r="4" 
+fill="red">
+<title>Con:34 Lab:45 LD:11</title><desc>Labour Majority of 140</desc></circle>
+<circle cx="492.0" cy="242.48" r="4" 
+fill="red">
+<title>Con:35 Lab:44 LD:11</title><desc>Labour Majority of 138</desc></circle>
+<circle cx="488.0" cy="249.408" r="4" 
+fill="red">
+<title>Con:36 Lab:43 LD:11</title><desc>Labour Majority of 128</desc></circle>
+<circle cx="484.0" cy="256.336" r="4" 
+fill="red">
+<title>Con:37 Lab:42 LD:11</title><desc>Labour Majority of 102</desc></circle>
+<circle cx="480.0" cy="263.264" r="4" 
+fill="red">
+<title>Con:38 Lab:41 LD:11</title><desc>Labour Majority of 70</desc></circle>
+<circle cx="476.0" cy="270.192" r="4" 
+fill="red">
+<title>Con:39 Lab:40 LD:11</title><desc>Labour Majority of 46</desc></circle>
+<circle cx="472.0" cy="277.12" r="4" 
+fill="red">
+<title>Con:40 Lab:39 LD:11</title><desc>Labour Majority of 8</desc></circle>
+<circle cx="468.0" cy="284.048" r="4" 
+fill="#AA0000">
+<title>Con:41 Lab:38 LD:11</title><desc>Hung Parliament, Labour 10 seats short</desc></circle>
+<circle cx="464.0" cy="290.976" r="4" 
+fill="#AA0000">
+<title>Con:42 Lab:37 LD:11</title><desc>Hung Parliament, Labour 20 seats short</desc></circle>
+<circle cx="460.0" cy="297.904" r="4" 
+fill="green" title="1979 outcome">
+<title>Con:43 Lab:36 LD:11</title><desc>Hung Parliament, Conservatives 3 seats short</desc></circle>
+<circle cx="456.0" cy="304.832" r="4" 
+fill="blue">
+<title>Con:44 Lab:35 LD:11</title><desc>Conservative Majority of 28</desc></circle>
+<circle cx="452.0" cy="311.76" r="4" 
+fill="blue">
+<title>Con:45 Lab:34 LD:11</title><desc>Conservative Majority of 68</desc></circle>
+<circle cx="448.0" cy="318.688" r="4" 
+fill="blue">
+<title>Con:46 Lab:33 LD:11</title><desc>Conservative Majority of 104</desc></circle>
+<circle cx="444.0" cy="325.616" r="4" 
+fill="blue">
+<title>Con:47 Lab:32 LD:11</title><desc>Conservative Majority of 138</desc></circle>
+<circle cx="440.0" cy="332.544" r="4" 
+fill="blue">
+<title>Con:48 Lab:31 LD:11</title><desc>Conservative Majority of 168</desc></circle>
+<circle cx="436.0" cy="339.472" r="4" 
+fill="blue">
+<title>Con:49 Lab:30 LD:11</title><desc>Conservative Majority of 200</desc></circle>
+<circle cx="432.0" cy="346.4" r="4" 
+fill="blue">
+<title>Con:50 Lab:29 LD:11</title><desc>Conservative Majority of 226</desc></circle>
+<circle cx="512.0" cy="193.984" r="4" 
+fill="red">
+<title>Con:28 Lab:50 LD:12</title><desc>Labour Majority of 244</desc></circle>
+<circle cx="508.0" cy="200.912" r="4" 
+fill="red">
+<title>Con:29 Lab:49 LD:12</title><desc>Labour Majority of 218</desc></circle>
+<circle cx="504.0" cy="207.84" r="4" 
+fill="red">
+<title>Con:30 Lab:48 LD:12</title><desc>Labour Majority of 186</desc></circle>
+<circle cx="500.0" cy="214.768" r="4" 
+fill="red">
+<title>Con:31 Lab:47 LD:12</title><desc>Labour Majority of 164</desc></circle>
+<circle cx="496.0" cy="221.696" r="4" 
+fill="red">
+<title>Con:32 Lab:46 LD:12</title><desc>Labour Majority of 154</desc></circle>
+<circle cx="492.0" cy="228.624" r="4" 
+fill="red">
+<title>Con:33 Lab:45 LD:12</title><desc>Labour Majority of 142</desc></circle>
+<circle cx="488.0" cy="235.552" r="4" 
+fill="red">
+<title>Con:34 Lab:44 LD:12</title><desc>Labour Majority of 140</desc></circle>
+<circle cx="484.0" cy="242.48" r="4" 
+fill="red">
+<title>Con:35 Lab:43 LD:12</title><desc>Labour Majority of 134</desc></circle>
+<circle cx="480.0" cy="249.408" r="4" 
+fill="red">
+<title>Con:36 Lab:42 LD:12</title><desc>Labour Majority of 120</desc></circle>
+<circle cx="476.0" cy="256.336" r="4" 
+fill="red">
+<title>Con:37 Lab:41 LD:12</title><desc>Labour Majority of 90</desc></circle>
+<circle cx="472.0" cy="263.264" r="4" 
+fill="red">
+<title>Con:38 Lab:40 LD:12</title><desc>Labour Majority of 54</desc></circle>
+<circle cx="468.0" cy="270.192" r="4" 
+fill="red">
+<title>Con:39 Lab:39 LD:12</title><desc>Labour Majority of 30</desc></circle>
+<circle cx="464.0" cy="277.12" r="4" 
+fill="#AA0000">
+<title>Con:40 Lab:38 LD:12</title><desc>Hung Parliament, Labour 1 seats short</desc></circle>
+<circle cx="460.0" cy="284.048" r="4" 
+fill="#AA0000">
+<title>Con:41 Lab:37 LD:12</title><desc>Hung Parliament, Labour 16 seats short</desc></circle>
+<circle cx="456.0" cy="290.976" r="4" 
+fill="#0000AA">
+<title>Con:42 Lab:36 LD:12</title><desc>Hung Parliament, Conservatives 14 seats short</desc></circle>
+<circle cx="452.0" cy="297.904" r="4" 
+fill="blue">
+<title>Con:43 Lab:35 LD:12</title><desc>Conservative Majority of 18</desc></circle>
+<circle cx="448.0" cy="304.832" r="4" 
+fill="blue">
+<title>Con:44 Lab:34 LD:12</title><desc>Conservative Majority of 46</desc></circle>
+<circle cx="444.0" cy="311.76" r="4" 
+fill="blue">
+<title>Con:45 Lab:33 LD:12</title><desc>Conservative Majority of 80</desc></circle>
+<circle cx="440.0" cy="318.688" r="4" 
+fill="blue">
+<title>Con:46 Lab:32 LD:12</title><desc>Conservative Majority of 122</desc></circle>
+<circle cx="436.0" cy="325.616" r="4" 
+fill="blue">
+<title>Con:47 Lab:31 LD:12</title><desc>Conservative Majority of 144</desc></circle>
+<circle cx="432.0" cy="332.544" r="4" 
+fill="blue">
+<title>Con:48 Lab:30 LD:12</title><desc>Conservative Majority of 182</desc></circle>
+<circle cx="428.0" cy="339.472" r="4" 
+fill="blue">
+<title>Con:49 Lab:29 LD:12</title><desc>Conservative Majority of 206</desc></circle>
+<circle cx="424.0" cy="346.4" r="4" 
+fill="blue">
+<title>Con:50 Lab:28 LD:12</title><desc>Conservative Majority of 250</desc></circle>
+<circle cx="508.0" cy="187.056" r="4" 
+fill="red">
+<title>Con:27 Lab:50 LD:13</title><desc>Labour Majority of 258</desc></circle>
+<circle cx="504.0" cy="193.984" r="4" 
+fill="red">
+<title>Con:28 Lab:49 LD:13</title><desc>Labour Majority of 230</desc></circle>
+<circle cx="500.0" cy="200.912" r="4" 
+fill="red">
+<title>Con:29 Lab:48 LD:13</title><desc>Labour Majority of 210</desc></circle>
+<circle cx="496.0" cy="207.84" r="4" 
+fill="red">
+<title>Con:30 Lab:47 LD:13</title><desc>Labour Majority of 176</desc></circle>
+<circle cx="492.0" cy="214.768" r="4" 
+fill="red">
+<title>Con:31 Lab:46 LD:13</title><desc>Labour Majority of 158</desc></circle>
+<circle cx="488.0" cy="221.696" r="4" 
+fill="red">
+<title>Con:32 Lab:45 LD:13</title><desc>Labour Majority of 148</desc></circle>
+<circle cx="484.0" cy="228.624" r="4" 
+fill="red">
+<title>Con:33 Lab:44 LD:13</title><desc>Labour Majority of 140</desc></circle>
+<circle cx="480.0" cy="235.552" r="4" 
+fill="red">
+<title>Con:34 Lab:43 LD:13</title><desc>Labour Majority of 138</desc></circle>
+<circle cx="476.0" cy="242.48" r="4" 
+fill="red">
+<title>Con:35 Lab:42 LD:13</title><desc>Labour Majority of 126</desc></circle>
+<circle cx="472.0" cy="249.408" r="4" 
+fill="red">
+<title>Con:36 Lab:41 LD:13</title><desc>Labour Majority of 98</desc></circle>
+<circle cx="468.0" cy="256.336" r="4" 
+fill="red">
+<title>Con:37 Lab:40 LD:13</title><desc>Labour Majority of 66</desc></circle>
+<circle cx="464.0" cy="263.264" r="4" 
+fill="red">
+<title>Con:38 Lab:39 LD:13</title><desc>Labour Majority of 42</desc></circle>
+<circle cx="460.0" cy="270.192" r="4" 
+fill="red">
+<title>Con:39 Lab:38 LD:13</title><desc>Labour Majority of 8</desc></circle>
+<circle cx="456.0" cy="277.12" r="4" 
+fill="#AA0000">
+<title>Con:40 Lab:37 LD:13</title><desc>Hung Parliament, Labour 12 seats short</desc></circle>
+<circle cx="452.0" cy="284.048" r="4" 
+fill="#AA0000">
+<title>Con:41 Lab:36 LD:13</title><desc>Hung Parliament, Labour 21 seats short</desc></circle>
+<circle cx="448.0" cy="290.976" r="4" 
+fill="#0000AA">
+<title>Con:42 Lab:35 LD:13</title><desc>Hung Parliament, Conservatives 6 seats short</desc></circle>
+<circle cx="444.0" cy="297.904" r="4" 
+fill="blue">
+<title>Con:43 Lab:34 LD:13</title><desc>Conservative Majority of 26</desc></circle>
+<circle cx="440.0" cy="304.832" r="4" 
+fill="blue">
+<title>Con:44 Lab:33 LD:13</title><desc>Conservative Majority of 64</desc></circle>
+<circle cx="436.0" cy="311.76" r="4" 
+fill="blue">
+<title>Con:45 Lab:32 LD:13</title><desc>Conservative Majority of 96</desc></circle>
+<circle cx="432.0" cy="318.688" r="4" 
+fill="blue">
+<title>Con:46 Lab:31 LD:13</title><desc>Conservative Majority of 126</desc></circle>
+<circle cx="428.0" cy="325.616" r="4" 
+fill="blue">
+<title>Con:47 Lab:30 LD:13</title><desc>Conservative Majority of 158</desc></circle>
+<circle cx="424.0" cy="332.544" r="4" 
+fill="blue">
+<title>Con:48 Lab:29 LD:13</title><desc>Conservative Majority of 194</desc></circle>
+<circle cx="420.0" cy="339.472" r="4" 
+fill="blue">
+<title>Con:49 Lab:28 LD:13</title><desc>Conservative Majority of 224</desc></circle>
+<circle cx="416.0" cy="346.4" r="4" 
+fill="blue">
+<title>Con:50 Lab:27 LD:13</title><desc>Conservative Majority of 264</desc></circle>
+<circle cx="504.0" cy="180.128" r="4" 
+fill="red">
+<title>Con:26 Lab:50 LD:14</title><desc>Labour Majority of 274</desc></circle>
+<circle cx="500.0" cy="187.056" r="4" 
+fill="red">
+<title>Con:27 Lab:49 LD:14</title><desc>Labour Majority of 244</desc></circle>
+<circle cx="496.0" cy="193.984" r="4" 
+fill="red">
+<title>Con:28 Lab:48 LD:14</title><desc>Labour Majority of 218</desc></circle>
+<circle cx="492.0" cy="200.912" r="4" 
+fill="red">
+<title>Con:29 Lab:47 LD:14</title><desc>Labour Majority of 186</desc></circle>
+<circle cx="488.0" cy="207.84" r="4" 
+fill="red">
+<title>Con:30 Lab:46 LD:14</title><desc>Labour Majority of 160</desc></circle>
+<circle cx="484.0" cy="214.768" r="4" 
+fill="red">
+<title>Con:31 Lab:45 LD:14</title><desc>Labour Majority of 152</desc></circle>
+<circle cx="480.0" cy="221.696" r="4" 
+fill="red">
+<title>Con:32 Lab:44 LD:14</title><desc>Labour Majority of 142</desc></circle>
+<circle cx="476.0" cy="228.624" r="4" 
+fill="red">
+<title>Con:33 Lab:43 LD:14</title><desc>Labour Majority of 138</desc></circle>
+<circle cx="472.0" cy="235.552" r="4" 
+fill="red">
+<title>Con:34 Lab:42 LD:14</title><desc>Labour Majority of 130</desc></circle>
+<circle cx="468.0" cy="242.48" r="4" 
+fill="red">
+<title>Con:35 Lab:41 LD:14</title><desc>Labour Majority of 114</desc></circle>
+<circle cx="464.0" cy="249.408" r="4" 
+fill="red">
+<title>Con:36 Lab:40 LD:14</title><desc>Labour Majority of 86</desc></circle>
+<circle cx="460.0" cy="256.336" r="4" 
+fill="red">
+<title>Con:37 Lab:39 LD:14</title><desc>Labour Majority of 52</desc></circle>
+<circle cx="456.0" cy="263.264" r="4" 
+fill="red">
+<title>Con:38 Lab:38 LD:14</title><desc>Labour Majority of 28</desc></circle>
+<circle cx="452.0" cy="270.192" r="4" 
+fill="#AA0000">
+<title>Con:39 Lab:37 LD:14</title><desc>Hung Parliament, Labour 3 seats short</desc></circle>
+<circle cx="448.0" cy="277.12" r="4" 
+fill="#AA0000">
+<title>Con:40 Lab:36 LD:14</title><desc>Hung Parliament, Labour 19 seats short</desc></circle>
+<circle cx="444.0" cy="284.048" r="4" 
+fill="#0000AA">
+<title>Con:41 Lab:35 LD:14</title><desc>Hung Parliament, Conservatives 19 seats short</desc></circle>
+<circle cx="440.0" cy="290.976" r="4" 
+fill="green" title="1992 outcome">
+<title>Con:42 Lab:34 LD:14</title><desc>Conservative Majority of 6</desc></circle>
+<circle cx="436.0" cy="297.904" r="4" 
+fill="blue">
+<title>Con:43 Lab:33 LD:14</title><desc>Conservative Majority of 40</desc></circle>
+<circle cx="432.0" cy="304.832" r="4" 
+fill="blue">
+<title>Con:44 Lab:32 LD:14</title><desc>Conservative Majority of 78</desc></circle>
+<circle cx="428.0" cy="311.76" r="4" 
+fill="blue">
+<title>Con:45 Lab:31 LD:14</title><desc>Conservative Majority of 118</desc></circle>
+<circle cx="424.0" cy="318.688" r="4" 
+fill="blue">
+<title>Con:46 Lab:30 LD:14</title><desc>Conservative Majority of 136</desc></circle>
+<circle cx="420.0" cy="325.616" r="4" 
+fill="blue">
+<title>Con:47 Lab:29 LD:14</title><desc>Conservative Majority of 168</desc></circle>
+<circle cx="416.0" cy="332.544" r="4" 
+fill="blue">
+<title>Con:48 Lab:28 LD:14</title><desc>Conservative Majority of 198</desc></circle>
+<circle cx="412.0" cy="339.472" r="4" 
+fill="blue">
+<title>Con:49 Lab:27 LD:14</title><desc>Conservative Majority of 244</desc></circle>
+<circle cx="408.0" cy="346.4" r="4" 
+fill="blue">
+<title>Con:50 Lab:26 LD:14</title><desc>Conservative Majority of 274</desc></circle>
+<circle cx="500.0" cy="173.2" r="4" 
+fill="red">
+<title>Con:25 Lab:50 LD:15</title><desc>Labour Majority of 286</desc></circle>
+<circle cx="496.0" cy="180.128" r="4" 
+fill="red">
+<title>Con:26 Lab:49 LD:15</title><desc>Labour Majority of 258</desc></circle>
+<circle cx="492.0" cy="187.056" r="4" 
+fill="red">
+<title>Con:27 Lab:48 LD:15</title><desc>Labour Majority of 230</desc></circle>
+<circle cx="488.0" cy="193.984" r="4" 
+fill="red">
+<title>Con:28 Lab:47 LD:15</title><desc>Labour Majority of 208</desc></circle>
+<circle cx="484.0" cy="200.912" r="4" 
+fill="red">
+<title>Con:29 Lab:46 LD:15</title><desc>Labour Majority of 172</desc></circle>
+<circle cx="480.0" cy="207.84" r="4" 
+fill="red">
+<title>Con:30 Lab:45 LD:15</title><desc>Labour Majority of 156</desc></circle>
+<circle cx="476.0" cy="214.768" r="4" 
+fill="red">
+<title>Con:31 Lab:44 LD:15</title><desc>Labour Majority of 146</desc></circle>
+<circle cx="472.0" cy="221.696" r="4" 
+fill="red">
+<title>Con:32 Lab:43 LD:15</title><desc>Labour Majority of 136</desc></circle>
+<circle cx="468.0" cy="228.624" r="4" 
+fill="red">
+<title>Con:33 Lab:42 LD:15</title><desc>Labour Majority of 132</desc></circle>
+<circle cx="464.0" cy="235.552" r="4" 
+fill="red">
+<title>Con:34 Lab:41 LD:15</title><desc>Labour Majority of 122</desc></circle>
+<circle cx="460.0" cy="242.48" r="4" 
+fill="red">
+<title>Con:35 Lab:40 LD:15</title><desc>Labour Majority of 96</desc></circle>
+<circle cx="456.0" cy="249.408" r="4" 
+fill="red">
+<title>Con:36 Lab:39 LD:15</title><desc>Labour Majority of 62</desc></circle>
+<circle cx="452.0" cy="256.336" r="4" 
+fill="red">
+<title>Con:37 Lab:38 LD:15</title><desc>Labour Majority of 40</desc></circle>
+<circle cx="448.0" cy="263.264" r="4" 
+fill="#AA0000">
+<title>Con:38 Lab:37 LD:15</title><desc>Hung Parliament, Labour 1 seats short</desc></circle>
+<circle cx="444.0" cy="270.192" r="4" 
+fill="#AA0000">
+<title>Con:39 Lab:36 LD:15</title><desc>Hung Parliament, Labour 14 seats short</desc></circle>
+<circle cx="440.0" cy="277.12" r="4" 
+fill="#AA0000">
+<title>Con:40 Lab:35 LD:15</title><desc>Hung Parliament, Labour 24 seats short</desc></circle>
+<circle cx="436.0" cy="284.048" r="4" 
+fill="#0000AA">
+<title>Con:41 Lab:34 LD:15</title><desc>Hung Parliament, Conservatives 13 seats short</desc></circle>
+<circle cx="432.0" cy="290.976" r="4" 
+fill="blue">
+<title>Con:42 Lab:33 LD:15</title><desc>Conservative Majority of 16</desc></circle>
+<circle cx="428.0" cy="297.904" r="4" 
+fill="blue">
+<title>Con:43 Lab:32 LD:15</title><desc>Conservative Majority of 52</desc></circle>
+<circle cx="424.0" cy="304.832" r="4" 
+fill="blue">
+<title>Con:44 Lab:31 LD:15</title><desc>Conservative Majority of 90</desc></circle>
+<circle cx="420.0" cy="311.76" r="4" 
+fill="blue">
+<title>Con:45 Lab:30 LD:15</title><desc>Conservative Majority of 124</desc></circle>
+<circle cx="416.0" cy="318.688" r="4" 
+fill="blue">
+<title>Con:46 Lab:29 LD:15</title><desc>Conservative Majority of 154</desc></circle>
+<circle cx="412.0" cy="325.616" r="4" 
+fill="blue">
+<title>Con:47 Lab:28 LD:15</title><desc>Conservative Majority of 184</desc></circle>
+<circle cx="408.0" cy="332.544" r="4" 
+fill="blue">
+<title>Con:48 Lab:27 LD:15</title><desc>Conservative Majority of 212</desc></circle>
+<circle cx="404.0" cy="339.472" r="4" 
+fill="blue">
+<title>Con:49 Lab:26 LD:15</title><desc>Conservative Majority of 254</desc></circle>
+<circle cx="400.0" cy="346.4" r="4" 
+fill="blue">
+<title>Con:50 Lab:25 LD:15</title><desc>Conservative Majority of 276</desc></circle>
+<circle cx="496.0" cy="166.272" r="4" 
+fill="red">
+<title>Con:24 Lab:50 LD:16</title><desc>Labour Majority of 292</desc></circle>
+<circle cx="492.0" cy="173.2" r="4" 
+fill="red">
+<title>Con:25 Lab:49 LD:16</title><desc>Labour Majority of 274</desc></circle>
+<circle cx="488.0" cy="180.128" r="4" 
+fill="red">
+<title>Con:26 Lab:48 LD:16</title><desc>Labour Majority of 242</desc></circle>
+<circle cx="484.0" cy="187.056" r="4" 
+fill="red">
+<title>Con:27 Lab:47 LD:16</title><desc>Labour Majority of 216</desc></circle>
+<circle cx="480.0" cy="193.984" r="4" 
+fill="red">
+<title>Con:28 Lab:46 LD:16</title><desc>Labour Majority of 182</desc></circle>
+<circle cx="476.0" cy="200.912" r="4" 
+fill="red">
+<title>Con:29 Lab:45 LD:16</title><desc>Labour Majority of 158</desc></circle>
+<circle cx="472.0" cy="207.84" r="4" 
+fill="red">
+<title>Con:30 Lab:44 LD:16</title><desc>Labour Majority of 148</desc></circle>
+<circle cx="468.0" cy="214.768" r="4" 
+fill="red">
+<title>Con:31 Lab:43 LD:16</title><desc>Labour Majority of 136</desc></circle>
+<circle cx="464.0" cy="221.696" r="4" 
+fill="red">
+<title>Con:32 Lab:42 LD:16</title><desc>Labour Majority of 134</desc></circle>
+<circle cx="460.0" cy="228.624" r="4" 
+fill="red">
+<title>Con:33 Lab:41 LD:16</title><desc>Labour Majority of 128</desc></circle>
+<circle cx="456.0" cy="235.552" r="4" 
+fill="red">
+<title>Con:34 Lab:40 LD:16</title><desc>Labour Majority of 112</desc></circle>
+<circle cx="452.0" cy="242.48" r="4" 
+fill="red">
+<title>Con:35 Lab:39 LD:16</title><desc>Labour Majority of 82</desc></circle>
+<circle cx="448.0" cy="249.408" r="4" 
+fill="red">
+<title>Con:36 Lab:38 LD:16</title><desc>Labour Majority of 46</desc></circle>
+<circle cx="444.0" cy="256.336" r="4" 
+fill="red">
+<title>Con:37 Lab:37 LD:16</title><desc>Labour Majority of 20</desc></circle>
+<circle cx="440.0" cy="263.264" r="4" 
+fill="#AA0000">
+<title>Con:38 Lab:36 LD:16</title><desc>Hung Parliament, Labour 5 seats short</desc></circle>
+<circle cx="436.0" cy="270.192" r="4" 
+fill="#AA0000">
+<title>Con:39 Lab:35 LD:16</title><desc>Hung Parliament, Labour 22 seats short</desc></circle>
+<circle cx="432.0" cy="277.12" r="4" 
+fill="#0000AA">
+<title>Con:40 Lab:34 LD:16</title><desc>Hung Parliament, Conservatives 25 seats short</desc></circle>
+<circle cx="428.0" cy="284.048" r="4" 
+fill="#0000AA">
+<title>Con:41 Lab:33 LD:16</title><desc>Hung Parliament, Conservatives 3 seats short</desc></circle>
+<circle cx="424.0" cy="290.976" r="4" 
+fill="blue">
+<title>Con:42 Lab:32 LD:16</title><desc>Conservative Majority of 28</desc></circle>
+<circle cx="420.0" cy="297.904" r="4" 
+fill="blue">
+<title>Con:43 Lab:31 LD:16</title><desc>Conservative Majority of 68</desc></circle>
+<circle cx="416.0" cy="304.832" r="4" 
+fill="blue">
+<title>Con:44 Lab:30 LD:16</title><desc>Conservative Majority of 106</desc></circle>
+<circle cx="412.0" cy="311.76" r="4" 
+fill="blue">
+<title>Con:45 Lab:29 LD:16</title><desc>Conservative Majority of 128</desc></circle>
+<circle cx="408.0" cy="318.688" r="4" 
+fill="blue">
+<title>Con:46 Lab:28 LD:16</title><desc>Conservative Majority of 166</desc></circle>
+<circle cx="404.0" cy="325.616" r="4" 
+fill="blue">
+<title>Con:47 Lab:27 LD:16</title><desc>Conservative Majority of 192</desc></circle>
+<circle cx="400.0" cy="332.544" r="4" 
+fill="blue">
+<title>Con:48 Lab:26 LD:16</title><desc>Conservative Majority of 236</desc></circle>
+<circle cx="396.0" cy="339.472" r="4" 
+fill="blue">
+<title>Con:49 Lab:25 LD:16</title><desc>Conservative Majority of 260</desc></circle>
+<circle cx="392.0" cy="346.4" r="4" 
+fill="blue">
+<title>Con:50 Lab:24 LD:16</title><desc>Conservative Majority of 276</desc></circle>
+<circle cx="492.0" cy="159.344" r="4" 
+fill="red">
+<title>Con:23 Lab:50 LD:17</title><desc>Labour Majority of 306</desc></circle>
+<circle cx="488.0" cy="166.272" r="4" 
+fill="red">
+<title>Con:24 Lab:49 LD:17</title><desc>Labour Majority of 284</desc></circle>
+<circle cx="484.0" cy="173.2" r="4" 
+fill="red">
+<title>Con:25 Lab:48 LD:17</title><desc>Labour Majority of 256</desc></circle>
+<circle cx="480.0" cy="180.128" r="4" 
+fill="red">
+<title>Con:26 Lab:47 LD:17</title><desc>Labour Majority of 226</desc></circle>
+<circle cx="476.0" cy="187.056" r="4" 
+fill="red">
+<title>Con:27 Lab:46 LD:17</title><desc>Labour Majority of 204</desc></circle>
+<circle cx="472.0" cy="193.984" r="4" 
+fill="red">
+<title>Con:28 Lab:45 LD:17</title><desc>Labour Majority of 168</desc></circle>
+<circle cx="468.0" cy="200.912" r="4" 
+fill="red">
+<title>Con:29 Lab:44 LD:17</title><desc>Labour Majority of 148</desc></circle>
+<circle cx="464.0" cy="207.84" r="4" 
+fill="green" title="1997 outcome">
+<title>Con:30 Lab:43 LD:17</title><desc>Labour Majority of 140</desc></circle>
+<circle cx="460.0" cy="214.768" r="4" 
+fill="red">
+<title>Con:31 Lab:42 LD:17</title><desc>Labour Majority of 134</desc></circle>
+<circle cx="456.0" cy="221.696" r="4" 
+fill="red">
+<title>Con:32 Lab:41 LD:17</title><desc>Labour Majority of 130</desc></circle>
+<circle cx="452.0" cy="228.624" r="4" 
+fill="red">
+<title>Con:33 Lab:40 LD:17</title><desc>Labour Majority of 120</desc></circle>
+<circle cx="448.0" cy="235.552" r="4" 
+fill="red">
+<title>Con:34 Lab:39 LD:17</title><desc>Labour Majority of 88</desc></circle>
+<circle cx="444.0" cy="242.48" r="4" 
+fill="red">
+<title>Con:35 Lab:38 LD:17</title><desc>Labour Majority of 56</desc></circle>
+<circle cx="440.0" cy="249.408" r="4" 
+fill="red">
+<title>Con:36 Lab:37 LD:17</title><desc>Labour Majority of 32</desc></circle>
+<circle cx="436.0" cy="256.336" r="4" 
+fill="#AA0000">
+<title>Con:37 Lab:36 LD:17</title><desc>Hung Parliament, Labour 3 seats short</desc></circle>
+<circle cx="432.0" cy="263.264" r="4" 
+fill="#AA0000">
+<title>Con:38 Lab:35 LD:17</title><desc>Hung Parliament, Labour 18 seats short</desc></circle>
+<circle cx="428.0" cy="270.192" r="4" 
+fill="#AA0000">
+<title>Con:39 Lab:34 LD:17</title><desc>Hung Parliament, Labour 28 seats short</desc></circle>
+<circle cx="424.0" cy="277.12" r="4" 
+fill="#0000AA">
+<title>Con:40 Lab:33 LD:17</title><desc>Hung Parliament, Conservatives 21 seats short</desc></circle>
+<circle cx="420.0" cy="284.048" r="4" 
+fill="blue">
+<title>Con:41 Lab:32 LD:17</title><desc>Conservative Majority of 2</desc></circle>
+<circle cx="416.0" cy="290.976" r="4" 
+fill="green" title="1987 outcome">
+<title>Con:42 Lab:31 LD:17</title><desc>Conservative Majority of 44</desc></circle>
+<circle cx="412.0" cy="297.904" r="4" 
+fill="blue">
+<title>Con:43 Lab:30 LD:17</title><desc>Conservative Majority of 78</desc></circle>
+<circle cx="408.0" cy="304.832" r="4" 
+fill="blue">
+<title>Con:44 Lab:29 LD:17</title><desc>Conservative Majority of 114</desc></circle>
+<circle cx="404.0" cy="311.76" r="4" 
+fill="blue">
+<title>Con:45 Lab:28 LD:17</title><desc>Conservative Majority of 140</desc></circle>
+<circle cx="400.0" cy="318.688" r="4" 
+fill="blue">
+<title>Con:46 Lab:27 LD:17</title><desc>Conservative Majority of 176</desc></circle>
+<circle cx="396.0" cy="325.616" r="4" 
+fill="blue">
+<title>Con:47 Lab:26 LD:17</title><desc>Conservative Majority of 208</desc></circle>
+<circle cx="392.0" cy="332.544" r="4" 
+fill="blue">
+<title>Con:48 Lab:25 LD:17</title><desc>Conservative Majority of 250</desc></circle>
+<circle cx="388.0" cy="339.472" r="4" 
+fill="blue">
+<title>Con:49 Lab:24 LD:17</title><desc>Conservative Majority of 266</desc></circle>
+<circle cx="384.0" cy="346.4" r="4" 
+fill="blue">
+<title>Con:50 Lab:23 LD:17</title><desc>Conservative Majority of 284</desc></circle>
+<circle cx="488.0" cy="152.416" r="4" 
+fill="red">
+<title>Con:22 Lab:50 LD:18</title><desc>Labour Majority of 316</desc></circle>
+<circle cx="484.0" cy="159.344" r="4" 
+fill="red">
+<title>Con:23 Lab:49 LD:18</title><desc>Labour Majority of 290</desc></circle>
+<circle cx="480.0" cy="166.272" r="4" 
+fill="red">
+<title>Con:24 Lab:48 LD:18</title><desc>Labour Majority of 270</desc></circle>
+<circle cx="476.0" cy="173.2" r="4" 
+fill="red">
+<title>Con:25 Lab:47 LD:18</title><desc>Labour Majority of 238</desc></circle>
+<circle cx="472.0" cy="180.128" r="4" 
+fill="red">
+<title>Con:26 Lab:46 LD:18</title><desc>Labour Majority of 208</desc></circle>
+<circle cx="468.0" cy="187.056" r="4" 
+fill="red">
+<title>Con:27 Lab:45 LD:18</title><desc>Labour Majority of 174</desc></circle>
+<circle cx="464.0" cy="193.984" r="4" 
+fill="red">
+<title>Con:28 Lab:44 LD:18</title><desc>Labour Majority of 152</desc></circle>
+<circle cx="460.0" cy="200.912" r="4" 
+fill="red">
+<title>Con:29 Lab:43 LD:18</title><desc>Labour Majority of 144</desc></circle>
+<circle cx="456.0" cy="207.84" r="4" 
+fill="red">
+<title>Con:30 Lab:42 LD:18</title><desc>Labour Majority of 134</desc></circle>
+<circle cx="452.0" cy="214.768" r="4" 
+fill="red">
+<title>Con:31 Lab:41 LD:18</title><desc>Labour Majority of 132</desc></circle>
+<circle cx="448.0" cy="221.696" r="4" 
+fill="green" title="2001 outcome">
+<title>Con:32 Lab:40 LD:18</title><desc>Labour Majority of 122</desc></circle>
+<circle cx="444.0" cy="228.624" r="4" 
+fill="red">
+<title>Con:33 Lab:39 LD:18</title><desc>Labour Majority of 104</desc></circle>
+<circle cx="440.0" cy="235.552" r="4" 
+fill="red">
+<title>Con:34 Lab:38 LD:18</title><desc>Labour Majority of 76</desc></circle>
+<circle cx="436.0" cy="242.48" r="4" 
+fill="red">
+<title>Con:35 Lab:37 LD:18</title><desc>Labour Majority of 38</desc></circle>
+<circle cx="432.0" cy="249.408" r="4" 
+fill="red">
+<title>Con:36 Lab:36 LD:18</title><desc>Labour Majority of 14</desc></circle>
+<circle cx="428.0" cy="256.336" r="4" 
+fill="#AA0000">
+<title>Con:37 Lab:35 LD:18</title><desc>Hung Parliament, Labour 9 seats short</desc></circle>
+<circle cx="424.0" cy="263.264" r="4" 
+fill="#AA0000">
+<title>Con:38 Lab:34 LD:18</title><desc>Hung Parliament, Labour 24 seats short</desc></circle>
+<circle cx="420.0" cy="270.192" r="4" 
+fill="#0000AA">
+<title>Con:39 Lab:33 LD:18</title><desc>Hung Parliament, Conservatives 34 seats short</desc></circle>
+<circle cx="416.0" cy="277.12" r="4" 
+fill="#0000AA">
+<title>Con:40 Lab:32 LD:18</title><desc>Hung Parliament, Conservatives 11 seats short</desc></circle>
+<circle cx="412.0" cy="284.048" r="4" 
+fill="blue">
+<title>Con:41 Lab:31 LD:18</title><desc>Conservative Majority of 10</desc></circle>
+<circle cx="408.0" cy="290.976" r="4" 
+fill="blue">
+<title>Con:42 Lab:30 LD:18</title><desc>Conservative Majority of 56</desc></circle>
+<circle cx="404.0" cy="297.904" r="4" 
+fill="blue">
+<title>Con:43 Lab:29 LD:18</title><desc>Conservative Majority of 98</desc></circle>
+<circle cx="400.0" cy="304.832" r="4" 
+fill="blue">
+<title>Con:44 Lab:28 LD:18</title><desc>Conservative Majority of 116</desc></circle>
+<circle cx="396.0" cy="311.76" r="4" 
+fill="blue">
+<title>Con:45 Lab:27 LD:18</title><desc>Conservative Majority of 154</desc></circle>
+<circle cx="392.0" cy="318.688" r="4" 
+fill="blue">
+<title>Con:46 Lab:26 LD:18</title><desc>Conservative Majority of 178</desc></circle>
+<circle cx="388.0" cy="325.616" r="4" 
+fill="blue">
+<title>Con:47 Lab:25 LD:18</title><desc>Conservative Majority of 226</desc></circle>
+<circle cx="384.0" cy="332.544" r="4" 
+fill="blue">
+<title>Con:48 Lab:24 LD:18</title><desc>Conservative Majority of 258</desc></circle>
+<circle cx="380.0" cy="339.472" r="4" 
+fill="blue">
+<title>Con:49 Lab:23 LD:18</title><desc>Conservative Majority of 272</desc></circle>
+<circle cx="376.0" cy="346.4" r="4" 
+fill="blue">
+<title>Con:50 Lab:22 LD:18</title><desc>Conservative Majority of 292</desc></circle>
+<circle cx="484.0" cy="145.488" r="4" 
+fill="red">
+<title>Con:21 Lab:50 LD:19</title><desc>Labour Majority of 322</desc></circle>
+<circle cx="480.0" cy="152.416" r="4" 
+fill="red">
+<title>Con:22 Lab:49 LD:19</title><desc>Labour Majority of 300</desc></circle>
+<circle cx="476.0" cy="159.344" r="4" 
+fill="red">
+<title>Con:23 Lab:48 LD:19</title><desc>Labour Majority of 278</desc></circle>
+<circle cx="472.0" cy="166.272" r="4" 
+fill="red">
+<title>Con:24 Lab:47 LD:19</title><desc>Labour Majority of 250</desc></circle>
+<circle cx="468.0" cy="173.2" r="4" 
+fill="red">
+<title>Con:25 Lab:46 LD:19</title><desc>Labour Majority of 216</desc></circle>
+<circle cx="464.0" cy="180.128" r="4" 
+fill="red">
+<title>Con:26 Lab:45 LD:19</title><desc>Labour Majority of 198</desc></circle>
+<circle cx="460.0" cy="187.056" r="4" 
+fill="red">
+<title>Con:27 Lab:44 LD:19</title><desc>Labour Majority of 164</desc></circle>
+<circle cx="456.0" cy="193.984" r="4" 
+fill="red">
+<title>Con:28 Lab:43 LD:19</title><desc>Labour Majority of 146</desc></circle>
+<circle cx="452.0" cy="200.912" r="4" 
+fill="red">
+<title>Con:29 Lab:42 LD:19</title><desc>Labour Majority of 138</desc></circle>
+<circle cx="448.0" cy="207.84" r="4" 
+fill="red">
+<title>Con:30 Lab:41 LD:19</title><desc>Labour Majority of 128</desc></circle>
+<circle cx="444.0" cy="214.768" r="4" 
+fill="red">
+<title>Con:31 Lab:40 LD:19</title><desc>Labour Majority of 124</desc></circle>
+<circle cx="440.0" cy="221.696" r="4" 
+fill="red">
+<title>Con:32 Lab:39 LD:19</title><desc>Labour Majority of 112</desc></circle>
+<circle cx="436.0" cy="228.624" r="4" 
+fill="red">
+<title>Con:33 Lab:38 LD:19</title><desc>Labour Majority of 82</desc></circle>
+<circle cx="432.0" cy="235.552" r="4" 
+fill="red">
+<title>Con:34 Lab:37 LD:19</title><desc>Labour Majority of 48</desc></circle>
+<circle cx="428.0" cy="242.48" r="4" 
+fill="red">
+<title>Con:35 Lab:36 LD:19</title><desc>Labour Majority of 26</desc></circle>
+<circle cx="424.0" cy="249.408" r="4" 
+fill="#AA0000">
+<title>Con:36 Lab:35 LD:19</title><desc>Hung Parliament, Labour 5 seats short</desc></circle>
+<circle cx="420.0" cy="256.336" r="4" 
+fill="#AA0000">
+<title>Con:37 Lab:34 LD:19</title><desc>Hung Parliament, Labour 20 seats short</desc></circle>
+<circle cx="416.0" cy="263.264" r="4" 
+fill="#AA0000">
+<title>Con:38 Lab:33 LD:19</title><desc>Hung Parliament, Labour 31 seats short</desc></circle>
+<circle cx="412.0" cy="270.192" r="4" 
+fill="#0000AA">
+<title>Con:39 Lab:32 LD:19</title><desc>Hung Parliament, Conservatives 28 seats short</desc></circle>
+<circle cx="408.0" cy="277.12" r="4" 
+fill="#0000AA">
+<title>Con:40 Lab:31 LD:19</title><desc>Hung Parliament, Conservatives 9 seats short</desc></circle>
+<circle cx="404.0" cy="284.048" r="4" 
+fill="blue">
+<title>Con:41 Lab:30 LD:19</title><desc>Conservative Majority of 26</desc></circle>
+<circle cx="400.0" cy="290.976" r="4" 
+fill="blue">
+<title>Con:42 Lab:29 LD:19</title><desc>Conservative Majority of 62</desc></circle>
+<circle cx="396.0" cy="297.904" r="4" 
+fill="blue">
+<title>Con:43 Lab:28 LD:19</title><desc>Conservative Majority of 102</desc></circle>
+<circle cx="392.0" cy="304.832" r="4" 
+fill="blue">
+<title>Con:44 Lab:27 LD:19</title><desc>Conservative Majority of 130</desc></circle>
+<circle cx="388.0" cy="311.76" r="4" 
+fill="blue">
+<title>Con:45 Lab:26 LD:19</title><desc>Conservative Majority of 162</desc></circle>
+<circle cx="384.0" cy="318.688" r="4" 
+fill="blue">
+<title>Con:46 Lab:25 LD:19</title><desc>Conservative Majority of 196</desc></circle>
+<circle cx="380.0" cy="325.616" r="4" 
+fill="blue">
+<title>Con:47 Lab:24 LD:19</title><desc>Conservative Majority of 234</desc></circle>
+<circle cx="376.0" cy="332.544" r="4" 
+fill="blue">
+<title>Con:48 Lab:23 LD:19</title><desc>Conservative Majority of 258</desc></circle>
+<circle cx="372.0" cy="339.472" r="4" 
+fill="blue">
+<title>Con:49 Lab:22 LD:19</title><desc>Conservative Majority of 282</desc></circle>
+<circle cx="368.0" cy="346.4" r="4" 
+fill="blue">
+<title>Con:50 Lab:21 LD:19</title><desc>Conservative Majority of 300</desc></circle>
+<circle cx="480.0" cy="138.56" r="4" 
+fill="red">
+<title>Con:20 Lab:50 LD:20</title><desc>Labour Majority of 336</desc></circle>
+<circle cx="476.0" cy="145.488" r="4" 
+fill="red">
+<title>Con:21 Lab:49 LD:20</title><desc>Labour Majority of 310</desc></circle>
+<circle cx="472.0" cy="152.416" r="4" 
+fill="red">
+<title>Con:22 Lab:48 LD:20</title><desc>Labour Majority of 282</desc></circle>
+<circle cx="468.0" cy="159.344" r="4" 
+fill="red">
+<title>Con:23 Lab:47 LD:20</title><desc>Labour Majority of 262</desc></circle>
+<circle cx="464.0" cy="166.272" r="4" 
+fill="red">
+<title>Con:24 Lab:46 LD:20</title><desc>Labour Majority of 230</desc></circle>
+<circle cx="460.0" cy="173.2" r="4" 
+fill="red">
+<title>Con:25 Lab:45 LD:20</title><desc>Labour Majority of 204</desc></circle>
+<circle cx="456.0" cy="180.128" r="4" 
+fill="red">
+<title>Con:26 Lab:44 LD:20</title><desc>Labour Majority of 172</desc></circle>
+<circle cx="452.0" cy="187.056" r="4" 
+fill="red">
+<title>Con:27 Lab:43 LD:20</title><desc>Labour Majority of 150</desc></circle>
+<circle cx="448.0" cy="193.984" r="4" 
+fill="red">
+<title>Con:28 Lab:42 LD:20</title><desc>Labour Majority of 138</desc></circle>
+<circle cx="444.0" cy="200.912" r="4" 
+fill="red">
+<title>Con:29 Lab:41 LD:20</title><desc>Labour Majority of 128</desc></circle>
+<circle cx="440.0" cy="207.84" r="4" 
+fill="red">
+<title>Con:30 Lab:40 LD:20</title><desc>Labour Majority of 126</desc></circle>
+<circle cx="436.0" cy="214.768" r="4" 
+fill="red">
+<title>Con:31 Lab:39 LD:20</title><desc>Labour Majority of 114</desc></circle>
+<circle cx="432.0" cy="221.696" r="4" 
+fill="red">
+<title>Con:32 Lab:38 LD:20</title><desc>Labour Majority of 98</desc></circle>
+<circle cx="428.0" cy="228.624" r="4" 
+fill="red">
+<title>Con:33 Lab:37 LD:20</title><desc>Labour Majority of 68</desc></circle>
+<circle cx="424.0" cy="235.552" r="4" 
+fill="red">
+<title>Con:34 Lab:36 LD:20</title><desc>Labour Majority of 36</desc></circle>
+<circle cx="420.0" cy="242.48" r="4" 
+fill="red">
+<title>Con:35 Lab:35 LD:20</title><desc>Labour Majority of 10</desc></circle>
+<circle cx="416.0" cy="249.408" r="4" 
+fill="#AA0000">
+<title>Con:36 Lab:34 LD:20</title><desc>Hung Parliament, Labour 14 seats short</desc></circle>
+<circle cx="412.0" cy="256.336" r="4" 
+fill="#AA0000">
+<title>Con:37 Lab:33 LD:20</title><desc>Hung Parliament, Labour 29 seats short</desc></circle>
+<circle cx="408.0" cy="263.264" r="4" 
+fill="#0000AA">
+<title>Con:38 Lab:32 LD:20</title><desc>Hung Parliament, Conservatives 40 seats short</desc></circle>
+<circle cx="404.0" cy="270.192" r="4" 
+fill="#0000AA">
+<title>Con:39 Lab:31 LD:20</title><desc>Hung Parliament, Conservatives 19 seats short</desc></circle>
+<circle cx="400.0" cy="277.12" r="4" 
+fill="#0000AA">
+<title>Con:40 Lab:30 LD:20</title><desc>Hung Parliament, Conservatives 3 seats short</desc></circle>
+<circle cx="396.0" cy="284.048" r="4" 
+fill="blue">
+<title>Con:41 Lab:29 LD:20</title><desc>Conservative Majority of 36</desc></circle>
+<circle cx="392.0" cy="290.976" r="4" 
+fill="blue">
+<title>Con:42 Lab:28 LD:20</title><desc>Conservative Majority of 82</desc></circle>
+<circle cx="388.0" cy="297.904" r="4" 
+fill="blue">
+<title>Con:43 Lab:27 LD:20</title><desc>Conservative Majority of 100</desc></circle>
+<circle cx="384.0" cy="304.832" r="4" 
+fill="blue">
+<title>Con:44 Lab:26 LD:20</title><desc>Conservative Majority of 140</desc></circle>
+<circle cx="380.0" cy="311.76" r="4" 
+fill="blue">
+<title>Con:45 Lab:25 LD:20</title><desc>Conservative Majority of 168</desc></circle>
+<circle cx="376.0" cy="318.688" r="4" 
+fill="blue">
+<title>Con:46 Lab:24 LD:20</title><desc>Conservative Majority of 212</desc></circle>
+<circle cx="372.0" cy="325.616" r="4" 
+fill="blue">
+<title>Con:47 Lab:23 LD:20</title><desc>Conservative Majority of 244</desc></circle>
+<circle cx="368.0" cy="332.544" r="4" 
+fill="blue">
+<title>Con:48 Lab:22 LD:20</title><desc>Conservative Majority of 258</desc></circle>
+<circle cx="364.0" cy="339.472" r="4" 
+fill="blue">
+<title>Con:49 Lab:21 LD:20</title><desc>Conservative Majority of 282</desc></circle>
+<circle cx="360.0" cy="346.4" r="4" 
+fill="blue">
+<title>Con:50 Lab:20 LD:20</title><desc>Conservative Majority of 310</desc></circle>
+<circle cx="476.0" cy="131.632" r="4" 
+fill="red">
+<title>Con:19 Lab:50 LD:21</title><desc>Labour Majority of 360</desc></circle>
+<circle cx="472.0" cy="138.56" r="4" 
+fill="red">
+<title>Con:20 Lab:49 LD:21</title><desc>Labour Majority of 312</desc></circle>
+<circle cx="468.0" cy="145.488" r="4" 
+fill="red">
+<title>Con:21 Lab:48 LD:21</title><desc>Labour Majority of 290</desc></circle>
+<circle cx="464.0" cy="152.416" r="4" 
+fill="red">
+<title>Con:22 Lab:47 LD:21</title><desc>Labour Majority of 272</desc></circle>
+<circle cx="460.0" cy="159.344" r="4" 
+fill="red">
+<title>Con:23 Lab:46 LD:21</title><desc>Labour Majority of 244</desc></circle>
+<circle cx="456.0" cy="166.272" r="4" 
+fill="red">
+<title>Con:24 Lab:45 LD:21</title><desc>Labour Majority of 214</desc></circle>
+<circle cx="452.0" cy="173.2" r="4" 
+fill="red">
+<title>Con:25 Lab:44 LD:21</title><desc>Labour Majority of 196</desc></circle>
+<circle cx="448.0" cy="180.128" r="4" 
+fill="red">
+<title>Con:26 Lab:43 LD:21</title><desc>Labour Majority of 158</desc></circle>
+<circle cx="444.0" cy="187.056" r="4" 
+fill="red">
+<title>Con:27 Lab:42 LD:21</title><desc>Labour Majority of 140</desc></circle>
+<circle cx="440.0" cy="193.984" r="4" 
+fill="red">
+<title>Con:28 Lab:41 LD:21</title><desc>Labour Majority of 132</desc></circle>
+<circle cx="436.0" cy="200.912" r="4" 
+fill="red">
+<title>Con:29 Lab:40 LD:21</title><desc>Labour Majority of 122</desc></circle>
+<circle cx="432.0" cy="207.84" r="4" 
+fill="red">
+<title>Con:30 Lab:39 LD:21</title><desc>Labour Majority of 116</desc></circle>
+<circle cx="428.0" cy="214.768" r="4" 
+fill="red">
+<title>Con:31 Lab:38 LD:21</title><desc>Labour Majority of 106</desc></circle>
+<circle cx="424.0" cy="221.696" r="4" 
+fill="red">
+<title>Con:32 Lab:37 LD:21</title><desc>Labour Majority of 78</desc></circle>
+<circle cx="420.0" cy="228.624" r="4" 
+fill="red">
+<title>Con:33 Lab:36 LD:21</title><desc>Labour Majority of 46</desc></circle>
+<circle cx="416.0" cy="235.552" r="4" 
+fill="red">
+<title>Con:34 Lab:35 LD:21</title><desc>Labour Majority of 16</desc></circle>
+<circle cx="412.0" cy="242.48" r="4" 
+fill="#AA0000">
+<title>Con:35 Lab:34 LD:21</title><desc>Hung Parliament, Labour 11 seats short</desc></circle>
+<circle cx="408.0" cy="249.408" r="4" 
+fill="#AA0000">
+<title>Con:36 Lab:33 LD:21</title><desc>Hung Parliament, Labour 25 seats short</desc></circle>
+<circle cx="404.0" cy="256.336" r="4" 
+fill="#AA0000">
+<title>Con:37 Lab:32 LD:21</title><desc>Hung Parliament, Labour 35 seats short</desc></circle>
+<circle cx="400.0" cy="263.264" r="4" 
+fill="#0000AA">
+<title>Con:38 Lab:31 LD:21</title><desc>Hung Parliament, Conservatives 34 seats short</desc></circle>
+<circle cx="396.0" cy="270.192" r="4" 
+fill="#0000AA">
+<title>Con:39 Lab:30 LD:21</title><desc>Hung Parliament, Conservatives 16 seats short</desc></circle>
+<circle cx="392.0" cy="277.12" r="4" 
+fill="blue">
+<title>Con:40 Lab:29 LD:21</title><desc>Conservative Majority of 8</desc></circle>
+<circle cx="388.0" cy="284.048" r="4" 
+fill="blue">
+<title>Con:41 Lab:28 LD:21</title><desc>Conservative Majority of 42</desc></circle>
+<circle cx="384.0" cy="290.976" r="4" 
+fill="green" title="1983 outcome">
+<title>Con:42 Lab:27 LD:21</title><desc>Conservative Majority of 82</desc></circle>
+<circle cx="380.0" cy="297.904" r="4" 
+fill="blue">
+<title>Con:43 Lab:26 LD:21</title><desc>Conservative Majority of 114</desc></circle>
+<circle cx="376.0" cy="304.832" r="4" 
+fill="blue">
+<title>Con:44 Lab:25 LD:21</title><desc>Conservative Majority of 144</desc></circle>
+<circle cx="372.0" cy="311.76" r="4" 
+fill="blue">
+<title>Con:45 Lab:24 LD:21</title><desc>Conservative Majority of 182</desc></circle>
+<circle cx="368.0" cy="318.688" r="4" 
+fill="blue">
+<title>Con:46 Lab:23 LD:21</title><desc>Conservative Majority of 224</desc></circle>
+<circle cx="364.0" cy="325.616" r="4" 
+fill="blue">
+<title>Con:47 Lab:22 LD:21</title><desc>Conservative Majority of 242</desc></circle>
+<circle cx="360.0" cy="332.544" r="4" 
+fill="blue">
+<title>Con:48 Lab:21 LD:21</title><desc>Conservative Majority of 270</desc></circle>
+<circle cx="356.0" cy="339.472" r="4" 
+fill="blue">
+<title>Con:49 Lab:20 LD:21</title><desc>Conservative Majority of 284</desc></circle>
+<circle cx="352.0" cy="346.4" r="4" 
+fill="blue">
+<title>Con:50 Lab:19 LD:21</title><desc>Conservative Majority of 312</desc></circle>
+<circle cx="472.0" cy="124.704" r="4" 
+fill="red">
+<title>Con:18 Lab:50 LD:22</title><desc>Labour Majority of 370</desc></circle>
+<circle cx="468.0" cy="131.632" r="4" 
+fill="red">
+<title>Con:19 Lab:49 LD:22</title><desc>Labour Majority of 326</desc></circle>
+<circle cx="464.0" cy="138.56" r="4" 
+fill="red">
+<title>Con:20 Lab:48 LD:22</title><desc>Labour Majority of 302</desc></circle>
+<circle cx="460.0" cy="145.488" r="4" 
+fill="red">
+<title>Con:21 Lab:47 LD:22</title><desc>Labour Majority of 278</desc></circle>
+<circle cx="456.0" cy="152.416" r="4" 
+fill="red">
+<title>Con:22 Lab:46 LD:22</title><desc>Labour Majority of 258</desc></circle>
+<circle cx="452.0" cy="159.344" r="4" 
+fill="red">
+<title>Con:23 Lab:45 LD:22</title><desc>Labour Majority of 228</desc></circle>
+<circle cx="448.0" cy="166.272" r="4" 
+fill="red">
+<title>Con:24 Lab:44 LD:22</title><desc>Labour Majority of 196</desc></circle>
+<circle cx="444.0" cy="173.2" r="4" 
+fill="red">
+<title>Con:25 Lab:43 LD:22</title><desc>Labour Majority of 166</desc></circle>
+<circle cx="440.0" cy="180.128" r="4" 
+fill="red">
+<title>Con:26 Lab:42 LD:22</title><desc>Labour Majority of 144</desc></circle>
+<circle cx="436.0" cy="187.056" r="4" 
+fill="red">
+<title>Con:27 Lab:41 LD:22</title><desc>Labour Majority of 132</desc></circle>
+<circle cx="432.0" cy="193.984" r="4" 
+fill="red">
+<title>Con:28 Lab:40 LD:22</title><desc>Labour Majority of 122</desc></circle>
+<circle cx="428.0" cy="200.912" r="4" 
+fill="red">
+<title>Con:29 Lab:39 LD:22</title><desc>Labour Majority of 118</desc></circle>
+<circle cx="424.0" cy="207.84" r="4" 
+fill="red">
+<title>Con:30 Lab:38 LD:22</title><desc>Labour Majority of 112</desc></circle>
+<circle cx="420.0" cy="214.768" r="4" 
+fill="red">
+<title>Con:31 Lab:37 LD:22</title><desc>Labour Majority of 94</desc></circle>
+<circle cx="416.0" cy="221.696" r="4" 
+fill="red">
+<title>Con:32 Lab:36 LD:22</title><desc>Labour Majority of 60</desc></circle>
+<circle cx="412.0" cy="228.624" r="4" 
+fill="red">
+<title>Con:33 Lab:35 LD:22</title><desc>Labour Majority of 24</desc></circle>
+<circle cx="408.0" cy="235.552" r="4" 
+fill="#AA0000">
+<title>Con:34 Lab:34 LD:22</title><desc>Hung Parliament, Labour 2 seats short</desc></circle>
+<circle cx="404.0" cy="242.48" r="4" 
+fill="#AA0000">
+<title>Con:35 Lab:33 LD:22</title><desc>Hung Parliament, Labour 17 seats short</desc></circle>
+<circle cx="400.0" cy="249.408" r="4" 
+fill="#AA0000">
+<title>Con:36 Lab:32 LD:22</title><desc>Hung Parliament, Labour 34 seats short</desc></circle>
+<circle cx="396.0" cy="256.336" r="4" 
+fill="#AA0000">
+<title>Con:37 Lab:31 LD:22</title><desc>Hung Parliament, Labour 45 seats short</desc></circle>
+<circle cx="392.0" cy="263.264" r="4" 
+fill="#0000AA">
+<title>Con:38 Lab:30 LD:22</title><desc>Hung Parliament, Conservatives 24 seats short</desc></circle>
+<circle cx="388.0" cy="270.192" r="4" 
+fill="#0000AA">
+<title>Con:39 Lab:29 LD:22</title><desc>Hung Parliament, Conservatives 9 seats short</desc></circle>
+<circle cx="384.0" cy="277.12" r="4" 
+fill="blue">
+<title>Con:40 Lab:28 LD:22</title><desc>Conservative Majority of 20</desc></circle>
+<circle cx="380.0" cy="284.048" r="4" 
+fill="blue">
+<title>Con:41 Lab:27 LD:22</title><desc>Conservative Majority of 58</desc></circle>
+<circle cx="376.0" cy="290.976" r="4" 
+fill="blue">
+<title>Con:42 Lab:26 LD:22</title><desc>Conservative Majority of 82</desc></circle>
+<circle cx="372.0" cy="297.904" r="4" 
+fill="blue">
+<title>Con:43 Lab:25 LD:22</title><desc>Conservative Majority of 118</desc></circle>
+<circle cx="368.0" cy="304.832" r="4" 
+fill="blue">
+<title>Con:44 Lab:24 LD:22</title><desc>Conservative Majority of 150</desc></circle>
+<circle cx="364.0" cy="311.76" r="4" 
+fill="blue">
+<title>Con:45 Lab:23 LD:22</title><desc>Conservative Majority of 192</desc></circle>
+<circle cx="360.0" cy="318.688" r="4" 
+fill="blue">
+<title>Con:46 Lab:22 LD:22</title><desc>Conservative Majority of 226</desc></circle>
+<circle cx="356.0" cy="325.616" r="4" 
+fill="blue">
+<title>Con:47 Lab:21 LD:22</title><desc>Conservative Majority of 246</desc></circle>
+<circle cx="352.0" cy="332.544" r="4" 
+fill="blue">
+<title>Con:48 Lab:20 LD:22</title><desc>Conservative Majority of 268</desc></circle>
+<circle cx="348.0" cy="339.472" r="4" 
+fill="blue">
+<title>Con:49 Lab:19 LD:22</title><desc>Conservative Majority of 296</desc></circle>
+<circle cx="344.0" cy="346.4" r="4" 
+fill="blue">
+<title>Con:50 Lab:18 LD:22</title><desc>Conservative Majority of 320</desc></circle>
+<circle cx="468.0" cy="117.776" r="4" 
+fill="red">
+<title>Con:17 Lab:50 LD:23</title><desc>Labour Majority of 374</desc></circle>
+<circle cx="464.0" cy="124.704" r="4" 
+fill="red">
+<title>Con:18 Lab:49 LD:23</title><desc>Labour Majority of 350</desc></circle>
+<circle cx="460.0" cy="131.632" r="4" 
+fill="red">
+<title>Con:19 Lab:48 LD:23</title><desc>Labour Majority of 308</desc></circle>
+<circle cx="456.0" cy="138.56" r="4" 
+fill="red">
+<title>Con:20 Lab:47 LD:23</title><desc>Labour Majority of 288</desc></circle>
+<circle cx="452.0" cy="145.488" r="4" 
+fill="red">
+<title>Con:21 Lab:46 LD:23</title><desc>Labour Majority of 268</desc></circle>
+<circle cx="448.0" cy="152.416" r="4" 
+fill="red">
+<title>Con:22 Lab:45 LD:23</title><desc>Labour Majority of 236</desc></circle>
+<circle cx="444.0" cy="159.344" r="4" 
+fill="red">
+<title>Con:23 Lab:44 LD:23</title><desc>Labour Majority of 206</desc></circle>
+<circle cx="440.0" cy="166.272" r="4" 
+fill="red">
+<title>Con:24 Lab:43 LD:23</title><desc>Labour Majority of 188</desc></circle>
+<circle cx="436.0" cy="173.2" r="4" 
+fill="red">
+<title>Con:25 Lab:42 LD:23</title><desc>Labour Majority of 152</desc></circle>
+<circle cx="432.0" cy="180.128" r="4" 
+fill="red">
+<title>Con:26 Lab:41 LD:23</title><desc>Labour Majority of 134</desc></circle>
+<circle cx="428.0" cy="187.056" r="4" 
+fill="red">
+<title>Con:27 Lab:40 LD:23</title><desc>Labour Majority of 126</desc></circle>
+<circle cx="424.0" cy="193.984" r="4" 
+fill="red">
+<title>Con:28 Lab:39 LD:23</title><desc>Labour Majority of 118</desc></circle>
+<circle cx="420.0" cy="200.912" r="4" 
+fill="red">
+<title>Con:29 Lab:38 LD:23</title><desc>Labour Majority of 114</desc></circle>
+<circle cx="416.0" cy="207.84" r="4" 
+fill="red">
+<title>Con:30 Lab:37 LD:23</title><desc>Labour Majority of 96</desc></circle>
+<circle cx="412.0" cy="214.768" r="4" 
+fill="red">
+<title>Con:31 Lab:36 LD:23</title><desc>Labour Majority of 68</desc></circle>
+<circle cx="408.0" cy="221.696" r="4" 
+fill="green" title="2005 outcome">
+<title>Con:32 Lab:35 LD:23</title><desc>Labour Majority of 34</desc></circle>
+<circle cx="404.0" cy="228.624" r="4" 
+fill="red">
+<title>Con:33 Lab:34 LD:23</title><desc>Labour Majority of 6</desc></circle>
+<circle cx="400.0" cy="235.552" r="4" 
+fill="#AA0000">
+<title>Con:34 Lab:33 LD:23</title><desc>Hung Parliament, Labour 16 seats short</desc></circle>
+<circle cx="396.0" cy="242.48" r="4" 
+fill="#AA0000">
+<title>Con:35 Lab:32 LD:23</title><desc>Hung Parliament, Labour 29 seats short</desc></circle>
+<circle cx="392.0" cy="249.408" r="4" 
+fill="#AA0000">
+<title>Con:36 Lab:31 LD:23</title><desc>Hung Parliament, Labour 38 seats short</desc></circle>
+<circle cx="388.0" cy="256.336" r="4" 
+fill="#0000AA">
+<title>Con:37 Lab:30 LD:23</title><desc>Hung Parliament, Conservatives 37 seats short</desc></circle>
+<circle cx="384.0" cy="263.264" r="4" 
+fill="#0000AA">
+<title>Con:38 Lab:29 LD:23</title><desc>Hung Parliament, Conservatives 20 seats short</desc></circle>
+<circle cx="380.0" cy="270.192" r="4" 
+fill="#0000AA">
+<title>Con:39 Lab:28 LD:23</title><desc>Hung Parliament, Conservatives 2 seats short</desc></circle>
+<circle cx="376.0" cy="277.12" r="4" 
+fill="blue">
+<title>Con:40 Lab:27 LD:23</title><desc>Conservative Majority of 30</desc></circle>
+<circle cx="372.0" cy="284.048" r="4" 
+fill="blue">
+<title>Con:41 Lab:26 LD:23</title><desc>Conservative Majority of 62</desc></circle>
+<circle cx="368.0" cy="290.976" r="4" 
+fill="blue">
+<title>Con:42 Lab:25 LD:23</title><desc>Conservative Majority of 92</desc></circle>
+<circle cx="364.0" cy="297.904" r="4" 
+fill="blue">
+<title>Con:43 Lab:24 LD:23</title><desc>Conservative Majority of 124</desc></circle>
+<circle cx="360.0" cy="304.832" r="4" 
+fill="blue">
+<title>Con:44 Lab:23 LD:23</title><desc>Conservative Majority of 158</desc></circle>
+<circle cx="356.0" cy="311.76" r="4" 
+fill="blue">
+<title>Con:45 Lab:22 LD:23</title><desc>Conservative Majority of 202</desc></circle>
+<circle cx="352.0" cy="318.688" r="4" 
+fill="blue">
+<title>Con:46 Lab:21 LD:23</title><desc>Conservative Majority of 218</desc></circle>
+<circle cx="348.0" cy="325.616" r="4" 
+fill="blue">
+<title>Con:47 Lab:20 LD:23</title><desc>Conservative Majority of 248</desc></circle>
+<circle cx="344.0" cy="332.544" r="4" 
+fill="blue">
+<title>Con:48 Lab:19 LD:23</title><desc>Conservative Majority of 274</desc></circle>
+<circle cx="340.0" cy="339.472" r="4" 
+fill="blue">
+<title>Con:49 Lab:18 LD:23</title><desc>Conservative Majority of 298</desc></circle>
+<circle cx="336.0" cy="346.4" r="4" 
+fill="blue">
+<title>Con:50 Lab:17 LD:23</title><desc>Conservative Majority of 324</desc></circle>
+<circle cx="464.0" cy="110.848" r="4" 
+fill="red">
+<title>Con:16 Lab:50 LD:24</title><desc>Labour Majority of 378</desc></circle>
+<circle cx="460.0" cy="117.776" r="4" 
+fill="red">
+<title>Con:17 Lab:49 LD:24</title><desc>Labour Majority of 362</desc></circle>
+<circle cx="456.0" cy="124.704" r="4" 
+fill="red">
+<title>Con:18 Lab:48 LD:24</title><desc>Labour Majority of 322</desc></circle>
+<circle cx="452.0" cy="131.632" r="4" 
+fill="red">
+<title>Con:19 Lab:47 LD:24</title><desc>Labour Majority of 300</desc></circle>
+<circle cx="448.0" cy="138.56" r="4" 
+fill="red">
+<title>Con:20 Lab:46 LD:24</title><desc>Labour Majority of 268</desc></circle>
+<circle cx="444.0" cy="145.488" r="4" 
+fill="red">
+<title>Con:21 Lab:45 LD:24</title><desc>Labour Majority of 248</desc></circle>
+<circle cx="440.0" cy="152.416" r="4" 
+fill="red">
+<title>Con:22 Lab:44 LD:24</title><desc>Labour Majority of 218</desc></circle>
+<circle cx="436.0" cy="159.344" r="4" 
+fill="red">
+<title>Con:23 Lab:43 LD:24</title><desc>Labour Majority of 190</desc></circle>
+<circle cx="432.0" cy="166.272" r="4" 
+fill="red">
+<title>Con:24 Lab:42 LD:24</title><desc>Labour Majority of 160</desc></circle>
+<circle cx="428.0" cy="173.2" r="4" 
+fill="red">
+<title>Con:25 Lab:41 LD:24</title><desc>Labour Majority of 136</desc></circle>
+<circle cx="424.0" cy="180.128" r="4" 
+fill="red">
+<title>Con:26 Lab:40 LD:24</title><desc>Labour Majority of 130</desc></circle>
+<circle cx="420.0" cy="187.056" r="4" 
+fill="red">
+<title>Con:27 Lab:39 LD:24</title><desc>Labour Majority of 118</desc></circle>
+<circle cx="416.0" cy="193.984" r="4" 
+fill="red">
+<title>Con:28 Lab:38 LD:24</title><desc>Labour Majority of 110</desc></circle>
+<circle cx="412.0" cy="200.912" r="4" 
+fill="red">
+<title>Con:29 Lab:37 LD:24</title><desc>Labour Majority of 100</desc></circle>
+<circle cx="408.0" cy="207.84" r="4" 
+fill="red">
+<title>Con:30 Lab:36 LD:24</title><desc>Labour Majority of 84</desc></circle>
+<circle cx="404.0" cy="214.768" r="4" 
+fill="red">
+<title>Con:31 Lab:35 LD:24</title><desc>Labour Majority of 50</desc></circle>
+<circle cx="400.0" cy="221.696" r="4" 
+fill="red">
+<title>Con:32 Lab:34 LD:24</title><desc>Labour Majority of 12</desc></circle>
+<circle cx="396.0" cy="228.624" r="4" 
+fill="#AA0000">
+<title>Con:33 Lab:33 LD:24</title><desc>Hung Parliament, Labour 6 seats short</desc></circle>
+<circle cx="392.0" cy="235.552" r="4" 
+fill="#AA0000">
+<title>Con:34 Lab:32 LD:24</title><desc>Hung Parliament, Labour 21 seats short</desc></circle>
+<circle cx="388.0" cy="242.48" r="4" 
+fill="#AA0000">
+<title>Con:35 Lab:31 LD:24</title><desc>Hung Parliament, Labour 35 seats short</desc></circle>
+<circle cx="384.0" cy="249.408" r="4" 
+fill="#AA0000">
+<title>Con:36 Lab:30 LD:24</title><desc>Hung Parliament, Labour 47 seats short</desc></circle>
+<circle cx="380.0" cy="256.336" r="4" 
+fill="#0000AA">
+<title>Con:37 Lab:29 LD:24</title><desc>Hung Parliament, Conservatives 30 seats short</desc></circle>
+<circle cx="376.0" cy="263.264" r="4" 
+fill="#0000AA">
+<title>Con:38 Lab:28 LD:24</title><desc>Hung Parliament, Conservatives 11 seats short</desc></circle>
+<circle cx="372.0" cy="270.192" r="4" 
+fill="blue">
+<title>Con:39 Lab:27 LD:24</title><desc>Conservative Majority of 10</desc></circle>
+<circle cx="368.0" cy="277.12" r="4" 
+fill="blue">
+<title>Con:40 Lab:26 LD:24</title><desc>Conservative Majority of 48</desc></circle>
+<circle cx="364.0" cy="284.048" r="4" 
+fill="blue">
+<title>Con:41 Lab:25 LD:24</title><desc>Conservative Majority of 66</desc></circle>
+<circle cx="360.0" cy="290.976" r="4" 
+fill="blue">
+<title>Con:42 Lab:24 LD:24</title><desc>Conservative Majority of 100</desc></circle>
+<circle cx="356.0" cy="297.904" r="4" 
+fill="blue">
+<title>Con:43 Lab:23 LD:24</title><desc>Conservative Majority of 126</desc></circle>
+<circle cx="352.0" cy="304.832" r="4" 
+fill="blue">
+<title>Con:44 Lab:22 LD:24</title><desc>Conservative Majority of 172</desc></circle>
+<circle cx="348.0" cy="311.76" r="4" 
+fill="blue">
+<title>Con:45 Lab:21 LD:24</title><desc>Conservative Majority of 200</desc></circle>
+<circle cx="344.0" cy="318.688" r="4" 
+fill="blue">
+<title>Con:46 Lab:20 LD:24</title><desc>Conservative Majority of 222</desc></circle>
+<circle cx="340.0" cy="325.616" r="4" 
+fill="blue">
+<title>Con:47 Lab:19 LD:24</title><desc>Conservative Majority of 240</desc></circle>
+<circle cx="336.0" cy="332.544" r="4" 
+fill="blue">
+<title>Con:48 Lab:18 LD:24</title><desc>Conservative Majority of 274</desc></circle>
+<circle cx="332.0" cy="339.472" r="4" 
+fill="blue">
+<title>Con:49 Lab:17 LD:24</title><desc>Conservative Majority of 306</desc></circle>
+<circle cx="328.0" cy="346.4" r="4" 
+fill="blue">
+<title>Con:50 Lab:16 LD:24</title><desc>Conservative Majority of 324</desc></circle>
+<circle cx="460.0" cy="103.92" r="4" 
+fill="red">
+<title>Con:15 Lab:50 LD:25</title><desc>Labour Majority of 380</desc></circle>
+<circle cx="456.0" cy="110.848" r="4" 
+fill="red">
+<title>Con:16 Lab:49 LD:25</title><desc>Labour Majority of 364</desc></circle>
+<circle cx="452.0" cy="117.776" r="4" 
+fill="red">
+<title>Con:17 Lab:48 LD:25</title><desc>Labour Majority of 342</desc></circle>
+<circle cx="448.0" cy="124.704" r="4" 
+fill="red">
+<title>Con:18 Lab:47 LD:25</title><desc>Labour Majority of 298</desc></circle>
+<circle cx="444.0" cy="131.632" r="4" 
+fill="red">
+<title>Con:19 Lab:46 LD:25</title><desc>Labour Majority of 274</desc></circle>
+<circle cx="440.0" cy="138.56" r="4" 
+fill="red">
+<title>Con:20 Lab:45 LD:25</title><desc>Labour Majority of 252</desc></circle>
+<circle cx="436.0" cy="145.488" r="4" 
+fill="red">
+<title>Con:21 Lab:44 LD:25</title><desc>Labour Majority of 224</desc></circle>
+<circle cx="432.0" cy="152.416" r="4" 
+fill="red">
+<title>Con:22 Lab:43 LD:25</title><desc>Labour Majority of 198</desc></circle>
+<circle cx="428.0" cy="159.344" r="4" 
+fill="red">
+<title>Con:23 Lab:42 LD:25</title><desc>Labour Majority of 180</desc></circle>
+<circle cx="424.0" cy="166.272" r="4" 
+fill="red">
+<title>Con:24 Lab:41 LD:25</title><desc>Labour Majority of 148</desc></circle>
+<circle cx="420.0" cy="173.2" r="4" 
+fill="red">
+<title>Con:25 Lab:40 LD:25</title><desc>Labour Majority of 132</desc></circle>
+<circle cx="416.0" cy="180.128" r="4" 
+fill="red">
+<title>Con:26 Lab:39 LD:25</title><desc>Labour Majority of 116</desc></circle>
+<circle cx="412.0" cy="187.056" r="4" 
+fill="red">
+<title>Con:27 Lab:38 LD:25</title><desc>Labour Majority of 108</desc></circle>
+<circle cx="408.0" cy="193.984" r="4" 
+fill="red">
+<title>Con:28 Lab:37 LD:25</title><desc>Labour Majority of 102</desc></circle>
+<circle cx="404.0" cy="200.912" r="4" 
+fill="red">
+<title>Con:29 Lab:36 LD:25</title><desc>Labour Majority of 88</desc></circle>
+<circle cx="400.0" cy="207.84" r="4" 
+fill="red">
+<title>Con:30 Lab:35 LD:25</title><desc>Labour Majority of 54</desc></circle>
+<circle cx="396.0" cy="214.768" r="4" 
+fill="red">
+<title>Con:31 Lab:34 LD:25</title><desc>Labour Majority of 24</desc></circle>
+<circle cx="392.0" cy="221.696" r="4" 
+fill="#AA0000">
+<title>Con:32 Lab:33 LD:25</title><desc>Hung Parliament, Labour 1 seats short</desc></circle>
+<circle cx="388.0" cy="228.624" r="4" 
+fill="#AA0000">
+<title>Con:33 Lab:32 LD:25</title><desc>Hung Parliament, Labour 18 seats short</desc></circle>
+<circle cx="384.0" cy="235.552" r="4" 
+fill="#AA0000">
+<title>Con:34 Lab:31 LD:25</title><desc>Hung Parliament, Labour 31 seats short</desc></circle>
+<circle cx="380.0" cy="242.48" r="4" 
+fill="#AA0000">
+<title>Con:35 Lab:30 LD:25</title><desc>Hung Parliament, Labour 40 seats short</desc></circle>
+<circle cx="376.0" cy="249.408" r="4" 
+fill="#0000AA">
+<title>Con:36 Lab:29 LD:25</title><desc>Hung Parliament, Conservatives 48 seats short</desc></circle>
+<circle cx="372.0" cy="256.336" r="4" 
+fill="#0000AA">
+<title>Con:37 Lab:28 LD:25</title><desc>Hung Parliament, Conservatives 28 seats short</desc></circle>
+<circle cx="368.0" cy="263.264" r="4" 
+fill="#0000AA">
+<title>Con:38 Lab:27 LD:25</title><desc>Hung Parliament, Conservatives 8 seats short</desc></circle>
+<circle cx="364.0" cy="270.192" r="4" 
+fill="blue">
+<title>Con:39 Lab:26 LD:25</title><desc>Conservative Majority of 24</desc></circle>
+<circle cx="360.0" cy="277.12" r="4" 
+fill="blue">
+<title>Con:40 Lab:25 LD:25</title><desc>Conservative Majority of 52</desc></circle>
+<circle cx="356.0" cy="284.048" r="4" 
+fill="blue">
+<title>Con:41 Lab:24 LD:25</title><desc>Conservative Majority of 80</desc></circle>
+<circle cx="352.0" cy="290.976" r="4" 
+fill="blue">
+<title>Con:42 Lab:23 LD:25</title><desc>Conservative Majority of 110</desc></circle>
+<circle cx="348.0" cy="297.904" r="4" 
+fill="blue">
+<title>Con:43 Lab:22 LD:25</title><desc>Conservative Majority of 140</desc></circle>
+<circle cx="344.0" cy="304.832" r="4" 
+fill="blue">
+<title>Con:44 Lab:21 LD:25</title><desc>Conservative Majority of 176</desc></circle>
+<circle cx="340.0" cy="311.76" r="4" 
+fill="blue">
+<title>Con:45 Lab:20 LD:25</title><desc>Conservative Majority of 198</desc></circle>
+<circle cx="336.0" cy="318.688" r="4" 
+fill="blue">
+<title>Con:46 Lab:19 LD:25</title><desc>Conservative Majority of 220</desc></circle>
+<circle cx="332.0" cy="325.616" r="4" 
+fill="blue">
+<title>Con:47 Lab:18 LD:25</title><desc>Conservative Majority of 246</desc></circle>
+<circle cx="328.0" cy="332.544" r="4" 
+fill="blue">
+<title>Con:48 Lab:17 LD:25</title><desc>Conservative Majority of 268</desc></circle>
+<circle cx="324.0" cy="339.472" r="4" 
+fill="blue">
+<title>Con:49 Lab:16 LD:25</title><desc>Conservative Majority of 300</desc></circle>
+<circle cx="320.0" cy="346.4" r="4" 
+fill="blue">
+<title>Con:50 Lab:15 LD:25</title><desc>Conservative Majority of 330</desc></circle>
+<circle cx="456.0" cy="96.992" r="4" 
+fill="red">
+<title>Con:14 Lab:50 LD:26</title><desc>Labour Majority of 384</desc></circle>
+<circle cx="452.0" cy="103.92" r="4" 
+fill="red">
+<title>Con:15 Lab:49 LD:26</title><desc>Labour Majority of 366</desc></circle>
+<circle cx="448.0" cy="110.848" r="4" 
+fill="red">
+<title>Con:16 Lab:48 LD:26</title><desc>Labour Majority of 342</desc></circle>
+<circle cx="444.0" cy="117.776" r="4" 
+fill="red">
+<title>Con:17 Lab:47 LD:26</title><desc>Labour Majority of 304</desc></circle>
+<circle cx="440.0" cy="124.704" r="4" 
+fill="red">
+<title>Con:18 Lab:46 LD:26</title><desc>Labour Majority of 280</desc></circle>
+<circle cx="436.0" cy="131.632" r="4" 
+fill="red">
+<title>Con:19 Lab:45 LD:26</title><desc>Labour Majority of 250</desc></circle>
+<circle cx="432.0" cy="138.56" r="4" 
+fill="red">
+<title>Con:20 Lab:44 LD:26</title><desc>Labour Majority of 238</desc></circle>
+<circle cx="428.0" cy="145.488" r="4" 
+fill="red">
+<title>Con:21 Lab:43 LD:26</title><desc>Labour Majority of 208</desc></circle>
+<circle cx="424.0" cy="152.416" r="4" 
+fill="red">
+<title>Con:22 Lab:42 LD:26</title><desc>Labour Majority of 186</desc></circle>
+<circle cx="420.0" cy="159.344" r="4" 
+fill="red">
+<title>Con:23 Lab:41 LD:26</title><desc>Labour Majority of 156</desc></circle>
+<circle cx="416.0" cy="166.272" r="4" 
+fill="red">
+<title>Con:24 Lab:40 LD:26</title><desc>Labour Majority of 128</desc></circle>
+<circle cx="412.0" cy="173.2" r="4" 
+fill="red">
+<title>Con:25 Lab:39 LD:26</title><desc>Labour Majority of 118</desc></circle>
+<circle cx="408.0" cy="180.128" r="4" 
+fill="red">
+<title>Con:26 Lab:38 LD:26</title><desc>Labour Majority of 108</desc></circle>
+<circle cx="404.0" cy="187.056" r="4" 
+fill="red">
+<title>Con:27 Lab:37 LD:26</title><desc>Labour Majority of 100</desc></circle>
+<circle cx="400.0" cy="193.984" r="4" 
+fill="red">
+<title>Con:28 Lab:36 LD:26</title><desc>Labour Majority of 88</desc></circle>
+<circle cx="396.0" cy="200.912" r="4" 
+fill="red">
+<title>Con:29 Lab:35 LD:26</title><desc>Labour Majority of 72</desc></circle>
+<circle cx="392.0" cy="207.84" r="4" 
+fill="red">
+<title>Con:30 Lab:34 LD:26</title><desc>Labour Majority of 40</desc></circle>
+<circle cx="388.0" cy="214.768" r="4" 
+fill="red">
+<title>Con:31 Lab:33 LD:26</title><desc>Labour Majority of 10</desc></circle>
+<circle cx="384.0" cy="221.696" r="4" 
+fill="#AA0000">
+<title>Con:32 Lab:32 LD:26</title><desc>Hung Parliament, Labour 9 seats short</desc></circle>
+<circle cx="380.0" cy="228.624" r="4" 
+fill="#AA0000">
+<title>Con:33 Lab:31 LD:26</title><desc>Hung Parliament, Labour 23 seats short</desc></circle>
+<circle cx="376.0" cy="235.552" r="4" 
+fill="#AA0000">
+<title>Con:34 Lab:30 LD:26</title><desc>Hung Parliament, Labour 41 seats short</desc></circle>
+<circle cx="372.0" cy="242.48" r="4" 
+fill="#AA0000">
+<title>Con:35 Lab:29 LD:26</title><desc>Hung Parliament, Labour 53 seats short</desc></circle>
+<circle cx="368.0" cy="249.408" r="4" 
+fill="#0000AA">
+<title>Con:36 Lab:28 LD:26</title><desc>Hung Parliament, Conservatives 40 seats short</desc></circle>
+<circle cx="364.0" cy="256.336" r="4" 
+fill="#0000AA">
+<title>Con:37 Lab:27 LD:26</title><desc>Hung Parliament, Conservatives 22 seats short</desc></circle>
+<circle cx="360.0" cy="263.264" r="4" 
+fill="#0000AA">
+<title>Con:38 Lab:26 LD:26</title><desc>Hung Parliament, Conservatives 3 seats short</desc></circle>
+<circle cx="356.0" cy="270.192" r="4" 
+fill="blue">
+<title>Con:39 Lab:25 LD:26</title><desc>Conservative Majority of 36</desc></circle>
+<circle cx="352.0" cy="277.12" r="4" 
+fill="blue">
+<title>Con:40 Lab:24 LD:26</title><desc>Conservative Majority of 60</desc></circle>
+<circle cx="348.0" cy="284.048" r="4" 
+fill="blue">
+<title>Con:41 Lab:23 LD:26</title><desc>Conservative Majority of 88</desc></circle>
+<circle cx="344.0" cy="290.976" r="4" 
+fill="blue">
+<title>Con:42 Lab:22 LD:26</title><desc>Conservative Majority of 116</desc></circle>
+<circle cx="340.0" cy="297.904" r="4" 
+fill="blue">
+<title>Con:43 Lab:21 LD:26</title><desc>Conservative Majority of 156</desc></circle>
+<circle cx="336.0" cy="304.832" r="4" 
+fill="blue">
+<title>Con:44 Lab:20 LD:26</title><desc>Conservative Majority of 178</desc></circle>
+<circle cx="332.0" cy="311.76" r="4" 
+fill="blue">
+<title>Con:45 Lab:19 LD:26</title><desc>Conservative Majority of 192</desc></circle>
+<circle cx="328.0" cy="318.688" r="4" 
+fill="blue">
+<title>Con:46 Lab:18 LD:26</title><desc>Conservative Majority of 218</desc></circle>
+<circle cx="324.0" cy="325.616" r="4" 
+fill="blue">
+<title>Con:47 Lab:17 LD:26</title><desc>Conservative Majority of 244</desc></circle>
+<circle cx="320.0" cy="332.544" r="4" 
+fill="blue">
+<title>Con:48 Lab:16 LD:26</title><desc>Conservative Majority of 280</desc></circle>
+<circle cx="316.0" cy="339.472" r="4" 
+fill="blue">
+<title>Con:49 Lab:15 LD:26</title><desc>Conservative Majority of 292</desc></circle>
+<circle cx="312.0" cy="346.4" r="4" 
+fill="blue">
+<title>Con:50 Lab:14 LD:26</title><desc>Conservative Majority of 328</desc></circle>
+<circle cx="452.0" cy="90.064" r="4" 
+fill="red">
+<title>Con:13 Lab:50 LD:27</title><desc>Labour Majority of 382</desc></circle>
+<circle cx="448.0" cy="96.992" r="4" 
+fill="red">
+<title>Con:14 Lab:49 LD:27</title><desc>Labour Majority of 354</desc></circle>
+<circle cx="444.0" cy="103.92" r="4" 
+fill="red">
+<title>Con:15 Lab:48 LD:27</title><desc>Labour Majority of 338</desc></circle>
+<circle cx="440.0" cy="110.848" r="4" 
+fill="red">
+<title>Con:16 Lab:47 LD:27</title><desc>Labour Majority of 320</desc></circle>
+<circle cx="436.0" cy="117.776" r="4" 
+fill="red">
+<title>Con:17 Lab:46 LD:27</title><desc>Labour Majority of 278</desc></circle>
+<circle cx="432.0" cy="124.704" r="4" 
+fill="red">
+<title>Con:18 Lab:45 LD:27</title><desc>Labour Majority of 260</desc></circle>
+<circle cx="428.0" cy="131.632" r="4" 
+fill="red">
+<title>Con:19 Lab:44 LD:27</title><desc>Labour Majority of 238</desc></circle>
+<circle cx="424.0" cy="138.56" r="4" 
+fill="red">
+<title>Con:20 Lab:43 LD:27</title><desc>Labour Majority of 218</desc></circle>
+<circle cx="420.0" cy="145.488" r="4" 
+fill="red">
+<title>Con:21 Lab:42 LD:27</title><desc>Labour Majority of 192</desc></circle>
+<circle cx="416.0" cy="152.416" r="4" 
+fill="red">
+<title>Con:22 Lab:41 LD:27</title><desc>Labour Majority of 172</desc></circle>
+<circle cx="412.0" cy="159.344" r="4" 
+fill="red">
+<title>Con:23 Lab:40 LD:27</title><desc>Labour Majority of 138</desc></circle>
+<circle cx="408.0" cy="166.272" r="4" 
+fill="red">
+<title>Con:24 Lab:39 LD:27</title><desc>Labour Majority of 120</desc></circle>
+<circle cx="404.0" cy="173.2" r="4" 
+fill="red">
+<title>Con:25 Lab:38 LD:27</title><desc>Labour Majority of 108</desc></circle>
+<circle cx="400.0" cy="180.128" r="4" 
+fill="red">
+<title>Con:26 Lab:37 LD:27</title><desc>Labour Majority of 94</desc></circle>
+<circle cx="396.0" cy="187.056" r="4" 
+fill="red">
+<title>Con:27 Lab:36 LD:27</title><desc>Labour Majority of 92</desc></circle>
+<circle cx="392.0" cy="193.984" r="4" 
+fill="red">
+<title>Con:28 Lab:35 LD:27</title><desc>Labour Majority of 78</desc></circle>
+<circle cx="388.0" cy="200.912" r="4" 
+fill="red">
+<title>Con:29 Lab:34 LD:27</title><desc>Labour Majority of 50</desc></circle>
+<circle cx="384.0" cy="207.84" r="4" 
+fill="red">
+<title>Con:30 Lab:33 LD:27</title><desc>Labour Majority of 20</desc></circle>
+<circle cx="380.0" cy="214.768" r="4" 
+fill="#AA0000">
+<title>Con:31 Lab:32 LD:27</title><desc>Hung Parliament, Labour 4 seats short</desc></circle>
+<circle cx="376.0" cy="221.696" r="4" 
+fill="#AA0000">
+<title>Con:32 Lab:31 LD:27</title><desc>Hung Parliament, Labour 24 seats short</desc></circle>
+<circle cx="372.0" cy="228.624" r="4" 
+fill="#AA0000">
+<title>Con:33 Lab:30 LD:27</title><desc>Hung Parliament, Labour 37 seats short</desc></circle>
+<circle cx="368.0" cy="235.552" r="4" 
+fill="#AA0000">
+<title>Con:34 Lab:29 LD:27</title><desc>Hung Parliament, Labour 45 seats short</desc></circle>
+<circle cx="364.0" cy="242.48" r="4" 
+fill="#0000AA">
+<title>Con:35 Lab:28 LD:27</title><desc>Hung Parliament, Conservatives 52 seats short</desc></circle>
+<circle cx="360.0" cy="249.408" r="4" 
+fill="#0000AA">
+<title>Con:36 Lab:27 LD:27</title><desc>Hung Parliament, Conservatives 35 seats short</desc></circle>
+<circle cx="356.0" cy="256.336" r="4" 
+fill="#0000AA">
+<title>Con:37 Lab:26 LD:27</title><desc>Hung Parliament, Conservatives 18 seats short</desc></circle>
+<circle cx="352.0" cy="263.264" r="4" 
+fill="blue">
+<title>Con:38 Lab:25 LD:27</title><desc>Conservative Majority of 4</desc></circle>
+<circle cx="348.0" cy="270.192" r="4" 
+fill="blue">
+<title>Con:39 Lab:24 LD:27</title><desc>Conservative Majority of 38</desc></circle>
+<circle cx="344.0" cy="277.12" r="4" 
+fill="blue">
+<title>Con:40 Lab:23 LD:27</title><desc>Conservative Majority of 68</desc></circle>
+<circle cx="340.0" cy="284.048" r="4" 
+fill="blue">
+<title>Con:41 Lab:22 LD:27</title><desc>Conservative Majority of 102</desc></circle>
+<circle cx="336.0" cy="290.976" r="4" 
+fill="blue">
+<title>Con:42 Lab:21 LD:27</title><desc>Conservative Majority of 130</desc></circle>
+<circle cx="332.0" cy="297.904" r="4" 
+fill="blue">
+<title>Con:43 Lab:20 LD:27</title><desc>Conservative Majority of 164</desc></circle>
+<circle cx="328.0" cy="304.832" r="4" 
+fill="blue">
+<title>Con:44 Lab:19 LD:27</title><desc>Conservative Majority of 180</desc></circle>
+<circle cx="324.0" cy="311.76" r="4" 
+fill="blue">
+<title>Con:45 Lab:18 LD:27</title><desc>Conservative Majority of 196</desc></circle>
+<circle cx="320.0" cy="318.688" r="4" 
+fill="blue">
+<title>Con:46 Lab:17 LD:27</title><desc>Conservative Majority of 216</desc></circle>
+<circle cx="316.0" cy="325.616" r="4" 
+fill="blue">
+<title>Con:47 Lab:16 LD:27</title><desc>Conservative Majority of 244</desc></circle>
+<circle cx="312.0" cy="332.544" r="4" 
+fill="blue">
+<title>Con:48 Lab:15 LD:27</title><desc>Conservative Majority of 272</desc></circle>
+<circle cx="308.0" cy="339.472" r="4" 
+fill="blue">
+<title>Con:49 Lab:14 LD:27</title><desc>Conservative Majority of 300</desc></circle>
+<circle cx="304.0" cy="346.4" r="4" 
+fill="blue">
+<title>Con:50 Lab:13 LD:27</title><desc>Conservative Majority of 324</desc></circle>
+<circle cx="448.0" cy="83.136" r="4" 
+fill="red">
+<title>Con:12 Lab:50 LD:28</title><desc>Labour Majority of 366</desc></circle>
+<circle cx="444.0" cy="90.064" r="4" 
+fill="red">
+<title>Con:13 Lab:49 LD:28</title><desc>Labour Majority of 350</desc></circle>
+<circle cx="440.0" cy="96.992" r="4" 
+fill="red">
+<title>Con:14 Lab:48 LD:28</title><desc>Labour Majority of 336</desc></circle>
+<circle cx="436.0" cy="103.92" r="4" 
+fill="red">
+<title>Con:15 Lab:47 LD:28</title><desc>Labour Majority of 320</desc></circle>
+<circle cx="432.0" cy="110.848" r="4" 
+fill="red">
+<title>Con:16 Lab:46 LD:28</title><desc>Labour Majority of 286</desc></circle>
+<circle cx="428.0" cy="117.776" r="4" 
+fill="red">
+<title>Con:17 Lab:45 LD:28</title><desc>Labour Majority of 266</desc></circle>
+<circle cx="424.0" cy="124.704" r="4" 
+fill="red">
+<title>Con:18 Lab:44 LD:28</title><desc>Labour Majority of 244</desc></circle>
+<circle cx="420.0" cy="131.632" r="4" 
+fill="red">
+<title>Con:19 Lab:43 LD:28</title><desc>Labour Majority of 232</desc></circle>
+<circle cx="416.0" cy="138.56" r="4" 
+fill="red">
+<title>Con:20 Lab:42 LD:28</title><desc>Labour Majority of 198</desc></circle>
+<circle cx="412.0" cy="145.488" r="4" 
+fill="red">
+<title>Con:21 Lab:41 LD:28</title><desc>Labour Majority of 176</desc></circle>
+<circle cx="408.0" cy="152.416" r="4" 
+fill="red">
+<title>Con:22 Lab:40 LD:28</title><desc>Labour Majority of 146</desc></circle>
+<circle cx="404.0" cy="159.344" r="4" 
+fill="red">
+<title>Con:23 Lab:39 LD:28</title><desc>Labour Majority of 118</desc></circle>
+<circle cx="400.0" cy="166.272" r="4" 
+fill="red">
+<title>Con:24 Lab:38 LD:28</title><desc>Labour Majority of 106</desc></circle>
+<circle cx="396.0" cy="173.2" r="4" 
+fill="red">
+<title>Con:25 Lab:37 LD:28</title><desc>Labour Majority of 96</desc></circle>
+<circle cx="392.0" cy="180.128" r="4" 
+fill="red">
+<title>Con:26 Lab:36 LD:28</title><desc>Labour Majority of 92</desc></circle>
+<circle cx="388.0" cy="187.056" r="4" 
+fill="red">
+<title>Con:27 Lab:35 LD:28</title><desc>Labour Majority of 82</desc></circle>
+<circle cx="384.0" cy="193.984" r="4" 
+fill="red">
+<title>Con:28 Lab:34 LD:28</title><desc>Labour Majority of 64</desc></circle>
+<circle cx="380.0" cy="200.912" r="4" 
+fill="red">
+<title>Con:29 Lab:33 LD:28</title><desc>Labour Majority of 36</desc></circle>
+<circle cx="376.0" cy="207.84" r="4" 
+fill="#AA0000">
+<title>Con:30 Lab:32 LD:28</title><desc>Hung Parliament, Labour 3 seats short</desc></circle>
+<circle cx="372.0" cy="214.768" r="4" 
+fill="#AA0000">
+<title>Con:31 Lab:31 LD:28</title><desc>Hung Parliament, Labour 15 seats short</desc></circle>
+<circle cx="368.0" cy="221.696" r="4" 
+fill="#AA0000">
+<title>Con:32 Lab:30 LD:28</title><desc>Hung Parliament, Labour 28 seats short</desc></circle>
+<circle cx="364.0" cy="228.624" r="4" 
+fill="#AA0000">
+<title>Con:33 Lab:29 LD:28</title><desc>Hung Parliament, Labour 44 seats short</desc></circle>
+<circle cx="360.0" cy="235.552" r="4" 
+fill="#AA0000">
+<title>Con:34 Lab:28 LD:28</title><desc>Hung Parliament, Labour 58 seats short</desc></circle>
+<circle cx="356.0" cy="242.48" r="4" 
+fill="#0000AA">
+<title>Con:35 Lab:27 LD:28</title><desc>Hung Parliament, Conservatives 43 seats short</desc></circle>
+<circle cx="352.0" cy="249.408" r="4" 
+fill="#0000AA">
+<title>Con:36 Lab:26 LD:28</title><desc>Hung Parliament, Conservatives 27 seats short</desc></circle>
+<circle cx="348.0" cy="256.336" r="4" 
+fill="#0000AA">
+<title>Con:37 Lab:25 LD:28</title><desc>Hung Parliament, Conservatives 10 seats short</desc></circle>
+<circle cx="344.0" cy="263.264" r="4" 
+fill="blue">
+<title>Con:38 Lab:24 LD:28</title><desc>Conservative Majority of 18</desc></circle>
+<circle cx="340.0" cy="270.192" r="4" 
+fill="blue">
+<title>Con:39 Lab:23 LD:28</title><desc>Conservative Majority of 40</desc></circle>
+<circle cx="336.0" cy="277.12" r="4" 
+fill="blue">
+<title>Con:40 Lab:22 LD:28</title><desc>Conservative Majority of 74</desc></circle>
+<circle cx="332.0" cy="284.048" r="4" 
+fill="blue">
+<title>Con:41 Lab:21 LD:28</title><desc>Conservative Majority of 102</desc></circle>
+<circle cx="328.0" cy="290.976" r="4" 
+fill="blue">
+<title>Con:42 Lab:20 LD:28</title><desc>Conservative Majority of 150</desc></circle>
+<circle cx="324.0" cy="297.904" r="4" 
+fill="blue">
+<title>Con:43 Lab:19 LD:28</title><desc>Conservative Majority of 168</desc></circle>
+<circle cx="320.0" cy="304.832" r="4" 
+fill="blue">
+<title>Con:44 Lab:18 LD:28</title><desc>Conservative Majority of 180</desc></circle>
+<circle cx="316.0" cy="311.76" r="4" 
+fill="blue">
+<title>Con:45 Lab:17 LD:28</title><desc>Conservative Majority of 198</desc></circle>
+<circle cx="312.0" cy="318.688" r="4" 
+fill="blue">
+<title>Con:46 Lab:16 LD:28</title><desc>Conservative Majority of 218</desc></circle>
+<circle cx="308.0" cy="325.616" r="4" 
+fill="blue">
+<title>Con:47 Lab:15 LD:28</title><desc>Conservative Majority of 244</desc></circle>
+<circle cx="304.0" cy="332.544" r="4" 
+fill="blue">
+<title>Con:48 Lab:14 LD:28</title><desc>Conservative Majority of 270</desc></circle>
+<circle cx="300.0" cy="339.472" r="4" 
+fill="blue">
+<title>Con:49 Lab:13 LD:28</title><desc>Conservative Majority of 294</desc></circle>
+<circle cx="296.0" cy="346.4" r="4" 
+fill="blue">
+<title>Con:50 Lab:12 LD:28</title><desc>Conservative Majority of 332</desc></circle>
+<circle cx="444.0" cy="76.208" r="4" 
+fill="red">
+<title>Con:11 Lab:50 LD:29</title><desc>Labour Majority of 362</desc></circle>
+<circle cx="440.0" cy="83.136" r="4" 
+fill="red">
+<title>Con:12 Lab:49 LD:29</title><desc>Labour Majority of 344</desc></circle>
+<circle cx="436.0" cy="90.064" r="4" 
+fill="red">
+<title>Con:13 Lab:48 LD:29</title><desc>Labour Majority of 330</desc></circle>
+<circle cx="432.0" cy="96.992" r="4" 
+fill="red">
+<title>Con:14 Lab:47 LD:29</title><desc>Labour Majority of 320</desc></circle>
+<circle cx="428.0" cy="103.92" r="4" 
+fill="red">
+<title>Con:15 Lab:46 LD:29</title><desc>Labour Majority of 302</desc></circle>
+<circle cx="424.0" cy="110.848" r="4" 
+fill="red">
+<title>Con:16 Lab:45 LD:29</title><desc>Labour Majority of 272</desc></circle>
+<circle cx="420.0" cy="117.776" r="4" 
+fill="red">
+<title>Con:17 Lab:44 LD:29</title><desc>Labour Majority of 254</desc></circle>
+<circle cx="416.0" cy="124.704" r="4" 
+fill="red">
+<title>Con:18 Lab:43 LD:29</title><desc>Labour Majority of 228</desc></circle>
+<circle cx="412.0" cy="131.632" r="4" 
+fill="red">
+<title>Con:19 Lab:42 LD:29</title><desc>Labour Majority of 206</desc></circle>
+<circle cx="408.0" cy="138.56" r="4" 
+fill="red">
+<title>Con:20 Lab:41 LD:29</title><desc>Labour Majority of 180</desc></circle>
+<circle cx="404.0" cy="145.488" r="4" 
+fill="red">
+<title>Con:21 Lab:40 LD:29</title><desc>Labour Majority of 164</desc></circle>
+<circle cx="400.0" cy="152.416" r="4" 
+fill="red">
+<title>Con:22 Lab:39 LD:29</title><desc>Labour Majority of 124</desc></circle>
+<circle cx="396.0" cy="159.344" r="4" 
+fill="red">
+<title>Con:23 Lab:38 LD:29</title><desc>Labour Majority of 110</desc></circle>
+<circle cx="392.0" cy="166.272" r="4" 
+fill="red">
+<title>Con:24 Lab:37 LD:29</title><desc>Labour Majority of 98</desc></circle>
+<circle cx="388.0" cy="173.2" r="4" 
+fill="red">
+<title>Con:25 Lab:36 LD:29</title><desc>Labour Majority of 90</desc></circle>
+<circle cx="384.0" cy="180.128" r="4" 
+fill="red">
+<title>Con:26 Lab:35 LD:29</title><desc>Labour Majority of 84</desc></circle>
+<circle cx="380.0" cy="187.056" r="4" 
+fill="red">
+<title>Con:27 Lab:34 LD:29</title><desc>Labour Majority of 70</desc></circle>
+<circle cx="376.0" cy="193.984" r="4" 
+fill="red">
+<title>Con:28 Lab:33 LD:29</title><desc>Labour Majority of 36</desc></circle>
+<circle cx="372.0" cy="200.912" r="4" 
+fill="red">
+<title>Con:29 Lab:32 LD:29</title><desc>Labour Majority of 6</desc></circle>
+<circle cx="368.0" cy="207.84" r="4" 
+fill="#AA0000">
+<title>Con:30 Lab:31 LD:29</title><desc>Hung Parliament, Labour 10 seats short</desc></circle>
+<circle cx="364.0" cy="214.768" r="4" 
+fill="#AA0000">
+<title>Con:31 Lab:30 LD:29</title><desc>Hung Parliament, Labour 27 seats short</desc></circle>
+<circle cx="360.0" cy="221.696" r="4" 
+fill="#AA0000">
+<title>Con:32 Lab:29 LD:29</title><desc>Hung Parliament, Labour 42 seats short</desc></circle>
+<circle cx="356.0" cy="228.624" r="4" 
+fill="#AA0000">
+<title>Con:33 Lab:28 LD:29</title><desc>Hung Parliament, Labour 50 seats short</desc></circle>
+<circle cx="352.0" cy="235.552" r="4" 
+fill="#0000AA">
+<title>Con:34 Lab:27 LD:29</title><desc>Hung Parliament, Conservatives 61 seats short</desc></circle>
+<circle cx="348.0" cy="242.48" r="4" 
+fill="#0000AA">
+<title>Con:35 Lab:26 LD:29</title><desc>Hung Parliament, Conservatives 43 seats short</desc></circle>
+<circle cx="344.0" cy="249.408" r="4" 
+fill="#0000AA">
+<title>Con:36 Lab:25 LD:29</title><desc>Hung Parliament, Conservatives 22 seats short</desc></circle>
+<circle cx="340.0" cy="256.336" r="4" 
+fill="#0000AA">
+<title>Con:37 Lab:24 LD:29</title><desc>Hung Parliament, Conservatives 4 seats short</desc></circle>
+<circle cx="336.0" cy="263.264" r="4" 
+fill="blue">
+<title>Con:38 Lab:23 LD:29</title><desc>Conservative Majority of 26</desc></circle>
+<circle cx="332.0" cy="270.192" r="4" 
+fill="blue">
+<title>Con:39 Lab:22 LD:29</title><desc>Conservative Majority of 50</desc></circle>
+<circle cx="328.0" cy="277.12" r="4" 
+fill="blue">
+<title>Con:40 Lab:21 LD:29</title><desc>Conservative Majority of 82</desc></circle>
+<circle cx="324.0" cy="284.048" r="4" 
+fill="blue">
+<title>Con:41 Lab:20 LD:29</title><desc>Conservative Majority of 110</desc></circle>
+<circle cx="320.0" cy="290.976" r="4" 
+fill="blue">
+<title>Con:42 Lab:19 LD:29</title><desc>Conservative Majority of 152</desc></circle>
+<circle cx="316.0" cy="297.904" r="4" 
+fill="blue">
+<title>Con:43 Lab:18 LD:29</title><desc>Conservative Majority of 172</desc></circle>
+<circle cx="312.0" cy="304.832" r="4" 
+fill="blue">
+<title>Con:44 Lab:17 LD:29</title><desc>Conservative Majority of 186</desc></circle>
+<circle cx="308.0" cy="311.76" r="4" 
+fill="blue">
+<title>Con:45 Lab:16 LD:29</title><desc>Conservative Majority of 204</desc></circle>
+<circle cx="304.0" cy="318.688" r="4" 
+fill="blue">
+<title>Con:46 Lab:15 LD:29</title><desc>Conservative Majority of 220</desc></circle>
+<circle cx="300.0" cy="325.616" r="4" 
+fill="blue">
+<title>Con:47 Lab:14 LD:29</title><desc>Conservative Majority of 240</desc></circle>
+<circle cx="296.0" cy="332.544" r="4" 
+fill="blue">
+<title>Con:48 Lab:13 LD:29</title><desc>Conservative Majority of 264</desc></circle>
+<circle cx="292.0" cy="339.472" r="4" 
+fill="blue">
+<title>Con:49 Lab:12 LD:29</title><desc>Conservative Majority of 294</desc></circle>
+<circle cx="288.0" cy="346.4" r="4" 
+fill="blue">
+<title>Con:50 Lab:11 LD:29</title><desc>Conservative Majority of 336</desc></circle>
+<circle cx="440.0" cy="69.28" r="4" 
+fill="red">
+<title>Con:10 Lab:50 LD:30</title><desc>Labour Majority of 354</desc></circle>
+<circle cx="436.0" cy="76.208" r="4" 
+fill="red">
+<title>Con:11 Lab:49 LD:30</title><desc>Labour Majority of 340</desc></circle>
+<circle cx="432.0" cy="83.136" r="4" 
+fill="red">
+<title>Con:12 Lab:48 LD:30</title><desc>Labour Majority of 328</desc></circle>
+<circle cx="428.0" cy="90.064" r="4" 
+fill="red">
+<title>Con:13 Lab:47 LD:30</title><desc>Labour Majority of 316</desc></circle>
+<circle cx="424.0" cy="96.992" r="4" 
+fill="red">
+<title>Con:14 Lab:46 LD:30</title><desc>Labour Majority of 308</desc></circle>
+<circle cx="420.0" cy="103.92" r="4" 
+fill="red">
+<title>Con:15 Lab:45 LD:30</title><desc>Labour Majority of 280</desc></circle>
+<circle cx="416.0" cy="110.848" r="4" 
+fill="red">
+<title>Con:16 Lab:44 LD:30</title><desc>Labour Majority of 252</desc></circle>
+<circle cx="412.0" cy="117.776" r="4" 
+fill="red">
+<title>Con:17 Lab:43 LD:30</title><desc>Labour Majority of 230</desc></circle>
+<circle cx="408.0" cy="124.704" r="4" 
+fill="red">
+<title>Con:18 Lab:42 LD:30</title><desc>Labour Majority of 212</desc></circle>
+<circle cx="404.0" cy="131.632" r="4" 
+fill="red">
+<title>Con:19 Lab:41 LD:30</title><desc>Labour Majority of 186</desc></circle>
+<circle cx="400.0" cy="138.56" r="4" 
+fill="red">
+<title>Con:20 Lab:40 LD:30</title><desc>Labour Majority of 164</desc></circle>
+<circle cx="396.0" cy="145.488" r="4" 
+fill="red">
+<title>Con:21 Lab:39 LD:30</title><desc>Labour Majority of 134</desc></circle>
+<circle cx="392.0" cy="152.416" r="4" 
+fill="red">
+<title>Con:22 Lab:38 LD:30</title><desc>Labour Majority of 108</desc></circle>
+<circle cx="388.0" cy="159.344" r="4" 
+fill="red">
+<title>Con:23 Lab:37 LD:30</title><desc>Labour Majority of 100</desc></circle>
+<circle cx="384.0" cy="166.272" r="4" 
+fill="red">
+<title>Con:24 Lab:36 LD:30</title><desc>Labour Majority of 90</desc></circle>
+<circle cx="380.0" cy="173.2" r="4" 
+fill="red">
+<title>Con:25 Lab:35 LD:30</title><desc>Labour Majority of 84</desc></circle>
+<circle cx="376.0" cy="180.128" r="4" 
+fill="red">
+<title>Con:26 Lab:34 LD:30</title><desc>Labour Majority of 64</desc></circle>
+<circle cx="372.0" cy="187.056" r="4" 
+fill="red">
+<title>Con:27 Lab:33 LD:30</title><desc>Labour Majority of 48</desc></circle>
+<circle cx="368.0" cy="193.984" r="4" 
+fill="red">
+<title>Con:28 Lab:32 LD:30</title><desc>Labour Majority of 22</desc></circle>
+<circle cx="364.0" cy="200.912" r="4" 
+fill="#AA0000">
+<title>Con:29 Lab:31 LD:30</title><desc>Hung Parliament, Labour 8 seats short</desc></circle>
+<circle cx="360.0" cy="207.84" r="4" 
+fill="white">
+<title>Con:30 Lab:30 LD:30</title><desc>Hung Parliament, Labour 21 seats short</desc></circle>
+<circle cx="356.0" cy="214.768" r="4" 
+fill="#AA0000">
+<title>Con:31 Lab:29 LD:30</title><desc>Hung Parliament, Labour 34 seats short</desc></circle>
+<circle cx="352.0" cy="221.696" r="4" 
+fill="#AA0000">
+<title>Con:32 Lab:28 LD:30</title><desc>Hung Parliament, Labour 48 seats short</desc></circle>
+<circle cx="348.0" cy="228.624" r="4" 
+fill="#AA0000">
+<title>Con:33 Lab:27 LD:30</title><desc>Hung Parliament, Labour 63 seats short</desc></circle>
+<circle cx="344.0" cy="235.552" r="4" 
+fill="#0000AA">
+<title>Con:34 Lab:26 LD:30</title><desc>Hung Parliament, Conservatives 55 seats short</desc></circle>
+<circle cx="340.0" cy="242.48" r="4" 
+fill="#0000AA">
+<title>Con:35 Lab:25 LD:30</title><desc>Hung Parliament, Conservatives 37 seats short</desc></circle>
+<circle cx="336.0" cy="249.408" r="4" 
+fill="#0000AA">
+<title>Con:36 Lab:24 LD:30</title><desc>Hung Parliament, Conservatives 19 seats short</desc></circle>
+<circle cx="332.0" cy="256.336" r="4" 
+fill="blue">
+<title>Con:37 Lab:23 LD:30</title><desc>Conservative Majority of 8</desc></circle>
+<circle cx="328.0" cy="263.264" r="4" 
+fill="blue">
+<title>Con:38 Lab:22 LD:30</title><desc>Conservative Majority of 28</desc></circle>
+<circle cx="324.0" cy="270.192" r="4" 
+fill="blue">
+<title>Con:39 Lab:21 LD:30</title><desc>Conservative Majority of 60</desc></circle>
+<circle cx="320.0" cy="277.12" r="4" 
+fill="blue">
+<title>Con:40 Lab:20 LD:30</title><desc>Conservative Majority of 80</desc></circle>
+<circle cx="316.0" cy="284.048" r="4" 
+fill="blue">
+<title>Con:41 Lab:19 LD:30</title><desc>Conservative Majority of 122</desc></circle>
+<circle cx="312.0" cy="290.976" r="4" 
+fill="blue">
+<title>Con:42 Lab:18 LD:30</title><desc>Conservative Majority of 144</desc></circle>
+<circle cx="308.0" cy="297.904" r="4" 
+fill="blue">
+<title>Con:43 Lab:17 LD:30</title><desc>Conservative Majority of 166</desc></circle>
+<circle cx="304.0" cy="304.832" r="4" 
+fill="blue">
+<title>Con:44 Lab:16 LD:30</title><desc>Conservative Majority of 190</desc></circle>
+<circle cx="300.0" cy="311.76" r="4" 
+fill="blue">
+<title>Con:45 Lab:15 LD:30</title><desc>Conservative Majority of 206</desc></circle>
+<circle cx="296.0" cy="318.688" r="4" 
+fill="blue">
+<title>Con:46 Lab:14 LD:30</title><desc>Conservative Majority of 224</desc></circle>
+<circle cx="292.0" cy="325.616" r="4" 
+fill="blue">
+<title>Con:47 Lab:13 LD:30</title><desc>Conservative Majority of 240</desc></circle>
+<circle cx="288.0" cy="332.544" r="4" 
+fill="blue">
+<title>Con:48 Lab:12 LD:30</title><desc>Conservative Majority of 262</desc></circle>
+<circle cx="284.0" cy="339.472" r="4" 
+fill="blue">
+<title>Con:49 Lab:11 LD:30</title><desc>Conservative Majority of 292</desc></circle>
+<circle cx="280.0" cy="346.4" r="4" 
+fill="blue">
+<title>Con:50 Lab:10 LD:30</title><desc>Conservative Majority of 332</desc></circle>
+<circle cx="432.0" cy="69.28" r="4" 
+fill="red">
+<title>Con:10 Lab:49 LD:31</title><desc>Labour Majority of 336</desc></circle>
+<circle cx="428.0" cy="76.208" r="4" 
+fill="red">
+<title>Con:11 Lab:48 LD:31</title><desc>Labour Majority of 324</desc></circle>
+<circle cx="424.0" cy="83.136" r="4" 
+fill="red">
+<title>Con:12 Lab:47 LD:31</title><desc>Labour Majority of 316</desc></circle>
+<circle cx="420.0" cy="90.064" r="4" 
+fill="red">
+<title>Con:13 Lab:46 LD:31</title><desc>Labour Majority of 304</desc></circle>
+<circle cx="416.0" cy="96.992" r="4" 
+fill="red">
+<title>Con:14 Lab:45 LD:31</title><desc>Labour Majority of 278</desc></circle>
+<circle cx="412.0" cy="103.92" r="4" 
+fill="red">
+<title>Con:15 Lab:44 LD:31</title><desc>Labour Majority of 254</desc></circle>
+<circle cx="408.0" cy="110.848" r="4" 
+fill="red">
+<title>Con:16 Lab:43 LD:31</title><desc>Labour Majority of 232</desc></circle>
+<circle cx="404.0" cy="117.776" r="4" 
+fill="red">
+<title>Con:17 Lab:42 LD:31</title><desc>Labour Majority of 212</desc></circle>
+<circle cx="400.0" cy="124.704" r="4" 
+fill="red">
+<title>Con:18 Lab:41 LD:31</title><desc>Labour Majority of 188</desc></circle>
+<circle cx="396.0" cy="131.632" r="4" 
+fill="red">
+<title>Con:19 Lab:40 LD:31</title><desc>Labour Majority of 170</desc></circle>
+<circle cx="392.0" cy="138.56" r="4" 
+fill="red">
+<title>Con:20 Lab:39 LD:31</title><desc>Labour Majority of 152</desc></circle>
+<circle cx="388.0" cy="145.488" r="4" 
+fill="red">
+<title>Con:21 Lab:38 LD:31</title><desc>Labour Majority of 118</desc></circle>
+<circle cx="384.0" cy="152.416" r="4" 
+fill="red">
+<title>Con:22 Lab:37 LD:31</title><desc>Labour Majority of 100</desc></circle>
+<circle cx="380.0" cy="159.344" r="4" 
+fill="red">
+<title>Con:23 Lab:36 LD:31</title><desc>Labour Majority of 92</desc></circle>
+<circle cx="376.0" cy="166.272" r="4" 
+fill="red">
+<title>Con:24 Lab:35 LD:31</title><desc>Labour Majority of 72</desc></circle>
+<circle cx="372.0" cy="173.2" r="4" 
+fill="red">
+<title>Con:25 Lab:34 LD:31</title><desc>Labour Majority of 66</desc></circle>
+<circle cx="368.0" cy="180.128" r="4" 
+fill="red">
+<title>Con:26 Lab:33 LD:31</title><desc>Labour Majority of 52</desc></circle>
+<circle cx="364.0" cy="187.056" r="4" 
+fill="red">
+<title>Con:27 Lab:32 LD:31</title><desc>Labour Majority of 22</desc></circle>
+<circle cx="360.0" cy="193.984" r="4" 
+fill="#AA0000">
+<title>Con:28 Lab:31 LD:31</title><desc>Hung Parliament, Labour 6 seats short</desc></circle>
+<circle cx="356.0" cy="200.912" r="4" 
+fill="#AA0000">
+<title>Con:29 Lab:30 LD:31</title><desc>Hung Parliament, Labour 17 seats short</desc></circle>
+<circle cx="352.0" cy="207.84" r="4" 
+fill="#AA0000">
+<title>Con:30 Lab:29 LD:31</title><desc>Hung Parliament, Labour 32 seats short</desc></circle>
+<circle cx="348.0" cy="214.768" r="4" 
+fill="#AA0000">
+<title>Con:31 Lab:28 LD:31</title><desc>Hung Parliament, Labour 48 seats short</desc></circle>
+<circle cx="344.0" cy="221.696" r="4" 
+fill="#AA0000">
+<title>Con:32 Lab:27 LD:31</title><desc>Hung Parliament, Labour 61 seats short</desc></circle>
+<circle cx="340.0" cy="228.624" r="4" 
+fill="#0000AA">
+<title>Con:33 Lab:26 LD:31</title><desc>Hung Parliament, Conservatives 71 seats short</desc></circle>
+<circle cx="336.0" cy="235.552" r="4" 
+fill="#0000AA">
+<title>Con:34 Lab:25 LD:31</title><desc>Hung Parliament, Conservatives 54 seats short</desc></circle>
+<circle cx="332.0" cy="242.48" r="4" 
+fill="#0000AA">
+<title>Con:35 Lab:24 LD:31</title><desc>Hung Parliament, Conservatives 34 seats short</desc></circle>
+<circle cx="328.0" cy="249.408" r="4" 
+fill="#0000AA">
+<title>Con:36 Lab:23 LD:31</title><desc>Hung Parliament, Conservatives 16 seats short</desc></circle>
+<circle cx="324.0" cy="256.336" r="4" 
+fill="blue">
+<title>Con:37 Lab:22 LD:31</title><desc>Conservative Majority of 4</desc></circle>
+<circle cx="320.0" cy="263.264" r="4" 
+fill="blue">
+<title>Con:38 Lab:21 LD:31</title><desc>Conservative Majority of 36</desc></circle>
+<circle cx="316.0" cy="270.192" r="4" 
+fill="blue">
+<title>Con:39 Lab:20 LD:31</title><desc>Conservative Majority of 64</desc></circle>
+<circle cx="312.0" cy="277.12" r="4" 
+fill="blue">
+<title>Con:40 Lab:19 LD:31</title><desc>Conservative Majority of 92</desc></circle>
+<circle cx="308.0" cy="284.048" r="4" 
+fill="blue">
+<title>Con:41 Lab:18 LD:31</title><desc>Conservative Majority of 120</desc></circle>
+<circle cx="304.0" cy="290.976" r="4" 
+fill="blue">
+<title>Con:42 Lab:17 LD:31</title><desc>Conservative Majority of 142</desc></circle>
+<circle cx="300.0" cy="297.904" r="4" 
+fill="blue">
+<title>Con:43 Lab:16 LD:31</title><desc>Conservative Majority of 160</desc></circle>
+<circle cx="296.0" cy="304.832" r="4" 
+fill="blue">
+<title>Con:44 Lab:15 LD:31</title><desc>Conservative Majority of 186</desc></circle>
+<circle cx="292.0" cy="311.76" r="4" 
+fill="blue">
+<title>Con:45 Lab:14 LD:31</title><desc>Conservative Majority of 208</desc></circle>
+<circle cx="288.0" cy="318.688" r="4" 
+fill="blue">
+<title>Con:46 Lab:13 LD:31</title><desc>Conservative Majority of 222</desc></circle>
+<circle cx="284.0" cy="325.616" r="4" 
+fill="blue">
+<title>Con:47 Lab:12 LD:31</title><desc>Conservative Majority of 244</desc></circle>
+<circle cx="280.0" cy="332.544" r="4" 
+fill="blue">
+<title>Con:48 Lab:11 LD:31</title><desc>Conservative Majority of 260</desc></circle>
+<circle cx="276.0" cy="339.472" r="4" 
+fill="blue">
+<title>Con:49 Lab:10 LD:31</title><desc>Conservative Majority of 298</desc></circle>
+<circle cx="424.0" cy="69.28" r="4" 
+fill="red">
+<title>Con:10 Lab:48 LD:32</title><desc>Labour Majority of 326</desc></circle>
+<circle cx="420.0" cy="76.208" r="4" 
+fill="red">
+<title>Con:11 Lab:47 LD:32</title><desc>Labour Majority of 314</desc></circle>
+<circle cx="416.0" cy="83.136" r="4" 
+fill="red">
+<title>Con:12 Lab:46 LD:32</title><desc>Labour Majority of 290</desc></circle>
+<circle cx="412.0" cy="90.064" r="4" 
+fill="red">
+<title>Con:13 Lab:45 LD:32</title><desc>Labour Majority of 280</desc></circle>
+<circle cx="408.0" cy="96.992" r="4" 
+fill="red">
+<title>Con:14 Lab:44 LD:32</title><desc>Labour Majority of 252</desc></circle>
+<circle cx="404.0" cy="103.92" r="4" 
+fill="red">
+<title>Con:15 Lab:43 LD:32</title><desc>Labour Majority of 236</desc></circle>
+<circle cx="400.0" cy="110.848" r="4" 
+fill="red">
+<title>Con:16 Lab:42 LD:32</title><desc>Labour Majority of 210</desc></circle>
+<circle cx="396.0" cy="117.776" r="4" 
+fill="red">
+<title>Con:17 Lab:41 LD:32</title><desc>Labour Majority of 196</desc></circle>
+<circle cx="392.0" cy="124.704" r="4" 
+fill="red">
+<title>Con:18 Lab:40 LD:32</title><desc>Labour Majority of 172</desc></circle>
+<circle cx="388.0" cy="131.632" r="4" 
+fill="red">
+<title>Con:19 Lab:39 LD:32</title><desc>Labour Majority of 156</desc></circle>
+<circle cx="384.0" cy="138.56" r="4" 
+fill="red">
+<title>Con:20 Lab:38 LD:32</title><desc>Labour Majority of 124</desc></circle>
+<circle cx="380.0" cy="145.488" r="4" 
+fill="red">
+<title>Con:21 Lab:37 LD:32</title><desc>Labour Majority of 100</desc></circle>
+<circle cx="376.0" cy="152.416" r="4" 
+fill="red">
+<title>Con:22 Lab:36 LD:32</title><desc>Labour Majority of 84</desc></circle>
+<circle cx="372.0" cy="159.344" r="4" 
+fill="red">
+<title>Con:23 Lab:35 LD:32</title><desc>Labour Majority of 72</desc></circle>
+<circle cx="368.0" cy="166.272" r="4" 
+fill="red">
+<title>Con:24 Lab:34 LD:32</title><desc>Labour Majority of 64</desc></circle>
+<circle cx="364.0" cy="173.2" r="4" 
+fill="red">
+<title>Con:25 Lab:33 LD:32</title><desc>Labour Majority of 46</desc></circle>
+<circle cx="360.0" cy="180.128" r="4" 
+fill="red">
+<title>Con:26 Lab:32 LD:32</title><desc>Labour Majority of 30</desc></circle>
+<circle cx="356.0" cy="187.056" r="4" 
+fill="red">
+<title>Con:27 Lab:31 LD:32</title><desc>Labour Majority of 6</desc></circle>
+<circle cx="352.0" cy="193.984" r="4" 
+fill="#AA0000">
+<title>Con:28 Lab:30 LD:32</title><desc>Hung Parliament, Labour 13 seats short</desc></circle>
+<circle cx="348.0" cy="200.912" r="4" 
+fill="#AA0000">
+<title>Con:29 Lab:29 LD:32</title><desc>Hung Parliament, Labour 28 seats short</desc></circle>
+<circle cx="344.0" cy="207.84" r="4" 
+fill="#AA0000">
+<title>Con:30 Lab:28 LD:32</title><desc>Hung Parliament, Labour 45 seats short</desc></circle>
+<circle cx="340.0" cy="214.768" r="4" 
+fill="#AA0000">
+<title>Con:31 Lab:27 LD:32</title><desc>Hung Parliament, Labour 61 seats short</desc></circle>
+<circle cx="336.0" cy="221.696" r="4" 
+fill="#AA0000">
+<title>Con:32 Lab:26 LD:32</title><desc>Hung Parliament, Labour 74 seats short</desc></circle>
+<circle cx="332.0" cy="228.624" r="4" 
+fill="#0000AA">
+<title>Con:33 Lab:25 LD:32</title><desc>Hung Parliament, Conservatives 65 seats short</desc></circle>
+<circle cx="328.0" cy="235.552" r="4" 
+fill="#0000AA">
+<title>Con:34 Lab:24 LD:32</title><desc>Hung Parliament, Conservatives 50 seats short</desc></circle>
+<circle cx="324.0" cy="242.48" r="4" 
+fill="#0000AA">
+<title>Con:35 Lab:23 LD:32</title><desc>Hung Parliament, Conservatives 32 seats short</desc></circle>
+<circle cx="320.0" cy="249.408" r="4" 
+fill="#0000AA">
+<title>Con:36 Lab:22 LD:32</title><desc>Hung Parliament, Conservatives 11 seats short</desc></circle>
+<circle cx="316.0" cy="256.336" r="4" 
+fill="#0000AA">
+<title>Con:37 Lab:21 LD:32</title><desc>Hung Parliament, Conservatives 1 seats short</desc></circle>
+<circle cx="312.0" cy="263.264" r="4" 
+fill="blue">
+<title>Con:38 Lab:20 LD:32</title><desc>Conservative Majority of 36</desc></circle>
+<circle cx="308.0" cy="270.192" r="4" 
+fill="blue">
+<title>Con:39 Lab:19 LD:32</title><desc>Conservative Majority of 66</desc></circle>
+<circle cx="304.0" cy="277.12" r="4" 
+fill="blue">
+<title>Con:40 Lab:18 LD:32</title><desc>Conservative Majority of 98</desc></circle>
+<circle cx="300.0" cy="284.048" r="4" 
+fill="blue">
+<title>Con:41 Lab:17 LD:32</title><desc>Conservative Majority of 122</desc></circle>
+<circle cx="296.0" cy="290.976" r="4" 
+fill="blue">
+<title>Con:42 Lab:16 LD:32</title><desc>Conservative Majority of 134</desc></circle>
+<circle cx="292.0" cy="297.904" r="4" 
+fill="blue">
+<title>Con:43 Lab:15 LD:32</title><desc>Conservative Majority of 158</desc></circle>
+<circle cx="288.0" cy="304.832" r="4" 
+fill="blue">
+<title>Con:44 Lab:14 LD:32</title><desc>Conservative Majority of 178</desc></circle>
+<circle cx="284.0" cy="311.76" r="4" 
+fill="blue">
+<title>Con:45 Lab:13 LD:32</title><desc>Conservative Majority of 204</desc></circle>
+<circle cx="280.0" cy="318.688" r="4" 
+fill="blue">
+<title>Con:46 Lab:12 LD:32</title><desc>Conservative Majority of 224</desc></circle>
+<circle cx="276.0" cy="325.616" r="4" 
+fill="blue">
+<title>Con:47 Lab:11 LD:32</title><desc>Conservative Majority of 242</desc></circle>
+<circle cx="272.0" cy="332.544" r="4" 
+fill="blue">
+<title>Con:48 Lab:10 LD:32</title><desc>Conservative Majority of 266</desc></circle>
+<circle cx="416.0" cy="69.28" r="4" 
+fill="red">
+<title>Con:10 Lab:47 LD:33</title><desc>Labour Majority of 300</desc></circle>
+<circle cx="412.0" cy="76.208" r="4" 
+fill="red">
+<title>Con:11 Lab:46 LD:33</title><desc>Labour Majority of 284</desc></circle>
+<circle cx="408.0" cy="83.136" r="4" 
+fill="red">
+<title>Con:12 Lab:45 LD:33</title><desc>Labour Majority of 272</desc></circle>
+<circle cx="404.0" cy="90.064" r="4" 
+fill="red">
+<title>Con:13 Lab:44 LD:33</title><desc>Labour Majority of 258</desc></circle>
+<circle cx="400.0" cy="96.992" r="4" 
+fill="red">
+<title>Con:14 Lab:43 LD:33</title><desc>Labour Majority of 234</desc></circle>
+<circle cx="396.0" cy="103.92" r="4" 
+fill="red">
+<title>Con:15 Lab:42 LD:33</title><desc>Labour Majority of 216</desc></circle>
+<circle cx="392.0" cy="110.848" r="4" 
+fill="red">
+<title>Con:16 Lab:41 LD:33</title><desc>Labour Majority of 196</desc></circle>
+<circle cx="388.0" cy="117.776" r="4" 
+fill="red">
+<title>Con:17 Lab:40 LD:33</title><desc>Labour Majority of 178</desc></circle>
+<circle cx="384.0" cy="124.704" r="4" 
+fill="red">
+<title>Con:18 Lab:39 LD:33</title><desc>Labour Majority of 154</desc></circle>
+<circle cx="380.0" cy="131.632" r="4" 
+fill="red">
+<title>Con:19 Lab:38 LD:33</title><desc>Labour Majority of 142</desc></circle>
+<circle cx="376.0" cy="138.56" r="4" 
+fill="red">
+<title>Con:20 Lab:37 LD:33</title><desc>Labour Majority of 96</desc></circle>
+<circle cx="372.0" cy="145.488" r="4" 
+fill="red">
+<title>Con:21 Lab:36 LD:33</title><desc>Labour Majority of 84</desc></circle>
+<circle cx="368.0" cy="152.416" r="4" 
+fill="red">
+<title>Con:22 Lab:35 LD:33</title><desc>Labour Majority of 70</desc></circle>
+<circle cx="364.0" cy="159.344" r="4" 
+fill="red">
+<title>Con:23 Lab:34 LD:33</title><desc>Labour Majority of 52</desc></circle>
+<circle cx="360.0" cy="166.272" r="4" 
+fill="red">
+<title>Con:24 Lab:33 LD:33</title><desc>Labour Majority of 44</desc></circle>
+<circle cx="356.0" cy="173.2" r="4" 
+fill="red">
+<title>Con:25 Lab:32 LD:33</title><desc>Labour Majority of 32</desc></circle>
+<circle cx="352.0" cy="180.128" r="4" 
+fill="red">
+<title>Con:26 Lab:31 LD:33</title><desc>Labour Majority of 12</desc></circle>
+<circle cx="348.0" cy="187.056" r="4" 
+fill="#AA0000">
+<title>Con:27 Lab:30 LD:33</title><desc>Hung Parliament, Labour 13 seats short</desc></circle>
+<circle cx="344.0" cy="193.984" r="4" 
+fill="#AA0000">
+<title>Con:28 Lab:29 LD:33</title><desc>Hung Parliament, Labour 28 seats short</desc></circle>
+<circle cx="340.0" cy="200.912" r="4" 
+fill="#AA0000">
+<title>Con:29 Lab:28 LD:33</title><desc>Hung Parliament, Labour 45 seats short</desc></circle>
+<circle cx="336.0" cy="207.84" r="4" 
+fill="#AA0000">
+<title>Con:30 Lab:27 LD:33</title><desc>Hung Parliament, Labour 59 seats short</desc></circle>
+<circle cx="332.0" cy="214.768" r="4" 
+fill="#AA0000">
+<title>Con:31 Lab:26 LD:33</title><desc>Hung Parliament, Labour 73 seats short</desc></circle>
+<circle cx="328.0" cy="221.696" r="4" 
+fill="#0000AA">
+<title>Con:32 Lab:25 LD:33</title><desc>Hung Parliament, Conservatives 81 seats short</desc></circle>
+<circle cx="324.0" cy="228.624" r="4" 
+fill="#0000AA">
+<title>Con:33 Lab:24 LD:33</title><desc>Hung Parliament, Conservatives 64 seats short</desc></circle>
+<circle cx="320.0" cy="235.552" r="4" 
+fill="#0000AA">
+<title>Con:34 Lab:23 LD:33</title><desc>Hung Parliament, Conservatives 45 seats short</desc></circle>
+<circle cx="316.0" cy="242.48" r="4" 
+fill="#0000AA">
+<title>Con:35 Lab:22 LD:33</title><desc>Hung Parliament, Conservatives 32 seats short</desc></circle>
+<circle cx="312.0" cy="249.408" r="4" 
+fill="#0000AA">
+<title>Con:36 Lab:21 LD:33</title><desc>Hung Parliament, Conservatives 14 seats short</desc></circle>
+<circle cx="308.0" cy="256.336" r="4" 
+fill="blue">
+<title>Con:37 Lab:20 LD:33</title><desc>Conservative Majority of 2</desc></circle>
+<circle cx="304.0" cy="263.264" r="4" 
+fill="blue">
+<title>Con:38 Lab:19 LD:33</title><desc>Conservative Majority of 38</desc></circle>
+<circle cx="300.0" cy="270.192" r="4" 
+fill="blue">
+<title>Con:39 Lab:18 LD:33</title><desc>Conservative Majority of 64</desc></circle>
+<circle cx="296.0" cy="277.12" r="4" 
+fill="blue">
+<title>Con:40 Lab:17 LD:33</title><desc>Conservative Majority of 98</desc></circle>
+<circle cx="292.0" cy="284.048" r="4" 
+fill="blue">
+<title>Con:41 Lab:16 LD:33</title><desc>Conservative Majority of 112</desc></circle>
+<circle cx="288.0" cy="290.976" r="4" 
+fill="blue">
+<title>Con:42 Lab:15 LD:33</title><desc>Conservative Majority of 136</desc></circle>
+<circle cx="284.0" cy="297.904" r="4" 
+fill="blue">
+<title>Con:43 Lab:14 LD:33</title><desc>Conservative Majority of 154</desc></circle>
+<circle cx="280.0" cy="304.832" r="4" 
+fill="blue">
+<title>Con:44 Lab:13 LD:33</title><desc>Conservative Majority of 172</desc></circle>
+<circle cx="276.0" cy="311.76" r="4" 
+fill="blue">
+<title>Con:45 Lab:12 LD:33</title><desc>Conservative Majority of 188</desc></circle>
+<circle cx="272.0" cy="318.688" r="4" 
+fill="blue">
+<title>Con:46 Lab:11 LD:33</title><desc>Conservative Majority of 218</desc></circle>
+<circle cx="268.0" cy="325.616" r="4" 
+fill="blue">
+<title>Con:47 Lab:10 LD:33</title><desc>Conservative Majority of 240</desc></circle>
+<circle cx="408.0" cy="69.28" r="4" 
+fill="red">
+<title>Con:10 Lab:46 LD:34</title><desc>Labour Majority of 280</desc></circle>
+<circle cx="404.0" cy="76.208" r="4" 
+fill="red">
+<title>Con:11 Lab:45 LD:34</title><desc>Labour Majority of 268</desc></circle>
+<circle cx="400.0" cy="83.136" r="4" 
+fill="red">
+<title>Con:12 Lab:44 LD:34</title><desc>Labour Majority of 256</desc></circle>
+<circle cx="396.0" cy="90.064" r="4" 
+fill="red">
+<title>Con:13 Lab:43 LD:34</title><desc>Labour Majority of 232</desc></circle>
+<circle cx="392.0" cy="96.992" r="4" 
+fill="red">
+<title>Con:14 Lab:42 LD:34</title><desc>Labour Majority of 214</desc></circle>
+<circle cx="388.0" cy="103.92" r="4" 
+fill="red">
+<title>Con:15 Lab:41 LD:34</title><desc>Labour Majority of 198</desc></circle>
+<circle cx="384.0" cy="110.848" r="4" 
+fill="red">
+<title>Con:16 Lab:40 LD:34</title><desc>Labour Majority of 178</desc></circle>
+<circle cx="380.0" cy="117.776" r="4" 
+fill="red">
+<title>Con:17 Lab:39 LD:34</title><desc>Labour Majority of 154</desc></circle>
+<circle cx="376.0" cy="124.704" r="4" 
+fill="red">
+<title>Con:18 Lab:38 LD:34</title><desc>Labour Majority of 128</desc></circle>
+<circle cx="372.0" cy="131.632" r="4" 
+fill="red">
+<title>Con:19 Lab:37 LD:34</title><desc>Labour Majority of 104</desc></circle>
+<circle cx="368.0" cy="138.56" r="4" 
+fill="red">
+<title>Con:20 Lab:36 LD:34</title><desc>Labour Majority of 80</desc></circle>
+<circle cx="364.0" cy="145.488" r="4" 
+fill="red">
+<title>Con:21 Lab:35 LD:34</title><desc>Labour Majority of 60</desc></circle>
+<circle cx="360.0" cy="152.416" r="4" 
+fill="red">
+<title>Con:22 Lab:34 LD:34</title><desc>Labour Majority of 46</desc></circle>
+<circle cx="356.0" cy="159.344" r="4" 
+fill="red">
+<title>Con:23 Lab:33 LD:34</title><desc>Labour Majority of 44</desc></circle>
+<circle cx="352.0" cy="166.272" r="4" 
+fill="red">
+<title>Con:24 Lab:32 LD:34</title><desc>Labour Majority of 34</desc></circle>
+<circle cx="348.0" cy="173.2" r="4" 
+fill="red">
+<title>Con:25 Lab:31 LD:34</title><desc>Labour Majority of 16</desc></circle>
+<circle cx="344.0" cy="180.128" r="4" 
+fill="#AA0000">
+<title>Con:26 Lab:30 LD:34</title><desc>Hung Parliament, Labour 11 seats short</desc></circle>
+<circle cx="340.0" cy="187.056" r="4" 
+fill="#AA0000">
+<title>Con:27 Lab:29 LD:34</title><desc>Hung Parliament, Labour 27 seats short</desc></circle>
+<circle cx="336.0" cy="193.984" r="4" 
+fill="#AA0000">
+<title>Con:28 Lab:28 LD:34</title><desc>Hung Parliament, Labour 40 seats short</desc></circle>
+<circle cx="332.0" cy="200.912" r="4" 
+fill="#AA0000">
+<title>Con:29 Lab:27 LD:34</title><desc>Hung Parliament, Labour 57 seats short</desc></circle>
+<circle cx="328.0" cy="207.84" r="4" 
+fill="#AA0000">
+<title>Con:30 Lab:26 LD:34</title><desc>Hung Parliament, Labour 78 seats short</desc></circle>
+<circle cx="324.0" cy="214.768" r="4" 
+fill="#AA0000">
+<title>Con:31 Lab:25 LD:34</title><desc>Hung Parliament, Labour 91 seats short</desc></circle>
+<circle cx="320.0" cy="221.696" r="4" 
+fill="#0000AA">
+<title>Con:32 Lab:24 LD:34</title><desc>Hung Parliament, Conservatives 77 seats short</desc></circle>
+<circle cx="316.0" cy="228.624" r="4" 
+fill="#0000AA">
+<title>Con:33 Lab:23 LD:34</title><desc>Hung Parliament, Conservatives 62 seats short</desc></circle>
+<circle cx="312.0" cy="235.552" r="4" 
+fill="#0000AA">
+<title>Con:34 Lab:22 LD:34</title><desc>Hung Parliament, Conservatives 42 seats short</desc></circle>
+<circle cx="308.0" cy="242.48" r="4" 
+fill="#0000AA">
+<title>Con:35 Lab:21 LD:34</title><desc>Hung Parliament, Conservatives 26 seats short</desc></circle>
+<circle cx="304.0" cy="249.408" r="4" 
+fill="#0000AA">
+<title>Con:36 Lab:20 LD:34</title><desc>Hung Parliament, Conservatives 20 seats short</desc></circle>
+<circle cx="300.0" cy="256.336" r="4" 
+fill="#0000AA">
+<title>Con:37 Lab:19 LD:34</title><desc>Hung Parliament, Conservatives 2 seats short</desc></circle>
+<circle cx="296.0" cy="263.264" r="4" 
+fill="blue">
+<title>Con:38 Lab:18 LD:34</title><desc>Conservative Majority of 30</desc></circle>
+<circle cx="292.0" cy="270.192" r="4" 
+fill="blue">
+<title>Con:39 Lab:17 LD:34</title><desc>Conservative Majority of 68</desc></circle>
+<circle cx="288.0" cy="277.12" r="4" 
+fill="blue">
+<title>Con:40 Lab:16 LD:34</title><desc>Conservative Majority of 88</desc></circle>
+<circle cx="284.0" cy="284.048" r="4" 
+fill="blue">
+<title>Con:41 Lab:15 LD:34</title><desc>Conservative Majority of 104</desc></circle>
+<circle cx="280.0" cy="290.976" r="4" 
+fill="blue">
+<title>Con:42 Lab:14 LD:34</title><desc>Conservative Majority of 126</desc></circle>
+<circle cx="276.0" cy="297.904" r="4" 
+fill="blue">
+<title>Con:43 Lab:13 LD:34</title><desc>Conservative Majority of 152</desc></circle>
+<circle cx="272.0" cy="304.832" r="4" 
+fill="blue">
+<title>Con:44 Lab:12 LD:34</title><desc>Conservative Majority of 164</desc></circle>
+<circle cx="268.0" cy="311.76" r="4" 
+fill="blue">
+<title>Con:45 Lab:11 LD:34</title><desc>Conservative Majority of 180</desc></circle>
+<circle cx="264.0" cy="318.688" r="4" 
+fill="blue">
+<title>Con:46 Lab:10 LD:34</title><desc>Conservative Majority of 200</desc></circle>
+<circle cx="400.0" cy="69.28" r="4" 
+fill="red">
+<title>Con:10 Lab:45 LD:35</title><desc>Labour Majority of 258</desc></circle>
+<circle cx="396.0" cy="76.208" r="4" 
+fill="red">
+<title>Con:11 Lab:44 LD:35</title><desc>Labour Majority of 244</desc></circle>
+<circle cx="392.0" cy="83.136" r="4" 
+fill="red">
+<title>Con:12 Lab:43 LD:35</title><desc>Labour Majority of 232</desc></circle>
+<circle cx="388.0" cy="90.064" r="4" 
+fill="red">
+<title>Con:13 Lab:42 LD:35</title><desc>Labour Majority of 214</desc></circle>
+<circle cx="384.0" cy="96.992" r="4" 
+fill="red">
+<title>Con:14 Lab:41 LD:35</title><desc>Labour Majority of 194</desc></circle>
+<circle cx="380.0" cy="103.92" r="4" 
+fill="red">
+<title>Con:15 Lab:40 LD:35</title><desc>Labour Majority of 172</desc></circle>
+<circle cx="376.0" cy="110.848" r="4" 
+fill="red">
+<title>Con:16 Lab:39 LD:35</title><desc>Labour Majority of 138</desc></circle>
+<circle cx="372.0" cy="117.776" r="4" 
+fill="red">
+<title>Con:17 Lab:38 LD:35</title><desc>Labour Majority of 128</desc></circle>
+<circle cx="368.0" cy="124.704" r="4" 
+fill="red">
+<title>Con:18 Lab:37 LD:35</title><desc>Labour Majority of 114</desc></circle>
+<circle cx="364.0" cy="131.632" r="4" 
+fill="red">
+<title>Con:19 Lab:36 LD:35</title><desc>Labour Majority of 74</desc></circle>
+<circle cx="360.0" cy="138.56" r="4" 
+fill="red">
+<title>Con:20 Lab:35 LD:35</title><desc>Labour Majority of 56</desc></circle>
+<circle cx="356.0" cy="145.488" r="4" 
+fill="red">
+<title>Con:21 Lab:34 LD:35</title><desc>Labour Majority of 48</desc></circle>
+<circle cx="352.0" cy="152.416" r="4" 
+fill="red">
+<title>Con:22 Lab:33 LD:35</title><desc>Labour Majority of 42</desc></circle>
+<circle cx="348.0" cy="159.344" r="4" 
+fill="red">
+<title>Con:23 Lab:32 LD:35</title><desc>Labour Majority of 26</desc></circle>
+<circle cx="344.0" cy="166.272" r="4" 
+fill="red">
+<title>Con:24 Lab:31 LD:35</title><desc>Labour Majority of 6</desc></circle>
+<circle cx="340.0" cy="173.2" r="4" 
+fill="#AA0000">
+<title>Con:25 Lab:30 LD:35</title><desc>Hung Parliament, Labour 11 seats short</desc></circle>
+<circle cx="336.0" cy="180.128" r="4" 
+fill="#AA0000">
+<title>Con:26 Lab:29 LD:35</title><desc>Hung Parliament, Labour 27 seats short</desc></circle>
+<circle cx="332.0" cy="187.056" r="4" 
+fill="#AA0000">
+<title>Con:27 Lab:28 LD:35</title><desc>Hung Parliament, Labour 43 seats short</desc></circle>
+<circle cx="328.0" cy="193.984" r="4" 
+fill="#AA0000">
+<title>Con:28 Lab:27 LD:35</title><desc>Hung Parliament, Labour 63 seats short</desc></circle>
+<circle cx="324.0" cy="200.912" r="4" 
+fill="#AA0000">
+<title>Con:29 Lab:26 LD:35</title><desc>Hung Parliament, Labour 78 seats short</desc></circle>
+<circle cx="320.0" cy="207.84" r="4" 
+fill="#AA0000">
+<title>Con:30 Lab:25 LD:35</title><desc>Hung Parliament, Labour 93 seats short</desc></circle>
+<circle cx="316.0" cy="214.768" r="4" 
+fill="#0000AA">
+<title>Con:31 Lab:24 LD:35</title><desc>Hung Parliament, Conservatives 94 seats short</desc></circle>
+<circle cx="312.0" cy="221.696" r="4" 
+fill="#0000AA">
+<title>Con:32 Lab:23 LD:35</title><desc>Hung Parliament, Conservatives 74 seats short</desc></circle>
+<circle cx="308.0" cy="228.624" r="4" 
+fill="#0000AA">
+<title>Con:33 Lab:22 LD:35</title><desc>Hung Parliament, Conservatives 61 seats short</desc></circle>
+<circle cx="304.0" cy="235.552" r="4" 
+fill="#0000AA">
+<title>Con:34 Lab:21 LD:35</title><desc>Hung Parliament, Conservatives 44 seats short</desc></circle>
+<circle cx="300.0" cy="242.48" r="4" 
+fill="#0000AA">
+<title>Con:35 Lab:20 LD:35</title><desc>Hung Parliament, Conservatives 27 seats short</desc></circle>
+<circle cx="296.0" cy="249.408" r="4" 
+fill="#0000AA">
+<title>Con:36 Lab:19 LD:35</title><desc>Hung Parliament, Conservatives 18 seats short</desc></circle>
+<circle cx="292.0" cy="256.336" r="4" 
+fill="#0000AA">
+<title>Con:37 Lab:18 LD:35</title><desc>Hung Parliament, Conservatives 8 seats short</desc></circle>
+<circle cx="288.0" cy="263.264" r="4" 
+fill="blue">
+<title>Con:38 Lab:17 LD:35</title><desc>Conservative Majority of 20</desc></circle>
+<circle cx="284.0" cy="270.192" r="4" 
+fill="blue">
+<title>Con:39 Lab:16 LD:35</title><desc>Conservative Majority of 54</desc></circle>
+<circle cx="280.0" cy="277.12" r="4" 
+fill="blue">
+<title>Con:40 Lab:15 LD:35</title><desc>Conservative Majority of 78</desc></circle>
+<circle cx="276.0" cy="284.048" r="4" 
+fill="blue">
+<title>Con:41 Lab:14 LD:35</title><desc>Conservative Majority of 96</desc></circle>
+<circle cx="272.0" cy="290.976" r="4" 
+fill="blue">
+<title>Con:42 Lab:13 LD:35</title><desc>Conservative Majority of 124</desc></circle>
+<circle cx="268.0" cy="297.904" r="4" 
+fill="blue">
+<title>Con:43 Lab:12 LD:35</title><desc>Conservative Majority of 140</desc></circle>
+<circle cx="264.0" cy="304.832" r="4" 
+fill="blue">
+<title>Con:44 Lab:11 LD:35</title><desc>Conservative Majority of 158</desc></circle>
+<circle cx="260.0" cy="311.76" r="4" 
+fill="blue">
+<title>Con:45 Lab:10 LD:35</title><desc>Conservative Majority of 174</desc></circle>
+<circle cx="392.0" cy="69.28" r="4" 
+fill="red">
+<title>Con:10 Lab:44 LD:36</title><desc>Labour Majority of 238</desc></circle>
+<circle cx="388.0" cy="76.208" r="4" 
+fill="red">
+<title>Con:11 Lab:43 LD:36</title><desc>Labour Majority of 226</desc></circle>
+<circle cx="384.0" cy="83.136" r="4" 
+fill="red">
+<title>Con:12 Lab:42 LD:36</title><desc>Labour Majority of 204</desc></circle>
+<circle cx="380.0" cy="90.064" r="4" 
+fill="red">
+<title>Con:13 Lab:41 LD:36</title><desc>Labour Majority of 184</desc></circle>
+<circle cx="376.0" cy="96.992" r="4" 
+fill="red">
+<title>Con:14 Lab:40 LD:36</title><desc>Labour Majority of 154</desc></circle>
+<circle cx="372.0" cy="103.92" r="4" 
+fill="red">
+<title>Con:15 Lab:39 LD:36</title><desc>Labour Majority of 134</desc></circle>
+<circle cx="368.0" cy="110.848" r="4" 
+fill="red">
+<title>Con:16 Lab:38 LD:36</title><desc>Labour Majority of 124</desc></circle>
+<circle cx="364.0" cy="117.776" r="4" 
+fill="red">
+<title>Con:17 Lab:37 LD:36</title><desc>Labour Majority of 100</desc></circle>
+<circle cx="360.0" cy="124.704" r="4" 
+fill="red">
+<title>Con:18 Lab:36 LD:36</title><desc>Labour Majority of 76</desc></circle>
+<circle cx="356.0" cy="131.632" r="4" 
+fill="red">
+<title>Con:19 Lab:35 LD:36</title><desc>Labour Majority of 56</desc></circle>
+<circle cx="352.0" cy="138.56" r="4" 
+fill="red">
+<title>Con:20 Lab:34 LD:36</title><desc>Labour Majority of 48</desc></circle>
+<circle cx="348.0" cy="145.488" r="4" 
+fill="red">
+<title>Con:21 Lab:33 LD:36</title><desc>Labour Majority of 30</desc></circle>
+<circle cx="344.0" cy="152.416" r="4" 
+fill="red">
+<title>Con:22 Lab:32 LD:36</title><desc>Labour Majority of 14</desc></circle>
+<circle cx="340.0" cy="159.344" r="4" 
+fill="red">
+<title>Con:23 Lab:31 LD:36</title><desc>Labour Majority of 2</desc></circle>
+<circle cx="336.0" cy="166.272" r="4" 
+fill="#AA0000">
+<title>Con:24 Lab:30 LD:36</title><desc>Hung Parliament, Labour 9 seats short</desc></circle>
+<circle cx="332.0" cy="173.2" r="4" 
+fill="#AA0000">
+<title>Con:25 Lab:29 LD:36</title><desc>Hung Parliament, Labour 28 seats short</desc></circle>
+<circle cx="328.0" cy="180.128" r="4" 
+fill="#AA0000">
+<title>Con:26 Lab:28 LD:36</title><desc>Hung Parliament, Labour 50 seats short</desc></circle>
+<circle cx="324.0" cy="187.056" r="4" 
+fill="#AA0000">
+<title>Con:27 Lab:27 LD:36</title><desc>Hung Parliament, Labour 61 seats short</desc></circle>
+<circle cx="320.0" cy="193.984" r="4" 
+fill="#AA0000">
+<title>Con:28 Lab:26 LD:36</title><desc>Hung Parliament, Labour 80 seats short</desc></circle>
+<circle cx="316.0" cy="200.912" r="4" 
+fill="#AA0000">
+<title>Con:29 Lab:25 LD:36</title><desc>Hung Parliament, Labour 97 seats short</desc></circle>
+<circle cx="312.0" cy="207.84" r="4" 
+fill="#AA0000">
+<title>Con:30 Lab:24 LD:36</title><desc>Hung Parliament, Labour 111 seats short</desc></circle>
+<circle cx="308.0" cy="214.768" r="4" 
+fill="#0000AA">
+<title>Con:31 Lab:23 LD:36</title><desc>Hung Parliament, Conservatives 95 seats short</desc></circle>
+<circle cx="304.0" cy="221.696" r="4" 
+fill="#0000AA">
+<title>Con:32 Lab:22 LD:36</title><desc>Hung Parliament, Conservatives 76 seats short</desc></circle>
+<circle cx="300.0" cy="228.624" r="4" 
+fill="#0000AA">
+<title>Con:33 Lab:21 LD:36</title><desc>Hung Parliament, Conservatives 57 seats short</desc></circle>
+<circle cx="296.0" cy="235.552" r="4" 
+fill="#0000AA">
+<title>Con:34 Lab:20 LD:36</title><desc>Hung Parliament, Conservatives 44 seats short</desc></circle>
+<circle cx="292.0" cy="242.48" r="4" 
+fill="#0000AA">
+<title>Con:35 Lab:19 LD:36</title><desc>Hung Parliament, Conservatives 33 seats short</desc></circle>
+<circle cx="288.0" cy="249.408" r="4" 
+fill="#0000AA">
+<title>Con:36 Lab:18 LD:36</title><desc>Hung Parliament, Conservatives 21 seats short</desc></circle>
+<circle cx="284.0" cy="256.336" r="4" 
+fill="#0000AA">
+<title>Con:37 Lab:17 LD:36</title><desc>Hung Parliament, Conservatives 10 seats short</desc></circle>
+<circle cx="280.0" cy="263.264" r="4" 
+fill="blue">
+<title>Con:38 Lab:16 LD:36</title><desc>Conservative Majority of 8</desc></circle>
+<circle cx="276.0" cy="270.192" r="4" 
+fill="blue">
+<title>Con:39 Lab:15 LD:36</title><desc>Conservative Majority of 38</desc></circle>
+<circle cx="272.0" cy="277.12" r="4" 
+fill="blue">
+<title>Con:40 Lab:14 LD:36</title><desc>Conservative Majority of 60</desc></circle>
+<circle cx="268.0" cy="284.048" r="4" 
+fill="blue">
+<title>Con:41 Lab:13 LD:36</title><desc>Conservative Majority of 88</desc></circle>
+<circle cx="264.0" cy="290.976" r="4" 
+fill="blue">
+<title>Con:42 Lab:12 LD:36</title><desc>Conservative Majority of 114</desc></circle>
+<circle cx="260.0" cy="297.904" r="4" 
+fill="blue">
+<title>Con:43 Lab:11 LD:36</title><desc>Conservative Majority of 132</desc></circle>
+<circle cx="256.0" cy="304.832" r="4" 
+fill="blue">
+<title>Con:44 Lab:10 LD:36</title><desc>Conservative Majority of 146</desc></circle>
+<circle cx="384.0" cy="69.28" r="4" 
+fill="red">
+<title>Con:10 Lab:43 LD:37</title><desc>Labour Majority of 212</desc></circle>
+<circle cx="380.0" cy="76.208" r="4" 
+fill="red">
+<title>Con:11 Lab:42 LD:37</title><desc>Labour Majority of 194</desc></circle>
+<circle cx="376.0" cy="83.136" r="4" 
+fill="red">
+<title>Con:12 Lab:41 LD:37</title><desc>Labour Majority of 162</desc></circle>
+<circle cx="372.0" cy="90.064" r="4" 
+fill="red">
+<title>Con:13 Lab:40 LD:37</title><desc>Labour Majority of 148</desc></circle>
+<circle cx="368.0" cy="96.992" r="4" 
+fill="red">
+<title>Con:14 Lab:39 LD:37</title><desc>Labour Majority of 130</desc></circle>
+<circle cx="364.0" cy="103.92" r="4" 
+fill="red">
+<title>Con:15 Lab:38 LD:37</title><desc>Labour Majority of 108</desc></circle>
+<circle cx="360.0" cy="110.848" r="4" 
+fill="red">
+<title>Con:16 Lab:37 LD:37</title><desc>Labour Majority of 94</desc></circle>
+<circle cx="356.0" cy="117.776" r="4" 
+fill="red">
+<title>Con:17 Lab:36 LD:37</title><desc>Labour Majority of 80</desc></circle>
+<circle cx="352.0" cy="124.704" r="4" 
+fill="red">
+<title>Con:18 Lab:35 LD:37</title><desc>Labour Majority of 58</desc></circle>
+<circle cx="348.0" cy="131.632" r="4" 
+fill="red">
+<title>Con:19 Lab:34 LD:37</title><desc>Labour Majority of 38</desc></circle>
+<circle cx="344.0" cy="138.56" r="4" 
+fill="red">
+<title>Con:20 Lab:33 LD:37</title><desc>Labour Majority of 18</desc></circle>
+<circle cx="340.0" cy="145.488" r="4" 
+fill="red">
+<title>Con:21 Lab:32 LD:37</title><desc>Labour Majority of 4</desc></circle>
+<circle cx="336.0" cy="152.416" r="4" 
+fill="#AA0000">
+<title>Con:22 Lab:31 LD:37</title><desc>Hung Parliament, Labour 6 seats short</desc></circle>
+<circle cx="332.0" cy="159.344" r="4" 
+fill="#AA0000">
+<title>Con:23 Lab:30 LD:37</title><desc>Hung Parliament, Labour 16 seats short</desc></circle>
+<circle cx="328.0" cy="166.272" r="4" 
+fill="#AA0000">
+<title>Con:24 Lab:29 LD:37</title><desc>Hung Parliament, Labour 34 seats short</desc></circle>
+<circle cx="324.0" cy="173.2" r="4" 
+fill="#AA0000">
+<title>Con:25 Lab:28 LD:37</title><desc>Hung Parliament, Labour 50 seats short</desc></circle>
+<circle cx="320.0" cy="180.128" r="4" 
+fill="#AA0000">
+<title>Con:26 Lab:27 LD:37</title><desc>Hung Parliament, Labour 69 seats short</desc></circle>
+<circle cx="316.0" cy="187.056" r="4" 
+fill="#AA0000">
+<title>Con:27 Lab:26 LD:37</title><desc>Hung Parliament, Labour 83 seats short</desc></circle>
+<circle cx="312.0" cy="193.984" r="4" 
+fill="#AA0000">
+<title>Con:28 Lab:25 LD:37</title><desc>Hung Parliament, Labour 101 seats short</desc></circle>
+<circle cx="308.0" cy="200.912" r="4" 
+fill="#AAAA00">
+<title>Con:29 Lab:24 LD:37</title><desc>Hung Parliament, Lib Dems 112 seats short</desc></circle>
+<circle cx="304.0" cy="207.84" r="4" 
+fill="#AAAA00">
+<title>Con:30 Lab:23 LD:37</title><desc>Hung Parliament, Lib Dems 108 seats short</desc></circle>
+<circle cx="300.0" cy="214.768" r="4" 
+fill="#0000AA">
+<title>Con:31 Lab:22 LD:37</title><desc>Hung Parliament, Conservatives 100 seats short</desc></circle>
+<circle cx="296.0" cy="221.696" r="4" 
+fill="#0000AA">
+<title>Con:32 Lab:21 LD:37</title><desc>Hung Parliament, Conservatives 82 seats short</desc></circle>
+<circle cx="292.0" cy="228.624" r="4" 
+fill="#0000AA">
+<title>Con:33 Lab:20 LD:37</title><desc>Hung Parliament, Conservatives 62 seats short</desc></circle>
+<circle cx="288.0" cy="235.552" r="4" 
+fill="#0000AA">
+<title>Con:34 Lab:19 LD:37</title><desc>Hung Parliament, Conservatives 45 seats short</desc></circle>
+<circle cx="284.0" cy="242.48" r="4" 
+fill="#0000AA">
+<title>Con:35 Lab:18 LD:37</title><desc>Hung Parliament, Conservatives 41 seats short</desc></circle>
+<circle cx="280.0" cy="249.408" r="4" 
+fill="#0000AA">
+<title>Con:36 Lab:17 LD:37</title><desc>Hung Parliament, Conservatives 27 seats short</desc></circle>
+<circle cx="276.0" cy="256.336" r="4" 
+fill="#0000AA">
+<title>Con:37 Lab:16 LD:37</title><desc>Hung Parliament, Conservatives 16 seats short</desc></circle>
+<circle cx="272.0" cy="263.264" r="4" 
+fill="blue">
+<title>Con:38 Lab:15 LD:37</title><desc>Conservative Majority of 2</desc></circle>
+<circle cx="268.0" cy="270.192" r="4" 
+fill="blue">
+<title>Con:39 Lab:14 LD:37</title><desc>Conservative Majority of 14</desc></circle>
+<circle cx="264.0" cy="277.12" r="4" 
+fill="blue">
+<title>Con:40 Lab:13 LD:37</title><desc>Conservative Majority of 42</desc></circle>
+<circle cx="260.0" cy="284.048" r="4" 
+fill="blue">
+<title>Con:41 Lab:12 LD:37</title><desc>Conservative Majority of 74</desc></circle>
+<circle cx="256.0" cy="290.976" r="4" 
+fill="blue">
+<title>Con:42 Lab:11 LD:37</title><desc>Conservative Majority of 100</desc></circle>
+<circle cx="252.0" cy="297.904" r="4" 
+fill="blue">
+<title>Con:43 Lab:10 LD:37</title><desc>Conservative Majority of 118</desc></circle>
+<circle cx="376.0" cy="69.28" r="4" 
+fill="red">
+<title>Con:10 Lab:42 LD:38</title><desc>Labour Majority of 166</desc></circle>
+<circle cx="372.0" cy="76.208" r="4" 
+fill="red">
+<title>Con:11 Lab:41 LD:38</title><desc>Labour Majority of 148</desc></circle>
+<circle cx="368.0" cy="83.136" r="4" 
+fill="red">
+<title>Con:12 Lab:40 LD:38</title><desc>Labour Majority of 140</desc></circle>
+<circle cx="364.0" cy="90.064" r="4" 
+fill="red">
+<title>Con:13 Lab:39 LD:38</title><desc>Labour Majority of 118</desc></circle>
+<circle cx="360.0" cy="96.992" r="4" 
+fill="red">
+<title>Con:14 Lab:38 LD:38</title><desc>Labour Majority of 100</desc></circle>
+<circle cx="356.0" cy="103.92" r="4" 
+fill="red">
+<title>Con:15 Lab:37 LD:38</title><desc>Labour Majority of 86</desc></circle>
+<circle cx="352.0" cy="110.848" r="4" 
+fill="red">
+<title>Con:16 Lab:36 LD:38</title><desc>Labour Majority of 74</desc></circle>
+<circle cx="348.0" cy="117.776" r="4" 
+fill="red">
+<title>Con:17 Lab:35 LD:38</title><desc>Labour Majority of 50</desc></circle>
+<circle cx="344.0" cy="124.704" r="4" 
+fill="red">
+<title>Con:18 Lab:34 LD:38</title><desc>Labour Majority of 24</desc></circle>
+<circle cx="340.0" cy="131.632" r="4" 
+fill="red">
+<title>Con:19 Lab:33 LD:38</title><desc>Labour Majority of 10</desc></circle>
+<circle cx="336.0" cy="138.56" r="4" 
+fill="#AA0000">
+<title>Con:20 Lab:32 LD:38</title><desc>Hung Parliament, Labour 5 seats short</desc></circle>
+<circle cx="332.0" cy="145.488" r="4" 
+fill="#AA0000">
+<title>Con:21 Lab:31 LD:38</title><desc>Hung Parliament, Labour 14 seats short</desc></circle>
+<circle cx="328.0" cy="152.416" r="4" 
+fill="#AA0000">
+<title>Con:22 Lab:30 LD:38</title><desc>Hung Parliament, Labour 26 seats short</desc></circle>
+<circle cx="324.0" cy="159.344" r="4" 
+fill="#AA0000">
+<title>Con:23 Lab:29 LD:38</title><desc>Hung Parliament, Labour 36 seats short</desc></circle>
+<circle cx="320.0" cy="166.272" r="4" 
+fill="#AA0000">
+<title>Con:24 Lab:28 LD:38</title><desc>Hung Parliament, Labour 59 seats short</desc></circle>
+<circle cx="316.0" cy="173.2" r="4" 
+fill="#AA0000">
+<title>Con:25 Lab:27 LD:38</title><desc>Hung Parliament, Labour 73 seats short</desc></circle>
+<circle cx="312.0" cy="180.128" r="4" 
+fill="#AA0000">
+<title>Con:26 Lab:26 LD:38</title><desc>Hung Parliament, Labour 86 seats short</desc></circle>
+<circle cx="308.0" cy="187.056" r="4" 
+fill="#AAAA00">
+<title>Con:27 Lab:25 LD:38</title><desc>Hung Parliament, Lib Dems 94 seats short</desc></circle>
+<circle cx="304.0" cy="193.984" r="4" 
+fill="#AAAA00">
+<title>Con:28 Lab:24 LD:38</title><desc>Hung Parliament, Lib Dems 90 seats short</desc></circle>
+<circle cx="300.0" cy="200.912" r="4" 
+fill="#AAAA00">
+<title>Con:29 Lab:23 LD:38</title><desc>Hung Parliament, Lib Dems 84 seats short</desc></circle>
+<circle cx="296.0" cy="207.84" r="4" 
+fill="#AAAA00">
+<title>Con:30 Lab:22 LD:38</title><desc>Hung Parliament, Lib Dems 81 seats short</desc></circle>
+<circle cx="292.0" cy="214.768" r="4" 
+fill="#AAAA00">
+<title>Con:31 Lab:21 LD:38</title><desc>Hung Parliament, Lib Dems 81 seats short</desc></circle>
+<circle cx="288.0" cy="221.696" r="4" 
+fill="#AAAA00">
+<title>Con:32 Lab:20 LD:38</title><desc>Hung Parliament, Lib Dems 82 seats short</desc></circle>
+<circle cx="284.0" cy="228.624" r="4" 
+fill="#0000AA">
+<title>Con:33 Lab:19 LD:38</title><desc>Hung Parliament, Conservatives 69 seats short</desc></circle>
+<circle cx="280.0" cy="235.552" r="4" 
+fill="#0000AA">
+<title>Con:34 Lab:18 LD:38</title><desc>Hung Parliament, Conservatives 52 seats short</desc></circle>
+<circle cx="276.0" cy="242.48" r="4" 
+fill="#0000AA">
+<title>Con:35 Lab:17 LD:38</title><desc>Hung Parliament, Conservatives 41 seats short</desc></circle>
+<circle cx="272.0" cy="249.408" r="4" 
+fill="#0000AA">
+<title>Con:36 Lab:16 LD:38</title><desc>Hung Parliament, Conservatives 36 seats short</desc></circle>
+<circle cx="268.0" cy="256.336" r="4" 
+fill="#0000AA">
+<title>Con:37 Lab:15 LD:38</title><desc>Hung Parliament, Conservatives 23 seats short</desc></circle>
+<circle cx="264.0" cy="263.264" r="4" 
+fill="#0000AA">
+<title>Con:38 Lab:14 LD:38</title><desc>Hung Parliament, Conservatives 10 seats short</desc></circle>
+<circle cx="260.0" cy="270.192" r="4" 
+fill="blue">
+<title>Con:39 Lab:13 LD:38</title><desc>Conservative Majority of 4</desc></circle>
+<circle cx="256.0" cy="277.12" r="4" 
+fill="blue">
+<title>Con:40 Lab:12 LD:38</title><desc>Conservative Majority of 18</desc></circle>
+<circle cx="252.0" cy="284.048" r="4" 
+fill="blue">
+<title>Con:41 Lab:11 LD:38</title><desc>Conservative Majority of 50</desc></circle>
+<circle cx="248.0" cy="290.976" r="4" 
+fill="blue">
+<title>Con:42 Lab:10 LD:38</title><desc>Conservative Majority of 82</desc></circle>
+<circle cx="368.0" cy="69.28" r="4" 
+fill="red">
+<title>Con:10 Lab:41 LD:39</title><desc>Labour Majority of 142</desc></circle>
+<circle cx="364.0" cy="76.208" r="4" 
+fill="red">
+<title>Con:11 Lab:40 LD:39</title><desc>Labour Majority of 122</desc></circle>
+<circle cx="360.0" cy="83.136" r="4" 
+fill="red">
+<title>Con:12 Lab:39 LD:39</title><desc>Labour Majority of 104</desc></circle>
+<circle cx="356.0" cy="90.064" r="4" 
+fill="red">
+<title>Con:13 Lab:38 LD:39</title><desc>Labour Majority of 92</desc></circle>
+<circle cx="352.0" cy="96.992" r="4" 
+fill="red">
+<title>Con:14 Lab:37 LD:39</title><desc>Labour Majority of 78</desc></circle>
+<circle cx="348.0" cy="103.92" r="4" 
+fill="red">
+<title>Con:15 Lab:36 LD:39</title><desc>Labour Majority of 64</desc></circle>
+<circle cx="344.0" cy="110.848" r="4" 
+fill="red">
+<title>Con:16 Lab:35 LD:39</title><desc>Labour Majority of 40</desc></circle>
+<circle cx="340.0" cy="117.776" r="4" 
+fill="red">
+<title>Con:17 Lab:34 LD:39</title><desc>Labour Majority of 16</desc></circle>
+<circle cx="336.0" cy="124.704" r="4" 
+fill="#AA0000">
+<title>Con:18 Lab:33 LD:39</title><desc>Hung Parliament, Labour 1 seats short</desc></circle>
+<circle cx="332.0" cy="131.632" r="4" 
+fill="#AA0000">
+<title>Con:19 Lab:32 LD:39</title><desc>Hung Parliament, Labour 13 seats short</desc></circle>
+<circle cx="328.0" cy="138.56" r="4" 
+fill="#AA0000">
+<title>Con:20 Lab:31 LD:39</title><desc>Hung Parliament, Labour 25 seats short</desc></circle>
+<circle cx="324.0" cy="145.488" r="4" 
+fill="#AA0000">
+<title>Con:21 Lab:30 LD:39</title><desc>Hung Parliament, Labour 34 seats short</desc></circle>
+<circle cx="320.0" cy="152.416" r="4" 
+fill="#AA0000">
+<title>Con:22 Lab:29 LD:39</title><desc>Hung Parliament, Labour 49 seats short</desc></circle>
+<circle cx="316.0" cy="159.344" r="4" 
+fill="#AAAA00">
+<title>Con:23 Lab:28 LD:39</title><desc>Hung Parliament, Lib Dems 64 seats short</desc></circle>
+<circle cx="312.0" cy="166.272" r="4" 
+fill="#AAAA00">
+<title>Con:24 Lab:27 LD:39</title><desc>Hung Parliament, Lib Dems 65 seats short</desc></circle>
+<circle cx="308.0" cy="173.2" r="4" 
+fill="#AAAA00">
+<title>Con:25 Lab:26 LD:39</title><desc>Hung Parliament, Lib Dems 58 seats short</desc></circle>
+<circle cx="304.0" cy="180.128" r="4" 
+fill="#AAAA00">
+<title>Con:26 Lab:25 LD:39</title><desc>Hung Parliament, Lib Dems 55 seats short</desc></circle>
+<circle cx="300.0" cy="187.056" r="4" 
+fill="#AAAA00">
+<title>Con:27 Lab:24 LD:39</title><desc>Hung Parliament, Lib Dems 60 seats short</desc></circle>
+<circle cx="296.0" cy="193.984" r="4" 
+fill="#AAAA00">
+<title>Con:28 Lab:23 LD:39</title><desc>Hung Parliament, Lib Dems 61 seats short</desc></circle>
+<circle cx="292.0" cy="200.912" r="4" 
+fill="#AAAA00">
+<title>Con:29 Lab:22 LD:39</title><desc>Hung Parliament, Lib Dems 54 seats short</desc></circle>
+<circle cx="288.0" cy="207.84" r="4" 
+fill="#AAAA00">
+<title>Con:30 Lab:21 LD:39</title><desc>Hung Parliament, Lib Dems 50 seats short</desc></circle>
+<circle cx="284.0" cy="214.768" r="4" 
+fill="#AAAA00">
+<title>Con:31 Lab:20 LD:39</title><desc>Hung Parliament, Lib Dems 49 seats short</desc></circle>
+<circle cx="280.0" cy="221.696" r="4" 
+fill="#AAAA00">
+<title>Con:32 Lab:19 LD:39</title><desc>Hung Parliament, Lib Dems 59 seats short</desc></circle>
+<circle cx="276.0" cy="228.624" r="4" 
+fill="#AAAA00">
+<title>Con:33 Lab:18 LD:39</title><desc>Hung Parliament, Lib Dems 56 seats short</desc></circle>
+<circle cx="272.0" cy="235.552" r="4" 
+fill="#AAAA00">
+<title>Con:34 Lab:17 LD:39</title><desc>Hung Parliament, Lib Dems 61 seats short</desc></circle>
+<circle cx="268.0" cy="242.48" r="4" 
+fill="#0000AA">
+<title>Con:35 Lab:16 LD:39</title><desc>Hung Parliament, Conservatives 47 seats short</desc></circle>
+<circle cx="264.0" cy="249.408" r="4" 
+fill="#0000AA">
+<title>Con:36 Lab:15 LD:39</title><desc>Hung Parliament, Conservatives 39 seats short</desc></circle>
+<circle cx="260.0" cy="256.336" r="4" 
+fill="#0000AA">
+<title>Con:37 Lab:14 LD:39</title><desc>Hung Parliament, Conservatives 32 seats short</desc></circle>
+<circle cx="256.0" cy="263.264" r="4" 
+fill="#0000AA">
+<title>Con:38 Lab:13 LD:39</title><desc>Hung Parliament, Conservatives 20 seats short</desc></circle>
+<circle cx="252.0" cy="270.192" r="4" 
+fill="#0000AA">
+<title>Con:39 Lab:12 LD:39</title><desc>Hung Parliament, Conservatives 8 seats short</desc></circle>
+<circle cx="248.0" cy="277.12" r="4" 
+fill="blue">
+<title>Con:40 Lab:11 LD:39</title><desc>Conservative Majority of 10</desc></circle>
+<circle cx="244.0" cy="284.048" r="4" 
+fill="blue">
+<title>Con:41 Lab:10 LD:39</title><desc>Conservative Majority of 26</desc></circle>
+<circle cx="360.0" cy="69.28" r="4" 
+fill="red">
+<title>Con:10 Lab:40 LD:40</title><desc>Labour Majority of 106</desc></circle>
+<circle cx="356.0" cy="76.208" r="4" 
+fill="red">
+<title>Con:11 Lab:39 LD:40</title><desc>Labour Majority of 94</desc></circle>
+<circle cx="352.0" cy="83.136" r="4" 
+fill="red">
+<title>Con:12 Lab:38 LD:40</title><desc>Labour Majority of 82</desc></circle>
+<circle cx="348.0" cy="90.064" r="4" 
+fill="red">
+<title>Con:13 Lab:37 LD:40</title><desc>Labour Majority of 66</desc></circle>
+<circle cx="344.0" cy="96.992" r="4" 
+fill="red">
+<title>Con:14 Lab:36 LD:40</title><desc>Labour Majority of 44</desc></circle>
+<circle cx="340.0" cy="103.92" r="4" 
+fill="red">
+<title>Con:15 Lab:35 LD:40</title><desc>Labour Majority of 24</desc></circle>
+<circle cx="336.0" cy="110.848" r="4" 
+fill="red">
+<title>Con:16 Lab:34 LD:40</title><desc>Labour Majority of 8</desc></circle>
+<circle cx="332.0" cy="117.776" r="4" 
+fill="#AA0000">
+<title>Con:17 Lab:33 LD:40</title><desc>Hung Parliament, Labour 10 seats short</desc></circle>
+<circle cx="328.0" cy="124.704" r="4" 
+fill="#AA0000">
+<title>Con:18 Lab:32 LD:40</title><desc>Hung Parliament, Labour 23 seats short</desc></circle>
+<circle cx="324.0" cy="131.632" r="4" 
+fill="#AA0000">
+<title>Con:19 Lab:31 LD:40</title><desc>Hung Parliament, Labour 33 seats short</desc></circle>
+<circle cx="320.0" cy="138.56" r="4" 
+fill="#AAAA00">
+<title>Con:20 Lab:30 LD:40</title><desc>Hung Parliament, Lib Dems 42 seats short</desc></circle>
+<circle cx="316.0" cy="145.488" r="4" 
+fill="#AAAA00">
+<title>Con:21 Lab:29 LD:40</title><desc>Hung Parliament, Lib Dems 44 seats short</desc></circle>
+<circle cx="312.0" cy="152.416" r="4" 
+fill="#AAAA00">
+<title>Con:22 Lab:28 LD:40</title><desc>Hung Parliament, Lib Dems 40 seats short</desc></circle>
+<circle cx="308.0" cy="159.344" r="4" 
+fill="#AAAA00">
+<title>Con:23 Lab:27 LD:40</title><desc>Hung Parliament, Lib Dems 33 seats short</desc></circle>
+<circle cx="304.0" cy="166.272" r="4" 
+fill="#AAAA00">
+<title>Con:24 Lab:26 LD:40</title><desc>Hung Parliament, Lib Dems 24 seats short</desc></circle>
+<circle cx="300.0" cy="173.2" r="4" 
+fill="#AAAA00">
+<title>Con:25 Lab:25 LD:40</title><desc>Hung Parliament, Lib Dems 24 seats short</desc></circle>
+<circle cx="296.0" cy="180.128" r="4" 
+fill="#AAAA00">
+<title>Con:26 Lab:24 LD:40</title><desc>Hung Parliament, Lib Dems 19 seats short</desc></circle>
+<circle cx="292.0" cy="187.056" r="4" 
+fill="#AAAA00">
+<title>Con:27 Lab:23 LD:40</title><desc>Hung Parliament, Lib Dems 16 seats short</desc></circle>
+<circle cx="288.0" cy="193.984" r="4" 
+fill="#AAAA00">
+<title>Con:28 Lab:22 LD:40</title><desc>Hung Parliament, Lib Dems 24 seats short</desc></circle>
+<circle cx="284.0" cy="200.912" r="4" 
+fill="#AAAA00">
+<title>Con:29 Lab:21 LD:40</title><desc>Hung Parliament, Lib Dems 27 seats short</desc></circle>
+<circle cx="280.0" cy="207.84" r="4" 
+fill="#AAAA00">
+<title>Con:30 Lab:20 LD:40</title><desc>Hung Parliament, Lib Dems 31 seats short</desc></circle>
+<circle cx="276.0" cy="214.768" r="4" 
+fill="#AAAA00">
+<title>Con:31 Lab:19 LD:40</title><desc>Hung Parliament, Lib Dems 20 seats short</desc></circle>
+<circle cx="272.0" cy="221.696" r="4" 
+fill="#AAAA00">
+<title>Con:32 Lab:18 LD:40</title><desc>Hung Parliament, Lib Dems 22 seats short</desc></circle>
+<circle cx="268.0" cy="228.624" r="4" 
+fill="#AAAA00">
+<title>Con:33 Lab:17 LD:40</title><desc>Hung Parliament, Lib Dems 29 seats short</desc></circle>
+<circle cx="264.0" cy="235.552" r="4" 
+fill="#AAAA00">
+<title>Con:34 Lab:16 LD:40</title><desc>Hung Parliament, Lib Dems 32 seats short</desc></circle>
+<circle cx="260.0" cy="242.48" r="4" 
+fill="#AAAA00">
+<title>Con:35 Lab:15 LD:40</title><desc>Hung Parliament, Lib Dems 41 seats short</desc></circle>
+<circle cx="256.0" cy="249.408" r="4" 
+fill="#0000AA">
+<title>Con:36 Lab:14 LD:40</title><desc>Hung Parliament, Conservatives 45 seats short</desc></circle>
+<circle cx="252.0" cy="256.336" r="4" 
+fill="#0000AA">
+<title>Con:37 Lab:13 LD:40</title><desc>Hung Parliament, Conservatives 35 seats short</desc></circle>
+<circle cx="248.0" cy="263.264" r="4" 
+fill="#0000AA">
+<title>Con:38 Lab:12 LD:40</title><desc>Hung Parliament, Conservatives 31 seats short</desc></circle>
+<circle cx="244.0" cy="270.192" r="4" 
+fill="#0000AA">
+<title>Con:39 Lab:11 LD:40</title><desc>Hung Parliament, Conservatives 18 seats short</desc></circle>
+<circle cx="240.0" cy="277.12" r="4" 
+fill="#0000AA">
+<title>Con:40 Lab:10 LD:40</title><desc>Hung Parliament, Conservatives 6 seats short</desc></circle>
+<circle cx="352.0" cy="69.28" r="4" 
+fill="red">
+<title>Con:10 Lab:39 LD:41</title><desc>Labour Majority of 82</desc></circle>
+<circle cx="348.0" cy="76.208" r="4" 
+fill="red">
+<title>Con:11 Lab:38 LD:41</title><desc>Labour Majority of 68</desc></circle>
+<circle cx="344.0" cy="83.136" r="4" 
+fill="red">
+<title>Con:12 Lab:37 LD:41</title><desc>Labour Majority of 44</desc></circle>
+<circle cx="340.0" cy="90.064" r="4" 
+fill="red">
+<title>Con:13 Lab:36 LD:41</title><desc>Labour Majority of 28</desc></circle>
+<circle cx="336.0" cy="96.992" r="4" 
+fill="red">
+<title>Con:14 Lab:35 LD:41</title><desc>Labour Majority of 14</desc></circle>
+<circle cx="332.0" cy="103.92" r="4" 
+fill="#AA0000">
+<title>Con:15 Lab:34 LD:41</title><desc>Hung Parliament, Labour 6 seats short</desc></circle>
+<circle cx="328.0" cy="110.848" r="4" 
+fill="#AA0000">
+<title>Con:16 Lab:33 LD:41</title><desc>Hung Parliament, Labour 20 seats short</desc></circle>
+<circle cx="324.0" cy="117.776" r="4" 
+fill="#AAAA00">
+<title>Con:17 Lab:32 LD:41</title><desc>Hung Parliament, Lib Dems 27 seats short</desc></circle>
+<circle cx="320.0" cy="124.704" r="4" 
+fill="#AAAA00">
+<title>Con:18 Lab:31 LD:41</title><desc>Hung Parliament, Lib Dems 18 seats short</desc></circle>
+<circle cx="316.0" cy="131.632" r="4" 
+fill="#AAAA00">
+<title>Con:19 Lab:30 LD:41</title><desc>Hung Parliament, Lib Dems 19 seats short</desc></circle>
+<circle cx="312.0" cy="138.56" r="4" 
+fill="#AAAA00">
+<title>Con:20 Lab:29 LD:41</title><desc>Hung Parliament, Lib Dems 13 seats short</desc></circle>
+<circle cx="308.0" cy="145.488" r="4" 
+fill="#AAAA00">
+<title>Con:21 Lab:28 LD:41</title><desc>Hung Parliament, Lib Dems 4 seats short</desc></circle>
+<circle cx="304.0" cy="152.416" r="4" 
+fill="#AAAA00">
+<title>Con:22 Lab:27 LD:41</title><desc>Hung Parliament, Lib Dems 2 seats short</desc></circle>
+<circle cx="300.0" cy="159.344" r="4" 
+fill="yellow">
+<title>Con:23 Lab:26 LD:41</title><desc>Lib Dem Majority of 12</desc></circle>
+<circle cx="296.0" cy="166.272" r="4" 
+fill="yellow">
+<title>Con:24 Lab:25 LD:41</title><desc>Lib Dem Majority of 20</desc></circle>
+<circle cx="292.0" cy="173.2" r="4" 
+fill="yellow">
+<title>Con:25 Lab:24 LD:41</title><desc>Lib Dem Majority of 48</desc></circle>
+<circle cx="288.0" cy="180.128" r="4" 
+fill="yellow">
+<title>Con:26 Lab:23 LD:41</title><desc>Lib Dem Majority of 48</desc></circle>
+<circle cx="284.0" cy="187.056" r="4" 
+fill="yellow">
+<title>Con:27 Lab:22 LD:41</title><desc>Lib Dem Majority of 40</desc></circle>
+<circle cx="280.0" cy="193.984" r="4" 
+fill="yellow">
+<title>Con:28 Lab:21 LD:41</title><desc>Lib Dem Majority of 32</desc></circle>
+<circle cx="276.0" cy="200.912" r="4" 
+fill="yellow">
+<title>Con:29 Lab:20 LD:41</title><desc>Lib Dem Majority of 28</desc></circle>
+<circle cx="272.0" cy="207.84" r="4" 
+fill="yellow">
+<title>Con:30 Lab:19 LD:41</title><desc>Lib Dem Majority of 20</desc></circle>
+<circle cx="268.0" cy="214.768" r="4" 
+fill="yellow">
+<title>Con:31 Lab:18 LD:41</title><desc>Lib Dem Majority of 18</desc></circle>
+<circle cx="264.0" cy="221.696" r="4" 
+fill="yellow">
+<title>Con:32 Lab:17 LD:41</title><desc>Lib Dem Majority of 20</desc></circle>
+<circle cx="260.0" cy="228.624" r="4" 
+fill="yellow">
+<title>Con:33 Lab:16 LD:41</title><desc>Lib Dem Majority of 10</desc></circle>
+<circle cx="256.0" cy="235.552" r="4" 
+fill="#AAAA00">
+<title>Con:34 Lab:15 LD:41</title><desc>Hung Parliament, Lib Dems 8 seats short</desc></circle>
+<circle cx="252.0" cy="242.48" r="4" 
+fill="#AAAA00">
+<title>Con:35 Lab:14 LD:41</title><desc>Hung Parliament, Lib Dems 14 seats short</desc></circle>
+<circle cx="248.0" cy="249.408" r="4" 
+fill="#AAAA00">
+<title>Con:36 Lab:13 LD:41</title><desc>Hung Parliament, Lib Dems 25 seats short</desc></circle>
+<circle cx="244.0" cy="256.336" r="4" 
+fill="#AAAA00">
+<title>Con:37 Lab:12 LD:41</title><desc>Hung Parliament, Lib Dems 34 seats short</desc></circle>
+<circle cx="240.0" cy="263.264" r="4" 
+fill="#0000AA">
+<title>Con:38 Lab:11 LD:41</title><desc>Hung Parliament, Conservatives 33 seats short</desc></circle>
+<circle cx="236.0" cy="270.192" r="4" 
+fill="#0000AA">
+<title>Con:39 Lab:10 LD:41</title><desc>Hung Parliament, Conservatives 28 seats short</desc></circle>
+<circle cx="344.0" cy="69.28" r="4" 
+fill="red">
+<title>Con:10 Lab:38 LD:42</title><desc>Labour Majority of 46</desc></circle>
+<circle cx="340.0" cy="76.208" r="4" 
+fill="red">
+<title>Con:11 Lab:37 LD:42</title><desc>Labour Majority of 28</desc></circle>
+<circle cx="336.0" cy="83.136" r="4" 
+fill="red">
+<title>Con:12 Lab:36 LD:42</title><desc>Labour Majority of 16</desc></circle>
+<circle cx="332.0" cy="90.064" r="4" 
+fill="#AA0000">
+<title>Con:13 Lab:35 LD:42</title><desc>Hung Parliament, Labour 6 seats short</desc></circle>
+<circle cx="328.0" cy="96.992" r="4" 
+fill="#AA0000">
+<title>Con:14 Lab:34 LD:42</title><desc>Hung Parliament, Labour 17 seats short</desc></circle>
+<circle cx="324.0" cy="103.92" r="4" 
+fill="#AAAA00">
+<title>Con:15 Lab:33 LD:42</title><desc>Hung Parliament, Lib Dems 11 seats short</desc></circle>
+<circle cx="320.0" cy="110.848" r="4" 
+fill="yellow">
+<title>Con:16 Lab:32 LD:42</title><desc>Lib Dem Majority of 4</desc></circle>
+<circle cx="316.0" cy="117.776" r="4" 
+fill="yellow">
+<title>Con:17 Lab:31 LD:42</title><desc>Lib Dem Majority of 16</desc></circle>
+<circle cx="312.0" cy="124.704" r="4" 
+fill="yellow">
+<title>Con:18 Lab:30 LD:42</title><desc>Lib Dem Majority of 22</desc></circle>
+<circle cx="308.0" cy="131.632" r="4" 
+fill="yellow">
+<title>Con:19 Lab:29 LD:42</title><desc>Lib Dem Majority of 40</desc></circle>
+<circle cx="304.0" cy="138.56" r="4" 
+fill="yellow">
+<title>Con:20 Lab:28 LD:42</title><desc>Lib Dem Majority of 46</desc></circle>
+<circle cx="300.0" cy="145.488" r="4" 
+fill="yellow">
+<title>Con:21 Lab:27 LD:42</title><desc>Lib Dem Majority of 66</desc></circle>
+<circle cx="296.0" cy="152.416" r="4" 
+fill="yellow">
+<title>Con:22 Lab:26 LD:42</title><desc>Lib Dem Majority of 80</desc></circle>
+<circle cx="292.0" cy="159.344" r="4" 
+fill="yellow">
+<title>Con:23 Lab:25 LD:42</title><desc>Lib Dem Majority of 96</desc></circle>
+<circle cx="288.0" cy="166.272" r="4" 
+fill="yellow">
+<title>Con:24 Lab:24 LD:42</title><desc>Lib Dem Majority of 110</desc></circle>
+<circle cx="284.0" cy="173.2" r="4" 
+fill="yellow">
+<title>Con:25 Lab:23 LD:42</title><desc>Lib Dem Majority of 108</desc></circle>
+<circle cx="280.0" cy="180.128" r="4" 
+fill="yellow">
+<title>Con:26 Lab:22 LD:42</title><desc>Lib Dem Majority of 116</desc></circle>
+<circle cx="276.0" cy="187.056" r="4" 
+fill="yellow">
+<title>Con:27 Lab:21 LD:42</title><desc>Lib Dem Majority of 130</desc></circle>
+<circle cx="272.0" cy="193.984" r="4" 
+fill="yellow">
+<title>Con:28 Lab:20 LD:42</title><desc>Lib Dem Majority of 120</desc></circle>
+<circle cx="268.0" cy="200.912" r="4" 
+fill="yellow">
+<title>Con:29 Lab:19 LD:42</title><desc>Lib Dem Majority of 112</desc></circle>
+<circle cx="264.0" cy="207.84" r="4" 
+fill="yellow">
+<title>Con:30 Lab:18 LD:42</title><desc>Lib Dem Majority of 88</desc></circle>
+<circle cx="260.0" cy="214.768" r="4" 
+fill="yellow">
+<title>Con:31 Lab:17 LD:42</title><desc>Lib Dem Majority of 76</desc></circle>
+<circle cx="256.0" cy="221.696" r="4" 
+fill="yellow">
+<title>Con:32 Lab:16 LD:42</title><desc>Lib Dem Majority of 60</desc></circle>
+<circle cx="252.0" cy="228.624" r="4" 
+fill="yellow">
+<title>Con:33 Lab:15 LD:42</title><desc>Lib Dem Majority of 52</desc></circle>
+<circle cx="248.0" cy="235.552" r="4" 
+fill="yellow">
+<title>Con:34 Lab:14 LD:42</title><desc>Lib Dem Majority of 38</desc></circle>
+<circle cx="244.0" cy="242.48" r="4" 
+fill="yellow">
+<title>Con:35 Lab:13 LD:42</title><desc>Lib Dem Majority of 20</desc></circle>
+<circle cx="240.0" cy="249.408" r="4" 
+fill="#AAAA00">
+<title>Con:36 Lab:12 LD:42</title><desc>Hung Parliament, Lib Dems 1 seats short</desc></circle>
+<circle cx="236.0" cy="256.336" r="4" 
+fill="#AAAA00">
+<title>Con:37 Lab:11 LD:42</title><desc>Hung Parliament, Lib Dems 14 seats short</desc></circle>
+<circle cx="232.0" cy="263.264" r="4" 
+fill="#AAAA00">
+<title>Con:38 Lab:10 LD:42</title><desc>Hung Parliament, Lib Dems 19 seats short</desc></circle>
+<circle cx="336.0" cy="69.28" r="4" 
+fill="red">
+<title>Con:10 Lab:37 LD:43</title><desc>Labour Majority of 16</desc></circle>
+<circle cx="332.0" cy="76.208" r="4" 
+fill="#AA0000">
+<title>Con:11 Lab:36 LD:43</title><desc>Hung Parliament, Labour 5 seats short</desc></circle>
+<circle cx="328.0" cy="83.136" r="4" 
+fill="#AA0000">
+<title>Con:12 Lab:35 LD:43</title><desc>Hung Parliament, Labour 17 seats short</desc></circle>
+<circle cx="324.0" cy="90.064" r="4" 
+fill="#AAAA00">
+<title>Con:13 Lab:34 LD:43</title><desc>Hung Parliament, Lib Dems 9 seats short</desc></circle>
+<circle cx="320.0" cy="96.992" r="4" 
+fill="yellow">
+<title>Con:14 Lab:33 LD:43</title><desc>Lib Dem Majority of 14</desc></circle>
+<circle cx="316.0" cy="103.92" r="4" 
+fill="yellow">
+<title>Con:15 Lab:32 LD:43</title><desc>Lib Dem Majority of 34</desc></circle>
+<circle cx="312.0" cy="110.848" r="4" 
+fill="yellow">
+<title>Con:16 Lab:31 LD:43</title><desc>Lib Dem Majority of 54</desc></circle>
+<circle cx="308.0" cy="117.776" r="4" 
+fill="yellow">
+<title>Con:17 Lab:30 LD:43</title><desc>Lib Dem Majority of 80</desc></circle>
+<circle cx="304.0" cy="124.704" r="4" 
+fill="yellow">
+<title>Con:18 Lab:29 LD:43</title><desc>Lib Dem Majority of 98</desc></circle>
+<circle cx="300.0" cy="131.632" r="4" 
+fill="yellow">
+<title>Con:19 Lab:28 LD:43</title><desc>Lib Dem Majority of 112</desc></circle>
+<circle cx="296.0" cy="138.56" r="4" 
+fill="yellow">
+<title>Con:20 Lab:27 LD:43</title><desc>Lib Dem Majority of 134</desc></circle>
+<circle cx="292.0" cy="145.488" r="4" 
+fill="yellow">
+<title>Con:21 Lab:26 LD:43</title><desc>Lib Dem Majority of 152</desc></circle>
+<circle cx="288.0" cy="152.416" r="4" 
+fill="yellow">
+<title>Con:22 Lab:25 LD:43</title><desc>Lib Dem Majority of 170</desc></circle>
+<circle cx="284.0" cy="159.344" r="4" 
+fill="yellow">
+<title>Con:23 Lab:24 LD:43</title><desc>Lib Dem Majority of 168</desc></circle>
+<circle cx="280.0" cy="166.272" r="4" 
+fill="yellow">
+<title>Con:24 Lab:23 LD:43</title><desc>Lib Dem Majority of 168</desc></circle>
+<circle cx="276.0" cy="173.2" r="4" 
+fill="yellow">
+<title>Con:25 Lab:22 LD:43</title><desc>Lib Dem Majority of 196</desc></circle>
+<circle cx="272.0" cy="180.128" r="4" 
+fill="yellow">
+<title>Con:26 Lab:21 LD:43</title><desc>Lib Dem Majority of 194</desc></circle>
+<circle cx="268.0" cy="187.056" r="4" 
+fill="yellow">
+<title>Con:27 Lab:20 LD:43</title><desc>Lib Dem Majority of 202</desc></circle>
+<circle cx="264.0" cy="193.984" r="4" 
+fill="yellow">
+<title>Con:28 Lab:19 LD:43</title><desc>Lib Dem Majority of 194</desc></circle>
+<circle cx="260.0" cy="200.912" r="4" 
+fill="yellow">
+<title>Con:29 Lab:18 LD:43</title><desc>Lib Dem Majority of 180</desc></circle>
+<circle cx="256.0" cy="207.84" r="4" 
+fill="yellow">
+<title>Con:30 Lab:17 LD:43</title><desc>Lib Dem Majority of 154</desc></circle>
+<circle cx="252.0" cy="214.768" r="4" 
+fill="yellow">
+<title>Con:31 Lab:16 LD:43</title><desc>Lib Dem Majority of 120</desc></circle>
+<circle cx="248.0" cy="221.696" r="4" 
+fill="yellow">
+<title>Con:32 Lab:15 LD:43</title><desc>Lib Dem Majority of 104</desc></circle>
+<circle cx="244.0" cy="228.624" r="4" 
+fill="yellow">
+<title>Con:33 Lab:14 LD:43</title><desc>Lib Dem Majority of 94</desc></circle>
+<circle cx="240.0" cy="235.552" r="4" 
+fill="yellow">
+<title>Con:34 Lab:13 LD:43</title><desc>Lib Dem Majority of 82</desc></circle>
+<circle cx="236.0" cy="242.48" r="4" 
+fill="yellow">
+<title>Con:35 Lab:12 LD:43</title><desc>Lib Dem Majority of 64</desc></circle>
+<circle cx="232.0" cy="249.408" r="4" 
+fill="yellow">
+<title>Con:36 Lab:11 LD:43</title><desc>Lib Dem Majority of 52</desc></circle>
+<circle cx="228.0" cy="256.336" r="4" 
+fill="yellow">
+<title>Con:37 Lab:10 LD:43</title><desc>Lib Dem Majority of 38</desc></circle>
+<circle cx="328.0" cy="69.28" r="4" 
+fill="#AAAA00">
+<title>Con:10 Lab:36 LD:44</title><desc>Hung Parliament, Lib Dems 15 seats short</desc></circle>
+<circle cx="324.0" cy="76.208" r="4" 
+fill="#AAAA00">
+<title>Con:11 Lab:35 LD:44</title><desc>Hung Parliament, Lib Dems 6 seats short</desc></circle>
+<circle cx="320.0" cy="83.136" r="4" 
+fill="yellow">
+<title>Con:12 Lab:34 LD:44</title><desc>Lib Dem Majority of 20</desc></circle>
+<circle cx="316.0" cy="90.064" r="4" 
+fill="yellow">
+<title>Con:13 Lab:33 LD:44</title><desc>Lib Dem Majority of 40</desc></circle>
+<circle cx="312.0" cy="96.992" r="4" 
+fill="yellow">
+<title>Con:14 Lab:32 LD:44</title><desc>Lib Dem Majority of 62</desc></circle>
+<circle cx="308.0" cy="103.92" r="4" 
+fill="yellow">
+<title>Con:15 Lab:31 LD:44</title><desc>Lib Dem Majority of 92</desc></circle>
+<circle cx="304.0" cy="110.848" r="4" 
+fill="yellow">
+<title>Con:16 Lab:30 LD:44</title><desc>Lib Dem Majority of 116</desc></circle>
+<circle cx="300.0" cy="117.776" r="4" 
+fill="yellow">
+<title>Con:17 Lab:29 LD:44</title><desc>Lib Dem Majority of 144</desc></circle>
+<circle cx="296.0" cy="124.704" r="4" 
+fill="yellow">
+<title>Con:18 Lab:28 LD:44</title><desc>Lib Dem Majority of 174</desc></circle>
+<circle cx="292.0" cy="131.632" r="4" 
+fill="yellow">
+<title>Con:19 Lab:27 LD:44</title><desc>Lib Dem Majority of 204</desc></circle>
+<circle cx="288.0" cy="138.56" r="4" 
+fill="yellow">
+<title>Con:20 Lab:26 LD:44</title><desc>Lib Dem Majority of 222</desc></circle>
+<circle cx="284.0" cy="145.488" r="4" 
+fill="yellow">
+<title>Con:21 Lab:25 LD:44</title><desc>Lib Dem Majority of 228</desc></circle>
+<circle cx="280.0" cy="152.416" r="4" 
+fill="yellow">
+<title>Con:22 Lab:24 LD:44</title><desc>Lib Dem Majority of 228</desc></circle>
+<circle cx="276.0" cy="159.344" r="4" 
+fill="yellow">
+<title>Con:23 Lab:23 LD:44</title><desc>Lib Dem Majority of 258</desc></circle>
+<circle cx="272.0" cy="166.272" r="4" 
+fill="yellow">
+<title>Con:24 Lab:22 LD:44</title><desc>Lib Dem Majority of 254</desc></circle>
+<circle cx="268.0" cy="173.2" r="4" 
+fill="yellow">
+<title>Con:25 Lab:21 LD:44</title><desc>Lib Dem Majority of 256</desc></circle>
+<circle cx="264.0" cy="180.128" r="4" 
+fill="yellow">
+<title>Con:26 Lab:20 LD:44</title><desc>Lib Dem Majority of 262</desc></circle>
+<circle cx="260.0" cy="187.056" r="4" 
+fill="yellow">
+<title>Con:27 Lab:19 LD:44</title><desc>Lib Dem Majority of 254</desc></circle>
+<circle cx="256.0" cy="193.984" r="4" 
+fill="yellow">
+<title>Con:28 Lab:18 LD:44</title><desc>Lib Dem Majority of 244</desc></circle>
+<circle cx="252.0" cy="200.912" r="4" 
+fill="yellow">
+<title>Con:29 Lab:17 LD:44</title><desc>Lib Dem Majority of 228</desc></circle>
+<circle cx="248.0" cy="207.84" r="4" 
+fill="yellow">
+<title>Con:30 Lab:16 LD:44</title><desc>Lib Dem Majority of 210</desc></circle>
+<circle cx="244.0" cy="214.768" r="4" 
+fill="yellow">
+<title>Con:31 Lab:15 LD:44</title><desc>Lib Dem Majority of 190</desc></circle>
+<circle cx="240.0" cy="221.696" r="4" 
+fill="yellow">
+<title>Con:32 Lab:14 LD:44</title><desc>Lib Dem Majority of 150</desc></circle>
+<circle cx="236.0" cy="228.624" r="4" 
+fill="yellow">
+<title>Con:33 Lab:13 LD:44</title><desc>Lib Dem Majority of 130</desc></circle>
+<circle cx="232.0" cy="235.552" r="4" 
+fill="yellow">
+<title>Con:34 Lab:12 LD:44</title><desc>Lib Dem Majority of 128</desc></circle>
+<circle cx="228.0" cy="242.48" r="4" 
+fill="yellow">
+<title>Con:35 Lab:11 LD:44</title><desc>Lib Dem Majority of 120</desc></circle>
+<circle cx="224.0" cy="249.408" r="4" 
+fill="yellow">
+<title>Con:36 Lab:10 LD:44</title><desc>Lib Dem Majority of 106</desc></circle>
+<circle cx="320.0" cy="69.28" r="4" 
+fill="yellow">
+<title>Con:10 Lab:35 LD:45</title><desc>Lib Dem Majority of 24</desc></circle>
+<circle cx="316.0" cy="76.208" r="4" 
+fill="yellow">
+<title>Con:11 Lab:34 LD:45</title><desc>Lib Dem Majority of 50</desc></circle>
+<circle cx="312.0" cy="83.136" r="4" 
+fill="yellow">
+<title>Con:12 Lab:33 LD:45</title><desc>Lib Dem Majority of 68</desc></circle>
+<circle cx="308.0" cy="90.064" r="4" 
+fill="yellow">
+<title>Con:13 Lab:32 LD:45</title><desc>Lib Dem Majority of 100</desc></circle>
+<circle cx="304.0" cy="96.992" r="4" 
+fill="yellow">
+<title>Con:14 Lab:31 LD:45</title><desc>Lib Dem Majority of 122</desc></circle>
+<circle cx="300.0" cy="103.92" r="4" 
+fill="yellow">
+<title>Con:15 Lab:30 LD:45</title><desc>Lib Dem Majority of 152</desc></circle>
+<circle cx="296.0" cy="110.848" r="4" 
+fill="yellow">
+<title>Con:16 Lab:29 LD:45</title><desc>Lib Dem Majority of 186</desc></circle>
+<circle cx="292.0" cy="117.776" r="4" 
+fill="yellow">
+<title>Con:17 Lab:28 LD:45</title><desc>Lib Dem Majority of 222</desc></circle>
+<circle cx="288.0" cy="124.704" r="4" 
+fill="yellow">
+<title>Con:18 Lab:27 LD:45</title><desc>Lib Dem Majority of 254</desc></circle>
+<circle cx="284.0" cy="131.632" r="4" 
+fill="yellow">
+<title>Con:19 Lab:26 LD:45</title><desc>Lib Dem Majority of 270</desc></circle>
+<circle cx="280.0" cy="138.56" r="4" 
+fill="yellow">
+<title>Con:20 Lab:25 LD:45</title><desc>Lib Dem Majority of 284</desc></circle>
+<circle cx="276.0" cy="145.488" r="4" 
+fill="yellow">
+<title>Con:21 Lab:24 LD:45</title><desc>Lib Dem Majority of 312</desc></circle>
+<circle cx="272.0" cy="152.416" r="4" 
+fill="yellow">
+<title>Con:22 Lab:23 LD:45</title><desc>Lib Dem Majority of 314</desc></circle>
+<circle cx="268.0" cy="159.344" r="4" 
+fill="yellow">
+<title>Con:23 Lab:22 LD:45</title><desc>Lib Dem Majority of 316</desc></circle>
+<circle cx="264.0" cy="166.272" r="4" 
+fill="yellow">
+<title>Con:24 Lab:21 LD:45</title><desc>Lib Dem Majority of 324</desc></circle>
+<circle cx="260.0" cy="173.2" r="4" 
+fill="yellow">
+<title>Con:25 Lab:20 LD:45</title><desc>Lib Dem Majority of 314</desc></circle>
+<circle cx="256.0" cy="180.128" r="4" 
+fill="yellow">
+<title>Con:26 Lab:19 LD:45</title><desc>Lib Dem Majority of 298</desc></circle>
+<circle cx="252.0" cy="187.056" r="4" 
+fill="yellow">
+<title>Con:27 Lab:18 LD:45</title><desc>Lib Dem Majority of 296</desc></circle>
+<circle cx="248.0" cy="193.984" r="4" 
+fill="yellow">
+<title>Con:28 Lab:17 LD:45</title><desc>Lib Dem Majority of 284</desc></circle>
+<circle cx="244.0" cy="200.912" r="4" 
+fill="yellow">
+<title>Con:29 Lab:16 LD:45</title><desc>Lib Dem Majority of 280</desc></circle>
+<circle cx="240.0" cy="207.84" r="4" 
+fill="yellow">
+<title>Con:30 Lab:15 LD:45</title><desc>Lib Dem Majority of 258</desc></circle>
+<circle cx="236.0" cy="214.768" r="4" 
+fill="yellow">
+<title>Con:31 Lab:14 LD:45</title><desc>Lib Dem Majority of 236</desc></circle>
+<circle cx="232.0" cy="221.696" r="4" 
+fill="yellow">
+<title>Con:32 Lab:13 LD:45</title><desc>Lib Dem Majority of 224</desc></circle>
+<circle cx="228.0" cy="228.624" r="4" 
+fill="yellow">
+<title>Con:33 Lab:12 LD:45</title><desc>Lib Dem Majority of 188</desc></circle>
+<circle cx="224.0" cy="235.552" r="4" 
+fill="yellow">
+<title>Con:34 Lab:11 LD:45</title><desc>Lib Dem Majority of 172</desc></circle>
+<circle cx="220.0" cy="242.48" r="4" 
+fill="yellow">
+<title>Con:35 Lab:10 LD:45</title><desc>Lib Dem Majority of 150</desc></circle>
+<circle cx="312.0" cy="69.28" r="4" 
+fill="yellow">
+<title>Con:10 Lab:34 LD:46</title><desc>Lib Dem Majority of 72</desc></circle>
+<circle cx="308.0" cy="76.208" r="4" 
+fill="yellow">
+<title>Con:11 Lab:33 LD:46</title><desc>Lib Dem Majority of 104</desc></circle>
+<circle cx="304.0" cy="83.136" r="4" 
+fill="yellow">
+<title>Con:12 Lab:32 LD:46</title><desc>Lib Dem Majority of 132</desc></circle>
+<circle cx="300.0" cy="90.064" r="4" 
+fill="yellow">
+<title>Con:13 Lab:31 LD:46</title><desc>Lib Dem Majority of 158</desc></circle>
+<circle cx="296.0" cy="96.992" r="4" 
+fill="yellow">
+<title>Con:14 Lab:30 LD:46</title><desc>Lib Dem Majority of 194</desc></circle>
+<circle cx="292.0" cy="103.92" r="4" 
+fill="yellow">
+<title>Con:15 Lab:29 LD:46</title><desc>Lib Dem Majority of 228</desc></circle>
+<circle cx="288.0" cy="110.848" r="4" 
+fill="yellow">
+<title>Con:16 Lab:28 LD:46</title><desc>Lib Dem Majority of 262</desc></circle>
+<circle cx="284.0" cy="117.776" r="4" 
+fill="yellow">
+<title>Con:17 Lab:27 LD:46</title><desc>Lib Dem Majority of 282</desc></circle>
+<circle cx="280.0" cy="124.704" r="4" 
+fill="yellow">
+<title>Con:18 Lab:26 LD:46</title><desc>Lib Dem Majority of 302</desc></circle>
+<circle cx="276.0" cy="131.632" r="4" 
+fill="yellow">
+<title>Con:19 Lab:25 LD:46</title><desc>Lib Dem Majority of 344</desc></circle>
+<circle cx="272.0" cy="138.56" r="4" 
+fill="yellow">
+<title>Con:20 Lab:24 LD:46</title><desc>Lib Dem Majority of 356</desc></circle>
+<circle cx="268.0" cy="145.488" r="4" 
+fill="yellow">
+<title>Con:21 Lab:23 LD:46</title><desc>Lib Dem Majority of 372</desc></circle>
+<circle cx="264.0" cy="152.416" r="4" 
+fill="yellow">
+<title>Con:22 Lab:22 LD:46</title><desc>Lib Dem Majority of 378</desc></circle>
+<circle cx="260.0" cy="159.344" r="4" 
+fill="yellow">
+<title>Con:23 Lab:21 LD:46</title><desc>Lib Dem Majority of 374</desc></circle>
+<circle cx="256.0" cy="166.272" r="4" 
+fill="yellow">
+<title>Con:24 Lab:20 LD:46</title><desc>Lib Dem Majority of 358</desc></circle>
+<circle cx="252.0" cy="173.2" r="4" 
+fill="yellow">
+<title>Con:25 Lab:19 LD:46</title><desc>Lib Dem Majority of 358</desc></circle>
+<circle cx="248.0" cy="180.128" r="4" 
+fill="yellow">
+<title>Con:26 Lab:18 LD:46</title><desc>Lib Dem Majority of 344</desc></circle>
+<circle cx="244.0" cy="187.056" r="4" 
+fill="yellow">
+<title>Con:27 Lab:17 LD:46</title><desc>Lib Dem Majority of 334</desc></circle>
+<circle cx="240.0" cy="193.984" r="4" 
+fill="yellow">
+<title>Con:28 Lab:16 LD:46</title><desc>Lib Dem Majority of 326</desc></circle>
+<circle cx="236.0" cy="200.912" r="4" 
+fill="yellow">
+<title>Con:29 Lab:15 LD:46</title><desc>Lib Dem Majority of 310</desc></circle>
+<circle cx="232.0" cy="207.84" r="4" 
+fill="yellow">
+<title>Con:30 Lab:14 LD:46</title><desc>Lib Dem Majority of 314</desc></circle>
+<circle cx="228.0" cy="214.768" r="4" 
+fill="yellow">
+<title>Con:31 Lab:13 LD:46</title><desc>Lib Dem Majority of 296</desc></circle>
+<circle cx="224.0" cy="221.696" r="4" 
+fill="yellow">
+<title>Con:32 Lab:12 LD:46</title><desc>Lib Dem Majority of 278</desc></circle>
+<circle cx="220.0" cy="228.624" r="4" 
+fill="yellow">
+<title>Con:33 Lab:11 LD:46</title><desc>Lib Dem Majority of 246</desc></circle>
+<circle cx="216.0" cy="235.552" r="4" 
+fill="yellow">
+<title>Con:34 Lab:10 LD:46</title><desc>Lib Dem Majority of 202</desc></circle>
+<circle cx="304.0" cy="69.28" r="4" 
+fill="yellow">
+<title>Con:10 Lab:33 LD:47</title><desc>Lib Dem Majority of 134</desc></circle>
+<circle cx="300.0" cy="76.208" r="4" 
+fill="yellow">
+<title>Con:11 Lab:32 LD:47</title><desc>Lib Dem Majority of 164</desc></circle>
+<circle cx="296.0" cy="83.136" r="4" 
+fill="yellow">
+<title>Con:12 Lab:31 LD:47</title><desc>Lib Dem Majority of 200</desc></circle>
+<circle cx="292.0" cy="90.064" r="4" 
+fill="yellow">
+<title>Con:13 Lab:30 LD:47</title><desc>Lib Dem Majority of 240</desc></circle>
+<circle cx="288.0" cy="96.992" r="4" 
+fill="yellow">
+<title>Con:14 Lab:29 LD:47</title><desc>Lib Dem Majority of 270</desc></circle>
+<circle cx="284.0" cy="103.92" r="4" 
+fill="yellow">
+<title>Con:15 Lab:28 LD:47</title><desc>Lib Dem Majority of 292</desc></circle>
+<circle cx="280.0" cy="110.848" r="4" 
+fill="yellow">
+<title>Con:16 Lab:27 LD:47</title><desc>Lib Dem Majority of 310</desc></circle>
+<circle cx="276.0" cy="117.776" r="4" 
+fill="yellow">
+<title>Con:17 Lab:26 LD:47</title><desc>Lib Dem Majority of 354</desc></circle>
+<circle cx="272.0" cy="124.704" r="4" 
+fill="yellow">
+<title>Con:18 Lab:25 LD:47</title><desc>Lib Dem Majority of 370</desc></circle>
+<circle cx="268.0" cy="131.632" r="4" 
+fill="yellow">
+<title>Con:19 Lab:24 LD:47</title><desc>Lib Dem Majority of 392</desc></circle>
+<circle cx="264.0" cy="138.56" r="4" 
+fill="yellow">
+<title>Con:20 Lab:23 LD:47</title><desc>Lib Dem Majority of 412</desc></circle>
+<circle cx="260.0" cy="145.488" r="4" 
+fill="yellow">
+<title>Con:21 Lab:22 LD:47</title><desc>Lib Dem Majority of 418</desc></circle>
+<circle cx="256.0" cy="152.416" r="4" 
+fill="yellow">
+<title>Con:22 Lab:21 LD:47</title><desc>Lib Dem Majority of 418</desc></circle>
+<circle cx="252.0" cy="159.344" r="4" 
+fill="yellow">
+<title>Con:23 Lab:20 LD:47</title><desc>Lib Dem Majority of 414</desc></circle>
+<circle cx="248.0" cy="166.272" r="4" 
+fill="yellow">
+<title>Con:24 Lab:19 LD:47</title><desc>Lib Dem Majority of 406</desc></circle>
+<circle cx="244.0" cy="173.2" r="4" 
+fill="yellow">
+<title>Con:25 Lab:18 LD:47</title><desc>Lib Dem Majority of 396</desc></circle>
+<circle cx="240.0" cy="180.128" r="4" 
+fill="yellow">
+<title>Con:26 Lab:17 LD:47</title><desc>Lib Dem Majority of 390</desc></circle>
+<circle cx="236.0" cy="187.056" r="4" 
+fill="yellow">
+<title>Con:27 Lab:16 LD:47</title><desc>Lib Dem Majority of 372</desc></circle>
+<circle cx="232.0" cy="193.984" r="4" 
+fill="yellow">
+<title>Con:28 Lab:15 LD:47</title><desc>Lib Dem Majority of 370</desc></circle>
+<circle cx="228.0" cy="200.912" r="4" 
+fill="yellow">
+<title>Con:29 Lab:14 LD:47</title><desc>Lib Dem Majority of 366</desc></circle>
+<circle cx="224.0" cy="207.84" r="4" 
+fill="yellow">
+<title>Con:30 Lab:13 LD:47</title><desc>Lib Dem Majority of 354</desc></circle>
+<circle cx="220.0" cy="214.768" r="4" 
+fill="yellow">
+<title>Con:31 Lab:12 LD:47</title><desc>Lib Dem Majority of 338</desc></circle>
+<circle cx="216.0" cy="221.696" r="4" 
+fill="yellow">
+<title>Con:32 Lab:11 LD:47</title><desc>Lib Dem Majority of 312</desc></circle>
+<circle cx="212.0" cy="228.624" r="4" 
+fill="yellow">
+<title>Con:33 Lab:10 LD:47</title><desc>Lib Dem Majority of 288</desc></circle>
+<circle cx="296.0" cy="69.28" r="4" 
+fill="yellow">
+<title>Con:10 Lab:32 LD:48</title><desc>Lib Dem Majority of 202</desc></circle>
+<circle cx="292.0" cy="76.208" r="4" 
+fill="yellow">
+<title>Con:11 Lab:31 LD:48</title><desc>Lib Dem Majority of 240</desc></circle>
+<circle cx="288.0" cy="83.136" r="4" 
+fill="yellow">
+<title>Con:12 Lab:30 LD:48</title><desc>Lib Dem Majority of 274</desc></circle>
+<circle cx="284.0" cy="90.064" r="4" 
+fill="yellow">
+<title>Con:13 Lab:29 LD:48</title><desc>Lib Dem Majority of 296</desc></circle>
+<circle cx="280.0" cy="96.992" r="4" 
+fill="yellow">
+<title>Con:14 Lab:28 LD:48</title><desc>Lib Dem Majority of 320</desc></circle>
+<circle cx="276.0" cy="103.92" r="4" 
+fill="yellow">
+<title>Con:15 Lab:27 LD:48</title><desc>Lib Dem Majority of 360</desc></circle>
+<circle cx="272.0" cy="110.848" r="4" 
+fill="yellow">
+<title>Con:16 Lab:26 LD:48</title><desc>Lib Dem Majority of 378</desc></circle>
+<circle cx="268.0" cy="117.776" r="4" 
+fill="yellow">
+<title>Con:17 Lab:25 LD:48</title><desc>Lib Dem Majority of 398</desc></circle>
+<circle cx="264.0" cy="124.704" r="4" 
+fill="yellow">
+<title>Con:18 Lab:24 LD:48</title><desc>Lib Dem Majority of 420</desc></circle>
+<circle cx="260.0" cy="131.632" r="4" 
+fill="yellow">
+<title>Con:19 Lab:23 LD:48</title><desc>Lib Dem Majority of 430</desc></circle>
+<circle cx="256.0" cy="138.56" r="4" 
+fill="yellow">
+<title>Con:20 Lab:22 LD:48</title><desc>Lib Dem Majority of 436</desc></circle>
+<circle cx="252.0" cy="145.488" r="4" 
+fill="yellow">
+<title>Con:21 Lab:21 LD:48</title><desc>Lib Dem Majority of 446</desc></circle>
+<circle cx="248.0" cy="152.416" r="4" 
+fill="yellow">
+<title>Con:22 Lab:20 LD:48</title><desc>Lib Dem Majority of 448</desc></circle>
+<circle cx="244.0" cy="159.344" r="4" 
+fill="yellow">
+<title>Con:23 Lab:19 LD:48</title><desc>Lib Dem Majority of 452</desc></circle>
+<circle cx="240.0" cy="166.272" r="4" 
+fill="yellow">
+<title>Con:24 Lab:18 LD:48</title><desc>Lib Dem Majority of 444</desc></circle>
+<circle cx="236.0" cy="173.2" r="4" 
+fill="yellow">
+<title>Con:25 Lab:17 LD:48</title><desc>Lib Dem Majority of 432</desc></circle>
+<circle cx="232.0" cy="180.128" r="4" 
+fill="yellow">
+<title>Con:26 Lab:16 LD:48</title><desc>Lib Dem Majority of 430</desc></circle>
+<circle cx="228.0" cy="187.056" r="4" 
+fill="yellow">
+<title>Con:27 Lab:15 LD:48</title><desc>Lib Dem Majority of 428</desc></circle>
+<circle cx="224.0" cy="193.984" r="4" 
+fill="yellow">
+<title>Con:28 Lab:14 LD:48</title><desc>Lib Dem Majority of 414</desc></circle>
+<circle cx="220.0" cy="200.912" r="4" 
+fill="yellow">
+<title>Con:29 Lab:13 LD:48</title><desc>Lib Dem Majority of 392</desc></circle>
+<circle cx="216.0" cy="207.84" r="4" 
+fill="yellow">
+<title>Con:30 Lab:12 LD:48</title><desc>Lib Dem Majority of 380</desc></circle>
+<circle cx="212.0" cy="214.768" r="4" 
+fill="yellow">
+<title>Con:31 Lab:11 LD:48</title><desc>Lib Dem Majority of 362</desc></circle>
+<circle cx="208.0" cy="221.696" r="4" 
+fill="yellow">
+<title>Con:32 Lab:10 LD:48</title><desc>Lib Dem Majority of 346</desc></circle>
+<circle cx="288.0" cy="69.28" r="4" 
+fill="yellow">
+<title>Con:10 Lab:31 LD:49</title><desc>Lib Dem Majority of 278</desc></circle>
+<circle cx="284.0" cy="76.208" r="4" 
+fill="yellow">
+<title>Con:11 Lab:30 LD:49</title><desc>Lib Dem Majority of 300</desc></circle>
+<circle cx="280.0" cy="83.136" r="4" 
+fill="yellow">
+<title>Con:12 Lab:29 LD:49</title><desc>Lib Dem Majority of 322</desc></circle>
+<circle cx="276.0" cy="90.064" r="4" 
+fill="yellow">
+<title>Con:13 Lab:28 LD:49</title><desc>Lib Dem Majority of 366</desc></circle>
+<circle cx="272.0" cy="96.992" r="4" 
+fill="yellow">
+<title>Con:14 Lab:27 LD:49</title><desc>Lib Dem Majority of 384</desc></circle>
+<circle cx="268.0" cy="103.92" r="4" 
+fill="yellow">
+<title>Con:15 Lab:26 LD:49</title><desc>Lib Dem Majority of 410</desc></circle>
+<circle cx="264.0" cy="110.848" r="4" 
+fill="yellow">
+<title>Con:16 Lab:25 LD:49</title><desc>Lib Dem Majority of 428</desc></circle>
+<circle cx="260.0" cy="117.776" r="4" 
+fill="yellow">
+<title>Con:17 Lab:24 LD:49</title><desc>Lib Dem Majority of 440</desc></circle>
+<circle cx="256.0" cy="124.704" r="4" 
+fill="yellow">
+<title>Con:18 Lab:23 LD:49</title><desc>Lib Dem Majority of 444</desc></circle>
+<circle cx="252.0" cy="131.632" r="4" 
+fill="yellow">
+<title>Con:19 Lab:22 LD:49</title><desc>Lib Dem Majority of 456</desc></circle>
+<circle cx="248.0" cy="138.56" r="4" 
+fill="yellow">
+<title>Con:20 Lab:21 LD:49</title><desc>Lib Dem Majority of 462</desc></circle>
+<circle cx="244.0" cy="145.488" r="4" 
+fill="yellow">
+<title>Con:21 Lab:20 LD:49</title><desc>Lib Dem Majority of 472</desc></circle>
+<circle cx="240.0" cy="152.416" r="4" 
+fill="yellow">
+<title>Con:22 Lab:19 LD:49</title><desc>Lib Dem Majority of 478</desc></circle>
+<circle cx="236.0" cy="159.344" r="4" 
+fill="yellow">
+<title>Con:23 Lab:18 LD:49</title><desc>Lib Dem Majority of 476</desc></circle>
+<circle cx="232.0" cy="166.272" r="4" 
+fill="yellow">
+<title>Con:24 Lab:17 LD:49</title><desc>Lib Dem Majority of 488</desc></circle>
+<circle cx="228.0" cy="173.2" r="4" 
+fill="yellow">
+<title>Con:25 Lab:16 LD:49</title><desc>Lib Dem Majority of 484</desc></circle>
+<circle cx="224.0" cy="180.128" r="4" 
+fill="yellow">
+<title>Con:26 Lab:15 LD:49</title><desc>Lib Dem Majority of 476</desc></circle>
+<circle cx="220.0" cy="187.056" r="4" 
+fill="yellow">
+<title>Con:27 Lab:14 LD:49</title><desc>Lib Dem Majority of 454</desc></circle>
+<circle cx="216.0" cy="193.984" r="4" 
+fill="yellow">
+<title>Con:28 Lab:13 LD:49</title><desc>Lib Dem Majority of 444</desc></circle>
+<circle cx="212.0" cy="200.912" r="4" 
+fill="yellow">
+<title>Con:29 Lab:12 LD:49</title><desc>Lib Dem Majority of 424</desc></circle>
+<circle cx="208.0" cy="207.84" r="4" 
+fill="yellow">
+<title>Con:30 Lab:11 LD:49</title><desc>Lib Dem Majority of 402</desc></circle>
+<circle cx="204.0" cy="214.768" r="4" 
+fill="yellow">
+<title>Con:31 Lab:10 LD:49</title><desc>Lib Dem Majority of 392</desc></circle>
+<circle cx="280.0" cy="69.28" r="4" 
+fill="yellow">
+<title>Con:10 Lab:30 LD:50</title><desc>Lib Dem Majority of 324</desc></circle>
+<circle cx="276.0" cy="76.208" r="4" 
+fill="yellow">
+<title>Con:11 Lab:29 LD:50</title><desc>Lib Dem Majority of 368</desc></circle>
+<circle cx="272.0" cy="83.136" r="4" 
+fill="yellow">
+<title>Con:12 Lab:28 LD:50</title><desc>Lib Dem Majority of 386</desc></circle>
+<circle cx="268.0" cy="90.064" r="4" 
+fill="yellow">
+<title>Con:13 Lab:27 LD:50</title><desc>Lib Dem Majority of 410</desc></circle>
+<circle cx="264.0" cy="96.992" r="4" 
+fill="yellow">
+<title>Con:14 Lab:26 LD:50</title><desc>Lib Dem Majority of 432</desc></circle>
+<circle cx="260.0" cy="103.92" r="4" 
+fill="yellow">
+<title>Con:15 Lab:25 LD:50</title><desc>Lib Dem Majority of 444</desc></circle>
+<circle cx="256.0" cy="110.848" r="4" 
+fill="yellow">
+<title>Con:16 Lab:24 LD:50</title><desc>Lib Dem Majority of 454</desc></circle>
+<circle cx="252.0" cy="117.776" r="4" 
+fill="yellow">
+<title>Con:17 Lab:23 LD:50</title><desc>Lib Dem Majority of 462</desc></circle>
+<circle cx="248.0" cy="124.704" r="4" 
+fill="yellow">
+<title>Con:18 Lab:22 LD:50</title><desc>Lib Dem Majority of 470</desc></circle>
+<circle cx="244.0" cy="131.632" r="4" 
+fill="yellow">
+<title>Con:19 Lab:21 LD:50</title><desc>Lib Dem Majority of 478</desc></circle>
+<circle cx="240.0" cy="138.56" r="4" 
+fill="yellow">
+<title>Con:20 Lab:20 LD:50</title><desc>Lib Dem Majority of 486</desc></circle>
+<circle cx="236.0" cy="145.488" r="4" 
+fill="yellow">
+<title>Con:21 Lab:19 LD:50</title><desc>Lib Dem Majority of 488</desc></circle>
+<circle cx="232.0" cy="152.416" r="4" 
+fill="yellow">
+<title>Con:22 Lab:18 LD:50</title><desc>Lib Dem Majority of 506</desc></circle>
+<circle cx="228.0" cy="159.344" r="4" 
+fill="yellow">
+<title>Con:23 Lab:17 LD:50</title><desc>Lib Dem Majority of 516</desc></circle>
+<circle cx="224.0" cy="166.272" r="4" 
+fill="yellow">
+<title>Con:24 Lab:16 LD:50</title><desc>Lib Dem Majority of 518</desc></circle>
+<circle cx="220.0" cy="173.2" r="4" 
+fill="yellow">
+<title>Con:25 Lab:15 LD:50</title><desc>Lib Dem Majority of 510</desc></circle>
+<circle cx="216.0" cy="180.128" r="4" 
+fill="yellow">
+<title>Con:26 Lab:14 LD:50</title><desc>Lib Dem Majority of 498</desc></circle>
+<circle cx="212.0" cy="187.056" r="4" 
+fill="yellow">
+<title>Con:27 Lab:13 LD:50</title><desc>Lib Dem Majority of 484</desc></circle>
+<circle cx="208.0" cy="193.984" r="4" 
+fill="yellow">
+<title>Con:28 Lab:12 LD:50</title><desc>Lib Dem Majority of 462</desc></circle>
+<circle cx="204.0" cy="200.912" r="4" 
+fill="yellow">
+<title>Con:29 Lab:11 LD:50</title><desc>Lib Dem Majority of 454</desc></circle>
+<circle cx="200.0" cy="207.84" r="4" 
+fill="yellow">
+<title>Con:30 Lab:10 LD:50</title><desc>Lib Dem Majority of 432</desc></circle>
+<line x1="360.0" y1="207.84" x2= "360.0" y2="0" style="stroke: green;"/>
+<line x1="360.0" y1="207.84" x2= "180.0" y2="311.76" style="stroke: green;"/>
+<line x1="360.0" y1="207.84" x2= "540.0" y2="311.76" style="stroke: green;"/>
+<line x1="360.0" y1="207.84" x2= "0" y2="0" style="stroke: white;"/>
+<line x1="360.0" y1="207.84" x2= "720.0" y2="0" style="stroke: white;"/>
+<line x1="360.0" y1="207.84" x2= "360.0" y2="623.52" style="stroke: white;"/>
+    <g id='ToolTip' opacity='0.8' visibility='hidden' pointer-events='none'>
+      <rect id='tipbox' x='0' y='5' width='88' height='20' rx='2' ry='2' fill='white' stroke='black'/>
+      <text id='tipText' x='5' y='20' font-family='Arial' font-size='12'>
+         <tspan id='tipTitle' x='5' font-weight='bold'><![CDATA[]]></tspan>
+         <tspan id='tipDesc' x='5' dy='15' fill='blue'><![CDATA[]]></tspan>
+      </text>
+   </g>
+
+
+</svg>
