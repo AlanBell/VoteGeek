@@ -1,10 +1,138 @@
 {
-  // includes the first choice split, and then transfer percentages representing distribution of second choices
-  // "fpcon","fplab","fplib","tfconlab","tfconlib","tfconoth","tflabcon","tflablib","tflaboth","tflibcon","tfliblab","tfliboth","tfothcon","tfothlab","tfothlib"
-  "2010 General Election under AV": [39.6,28.1,24.2,7,38,24,9,64,12,26,34,16,25,25,25],
-  "Populous/Times 23 June":         [41.5,31,18,5,45,6,7,40,10,39,27,8,25,25,25],
-  "Yougov/Channel 4 28 June":       [44.5,34,15,6,46,19,6,33,29,38,33,15,25,25,25],
-  "Yougov/Spectator 6 July":        [43.5,33,16,4,49,18,4,35,32,33,33,20,25,25,25]
+	"2010 General Election under AV": {
+		"con": {
+			"firstChoice": 0.396,
+			"transfers": {
+				"lab": 0.07,
+				"lib": 0.38,
+				"oth": 0.24
+			}
+		},
+		"lab": {
+			"firstChoice": 0.281,
+			"transfers": {
+				"con": 0.09,
+				"lib": 0.64,
+				"oth": 0.12
+			}
+		},
+		"lib": {
+			"firstChoice": 0.242,
+			"transfers": {
+				"con": 0.26,
+				"lab": 0.34,
+				"oth": 0.16
+			}
+		},
+		"oth": {
+			"firstChoice": 0.081,
+			"transfers": {
+				"con": 0.07,
+				"lab": 0.38,
+				"lib": 0.24
+			}
+		}
+	},
+	"Populous/Times 23 June": {
+		"con": {
+			"firstChoice": 0.415,
+			"transfers": {
+				"lab": 0.05,
+				"lib": 0.45,
+				"oth": 0.06
+			}
+		},
+		"lab": {
+			"firstChoice": 0.31,
+			"transfers": {
+				"con": 0.07,
+				"lib": 0.4,
+				"oth": 0.1
+			}
+		},
+		"lib": {
+			"firstChoice": 0.18,
+			"transfers": {
+				"con": 0.39,
+				"lab": 0.27,
+				"oth": 0.08
+			}
+		},
+		"oth": {
+			"firstChoice": 0.095,
+			"transfers": {
+				"con": 0.05,
+				"lab": 0.45,
+				"lib": 0.06
+			}
+		}
+	},
+	"Yougov/Channel 4 28 June": {
+		"con": {
+			"firstChoice": 0.445,
+			"transfers": {
+				"lab": 0.06,
+				"lib": 0.46,
+				"oth": 0.19
+			}
+		},
+		"lab": {
+			"firstChoice": 0.34,
+			"transfers": {
+				"con": 0.06,
+				"lib": 0.33,
+				"oth": 0.29
+			}
+		},
+		"lib": {
+			"firstChoice": 0.15,
+			"transfers": {
+				"con": 0.38,
+				"lab": 0.33,
+				"oth": 0.15
+			}
+		},
+		"oth": {
+			"firstChoice": 0.065,
+			"transfers": {
+				"con": 0.06,
+				"lab": 0.46,
+				"lib": 0.19
+			}
+		}
+	},
+	"Yougov/Spectator 6 July": {
+		"con": {
+			"firstChoice": 0.435,
+			"transfers": {
+				"lab": 0.04,
+				"lib": 0.49,
+				"oth": 0.18
+			}
+		},
+		"lab": {
+			"firstChoice": 0.33,
+			"transfers": {
+				"con": 0.04,
+				"lib": 0.35,
+				"oth": 0.32
+			}
+		},
+		"lib": {
+			"firstChoice": 0.16,
+			"transfers": {
+				"con": 0.33,
+				"lab": 0.33,
+				"oth": 0.2
+			}
+		},
+		"oth": {
+			"firstChoice": 0.075,
+			"transfers": {
+				"con": 0.04,
+				"lab": 0.49,
+				"lib": 0.18
+			}
+		}
+	}
 }
-
-
