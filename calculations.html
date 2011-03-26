@@ -3,12 +3,31 @@
 <head>
 
 <title>VoteGeek AV Awesomeometer</title>
+<style>
+body{
+background: url(swoosh.jpg) top left no-repeat #380023;
+}
+.data{
+background:white;
+width:720px
+}
+h1{
+color:white;
+font:60px Georgia,serif;
+}
 
+h2{
+color:white;
+font:40px Georgia,serif;
+}
+fieldset{
+width:692px;
+}
+</style>
 </head>
 <body>
-
-<h3 >VoteGeek AV Awesomeometer</h3>
-
+<h1>VoteGeek</h1>
+<h2>AV Awesomeometer</h2>
 
 <script type='text/javascript'>
 
@@ -731,9 +750,60 @@ function swingometer() {
             showResults(results);
         }
     }
+    drawlines();//do this last so they go on top of the circles
+    
     return false;//don't actually submit the form anywhere
 }
+function drawlines(){
+    triangle=document.getElementById("Render").getSVGDocument().lastChild;
+    var shape = document.createElementNS("http://www.w3.org/2000/svg", "line");
+    shape.setAttribute("x1", "360.0");
+    shape.setAttribute("y1", "207.84");
+    shape.setAttribute("x2",  "360.0");
+    shape.setAttribute("y2",  "0");
+    shape.setAttribute("style", "stroke: green;");
+    triangle.appendChild(shape);
 
+    var shape = document.createElementNS("http://www.w3.org/2000/svg", "line");
+    shape.setAttribute("x1", "360.0");
+    shape.setAttribute("y1", "207.84");
+    shape.setAttribute("x2",  "180.0");
+    shape.setAttribute("y2",  "311.76");
+    shape.setAttribute("style", "stroke: green;");
+    triangle.appendChild(shape);
+
+    var shape = document.createElementNS("http://www.w3.org/2000/svg", "line");
+    shape.setAttribute("x1", "360.0");
+    shape.setAttribute("y1", "207.84");
+    shape.setAttribute("x2",  "540.0");
+    shape.setAttribute("y2",  "311.76");
+    shape.setAttribute("style", "stroke: green;");
+    triangle.appendChild(shape);
+
+    var shape = document.createElementNS("http://www.w3.org/2000/svg", "line");
+    shape.setAttribute("x1", "360.0");
+    shape.setAttribute("y1", "207.84");
+    shape.setAttribute("x2",  "0");
+    shape.setAttribute("y2",  "0");
+    shape.setAttribute("style", "stroke: white;");
+    triangle.appendChild(shape);
+
+    var shape = document.createElementNS("http://www.w3.org/2000/svg", "line");
+    shape.setAttribute("x1", "360.0");
+    shape.setAttribute("y1", "207.84");
+    shape.setAttribute("x2",  "720");
+    shape.setAttribute("y2",  "0");
+    shape.setAttribute("style", "stroke: white;");
+    triangle.appendChild(shape);
+
+    var shape = document.createElementNS("http://www.w3.org/2000/svg", "line");
+    shape.setAttribute("x1", "360.0");
+    shape.setAttribute("y1", "207.84");
+    shape.setAttribute("x2",  "360.0");
+    shape.setAttribute("y2",  "623.52");
+    shape.setAttribute("style", "stroke: white;");
+    triangle.appendChild(shape);
+}
 function showResults(results) {
     conseats=(results['Con'][0]);
     labseats=(results['Lab'][0]);
@@ -757,14 +827,14 @@ function showResults(results) {
     plot(newbase['Con'],newbase['Lab'],newbase['Lib'],fill)
 }
 function plot(con,lab,lib,fill){
-    rad=3.5;
+    rad=4;
     triangle=document.getElementById("Render").getSVGDocument().lastChild;
     var shape = document.createElementNS("http://www.w3.org/2000/svg", "circle");
     cx=(lab*(rad)*2)+con*(rad);
     cy=con*(rad)*2*.866;
     shape.setAttribute("cx", cx);
     shape.setAttribute("cy", cy);
-    shape.setAttribute("r",  4);
+    shape.setAttribute("r",  3.5);
     shape.setAttribute("fill", fill);
     // Add to a parent node; document.documentElement should be the root svg element.
     // Acquiring a parent element with document.getElementById() would be safest.
@@ -846,7 +916,7 @@ function avTransfer(shares) {
 
 
 </script>
-
+<div class="data">
 <h4>Configure swingometer</h4>
 
 <form style='width: 60%' action='#' id='avctransferform' onsubmit='swingometer(); return false' method='get'>
@@ -865,12 +935,12 @@ function avTransfer(shares) {
 </table>
 </fieldset>
 
-<fieldset><legend>Calculate</legend>
+<fieldset><legend>This is where the magic happens</legend>
 
 <input type='submit' value='Calculate'>
 </fieldset>
 </form>
-
+</div>
 
 
 <EMBED ID="Render" SRC="empty.svg" width="780" height="650"><br />
