@@ -1,534 +1,3189 @@
-[
-  // seat, holder, lab, lib, con, oth
-  ["Aldershot","Con",5489,15617,21203,3075],
-  ["Aldridge-Brownhills","Con",7647,6833,22913,1241],
-  ["Altrincham and Sale West","Con",11073,12581,24176,1563],
-  ["Amber Valley","Con",17210,6636,17746,4366],
-  ["Arundel and South Downs","Con",4835,15642,32333,3172],
-  ["Ashfield","Lab",16239,16047,10698,5212],
-  ["Ashford","Con",9204,12581,29878,3522],
-  ["Ashton Under Lyne","Lab",18604,5703,9510,4615],
-  ["Aylesbury","Con",6695,15118,27736,3613],
-  ["Banbury","Con",10773,11476,29703,4289],
-  ["Barking","Lab",24628,3719,8073,8923],
-  ["Barnsley Central","Lab",17487,6394,6388,6000],
-  ["Barnsley East","Lab",18059,6969,6329,6317],
-  ["Barrow and Furness","Lab",21226,4424,16018,2456],
-  ["Basildon and Billericay","Con",9584,6538,21922,3525],
-  ["Basildon South and Thurrock East","Con",13852,5977,19624,5282],
-  ["Basingstoke","Con",10327,12414,25590,2323],
-  ["Bassetlaw","Lab",25018,5570,16803,2186],
-  ["Bath","Lib",3251,26651,14768,2416],
-  ["Batley and Spen","Lab",21565,8095,17159,4290],
-  ["Battersea","Con",17126,7176,23103,1387],
-  ["Beaconsfield","Con",6135,10271,32053,4031],
-  ["Beckenham","Con",6893,9813,27597,3383],
-  ["Bedford","Con",16193,8957,17546,2406],
-  ["Bedfordshire Mid","Con",8108,13663,28815,4311],
-  ["Bedfordshire North East","Con",8957,12047,30989,3559],
-  ["Bedfordshire South West","Con",9948,10166,26815,3845],
-  ["Bermondsey and Old Southwark","Lib",13060,21590,7638,2363],
-  ["Berwick-upon-Tweed","Lib",5061,16806,14116,2456],
-  ["Bethnal Green and Bow","Lab",21784,10210,7071,11286],
-  ["Beverley and Holderness","Con",11224,12076,25063,4836],
-  ["Bexhill and Battle","Con",6524,15267,28147,4649],
-  ["Bexleyheath and Crayford","Con",11450,5502,21794,4436],
-  ["Birkenhead","Lab",22082,6554,6687,0],
-  ["Birmingham Edgbaston","Lab",16894,6387,15620,2670],
-  ["Birmingham Erdington","Lab",14869,5742,11592,3343],
-  ["Birmingham Hall Green","Lab",16039,11988,7320,13380],
-  ["Birmingham Hodge Hill","Lab",22077,11775,4936,3684],
-  ["Birmingham Ladywood","Lab",19950,9845,4277,1761],
-  ["Birmingham Northfield","Lab",16841,6550,14059,4364],
-  ["Birmingham Perry Barr","Lab",21142,9234,8960,2709],
-  ["Birmingham Selly Oak","Lab",17950,10371,14468,3774],
-  ["Birmingham Yardley","Lib",13160,16162,7836,3692],
-  ["Bishop Auckland","Lab",16023,9189,10805,5119],
-  ["Blackburn","Lab",21751,6918,11895,4697],
-  ["Blackley and Broughton","Lab",18563,4861,6260,4520],
-  ["Blackpool North and Cleveleys","Con",14814,5400,16964,3413],
-  ["Blackpool South","Lab",14448,5082,12597,3064],
-  ["Blaydon","Lab",22297,13180,7159,2277],
-  ["Blyth Valley","Lab",17156,10488,6412,4510],
-  ["Bognor Regis and Littlehampton","Con",6580,11024,24087,5161],
-  ["Bolsover","Lab",21994,6821,10812,4361],
-  ["Bolton North East","Lab",19870,5624,15786,1997],
-  ["Bolton South East","Lab",18782,6289,10148,4385],
-  ["Bolton West","Lab",18327,8177,18235,2837],
-  ["Bootle","Lab",27426,6245,3678,3928],
-  ["Boston and Skegness","Con",8899,6371,21325,6530],
-  ["Bosworth","Con",8674,18100,23132,4368],
-  ["Bournemouth East","Con",5836,13592,21320,3276],
-  ["Bournemouth West","Con",6171,13225,18808,3455],
-  ["Bracknell","Con",8755,11623,27327,4435],
-  ["Bradford East","Lib",13272,13637,10860,2313],
-  ["Bradford South","Lab",15682,6948,11060,4305],
-  ["Bradford West","Lab",18401,4732,12638,4805],
-  ["Braintree","Con",9780,9247,25901,4275],
-  ["Brent Central","Lib",18681,20026,5068,1549],
-  ["Brent North","Lab",24514,8879,16486,1685],
-  ["Brentford and Isleworth","Con",18064,12718,20022,2961],
-  ["Brentwood and Ongar","Con",4992,11872,28793,4935],
-  ["Bridgwater and Somerset West","Con",9332,15426,24675,5060],
-  ["Brigg and Goole","Con",14533,6414,19680,3247],
-  ["Brighton Kemptown","Con",14889,7691,16217,3908],
-  ["Brighton Pavilion","Oth",14986,7159,12275,17414],
-  ["Bristol East","Lab",16471,10993,12749,4804],
-  ["Bristol North West","Con",13059,15841,19115,2321],
-  ["Bristol South","Lab",18600,13866,11086,4825],
-  ["Bristol West","Lib",15227,26593,10169,3358],
-  ["Broadland","Con",7287,17046,24338,4005],
-  ["Bromley and Chislehurst","Con",7295,9669,23569,3504],
-  ["Bromsgrove","Con",11250,10124,22558,7362],
-  ["Broxbourne","Con",8040,6107,26844,4667],
-  ["Broxtowe","Con",20196,8907,20585,3039],
-  ["Burnley","Lib",13114,14932,6950,4973],
-  ["Burton","Con",15884,7891,22188,3860],
-  ["Bury North","Con",15827,7645,18070,3419],
-  ["Bury South","Lab",19508,8796,16216,3747],
-  ["Bury St Edmunds","Con",9776,15519,27899,5524],
-  ["Calder Valley","Con",13966,13037,20397,4186],
-  ["Camberwell and Peckham","Lab",27619,10432,6080,2435],
-  ["Camborne and Redruth","Con",6945,15903,15969,3676],
-  ["Cambridge","Lib",12174,19621,12829,5506],
-  ["Cambridgeshire North East","Con",9274,10437,26862,5691],
-  ["Cambridgeshire North West","Con",9877,12748,29425,6233],
-  ["Cambridgeshire South","Con",6024,20157,27995,4880],
-  ["Cambridgeshire South East","Con",4380,21683,27629,3910],
-  ["Cannock Chase","Con",15076,7732,18271,4100],
-  ["Canterbury","Con",7940,16002,22050,3217],
-  ["Carlisle","Con",15736,6567,16589,3308],
-  ["Carshalton and Wallington","Lib",4015,22180,16920,2803],
-  ["Castle Point","Con",6609,4232,19806,14379],
-  ["Charnwood","Con",10536,11531,26560,4915],
-  ["Chatham and Aylesford","Con",14161,5832,20230,3584],
-  ["Cheadle","Lib",4920,24717,21445,1430],
-  ["Chelmsford","Con",5980,20097,25207,3309],
-  ["Chelsea and Fulham","Con",7371,6473,24093,1919],
-  ["Cheltenham","Lib",2703,26659,21739,1685],
-  ["Chesham and Amersham","Con",2942,14948,31658,2896],
-  ["Chester, City of","Con",16412,8930,18995,2453],
-  ["Chesterfield","Lab",17891,17342,7214,3392],
-  ["Chichester","Con",5937,15550,31427,3873],
-  ["Chingford and Woodford Green","Con",9780,7242,22743,3139],
-  ["Chippenham","Lib",3620,23970,21500,3295],
-  ["Chipping Barnet","Con",12773,10202,24700,2933],
-  ["Chorley","Lab",21515,6957,18922,2380],
-  ["Christchurch","Con",4849,12478,27888,4201],
-  ["Cities of London and Westminster","Con",8188,7574,19264,1807],
-  ["Clacton","Con",10799,5577,22867,3880],
-  ["Cleethorpes","Con",14641,8192,18939,3194],
-  ["Colchester","Lib",5680,22151,15169,3139],
-  ["Colne Valley","Con",14589,15603,20440,4664],
-  ["Congleton","Con",8747,16187,23250,2320],
-  ["Copeland","Lab",19699,4365,15866,2857],
-  ["Corby","Con",20991,7834,22886,2525],
-  ["Cornwall North","Lib",1971,22512,19531,2830],
-  ["Cornwall South East","Con",3507,19170,22390,4550],
-  ["Cotswolds, The","Con",5886,16211,29075,3660],
-  ["Coventry North East","Lab",21384,7210,9609,5180],
-  ["Coventry North West","Lab",19936,8344,13648,4632],
-  ["Coventry South","Lab",19197,8278,15352,3097],
-  ["Crawley","Con",15336,6844,21264,4060],
-  ["Crewe and Nantwich","Con",17374,7656,23420,2634],
-  ["Croydon Central","Con",16688,6553,19657,3620],
-  ["Croydon North","Lab",28949,7226,12466,3037],
-  ["Croydon South","Con",11287,12866,28684,3485],
-  ["Dagenham and Rainham","Lab",17813,3806,15183,7430],
-  ["Darlington","Lab",16891,10046,13503,2456],
-  ["Dartford","Con",13800,7361,24428,4491],
-  ["Daventry","Con",8168,10064,29252,4290],
-  ["Denton and Reddish","Lab",19191,6727,9360,2357],
-  ["Derby North","Lab",14896,12638,14283,3263],
-  ["Derby South","Lab",17851,8430,11729,3178],
-  ["Derbyshire Dales","Con",9061,10512,24378,2829],
-  ["Derbyshire Mid","Con",11585,9711,22877,3169],
-  ["Derbyshire North East","Lab",17948,10947,15503,2636],
-  ["Derbyshire South","Con",15807,8012,22935,3665],
-  ["Devizes","Con",4711,12514,25519,3596],
-  ["Devon Central","Con",3715,18507,27737,3914],
-  ["Devon East","Con",5721,16548,25662,5161],
-  ["Devon North","Lib",2671,24305,18484,5861],
-  ["Devon South West","Con",6193,12034,27908,3725],
-  ["Devon West and Torridge","Con",2917,22273,25230,4837],
-  ["Dewsbury","Con",17372,9150,18898,8588],
-  ["Don Valley","Lab",16472,7422,12877,6659],
-  ["Doncaster Central","Lab",16569,8795,10340,6041],
-  ["Doncaster North","Lab",19637,6174,8728,6944],
-  ["Dorset Mid and Poole North","Lib",2748,21100,20831,2109],
-  ["Dorset North","Con",2910,20015,27640,3576],
-  ["Dorset South","Con",15224,9557,22667,2862],
-  ["Dorset West","Con",3815,23364,27287,2871],
-  ["Dover","Con",16900,7962,22174,3349],
-  ["Dudley North","Lab",14923,4066,14274,5339],
-  ["Dudley South","Con",12594,5989,16450,3132],
-  ["Dulwich and West Norwood","Lab",22461,13096,10684,1973],
-  ["Durham, City of","Lab",20496,17429,6146,2181],
-  ["Durham North","Lab",20698,8617,8622,3030],
-  ["Durham North West","Lab",18539,10927,8766,5583],
-  ["Ealing Central and Acton","Con",14228,13041,17944,1987],
-  ["Ealing North","Lab",24023,6283,14722,2650],
-  ["Ealing Southall","Lab",22024,6383,12733,1616],
-  ["Easington","Lab",20579,5597,4790,3948],
-  ["East Ham","Lab",35471,5849,7645,1408],
-  ["Eastbourne","Lib",2497,24658,21223,2318],
-  ["Eastleigh","Lib",5153,24966,21102,2429],
-  ["Eddisbury","Con",9794,10217,23472,1931],
-  ["Edmonton","Lab",21665,4252,12052,2408],
-  ["Ellesmere Port and Neston","Lab",19750,6663,15419,2401],
-  ["Elmet and Rothwell","Con",19257,9109,23778,3645],
-  ["Eltham","Lab",17416,5299,15753,3496],
-  ["Enfield North","Con",17112,5403,18804,3134],
-  ["Enfield Southgate","Con",14302,6124,21928,1998],
-  ["Epping Forest","Con",6641,10017,25148,4778],
-  ["Epsom and Ewell","Con",6538,14734,30868,2815],
-  ["Erewash","Con",16304,8343,18805,4190],
-  ["Erith and Thamesmead","Lab",19068,5116,13365,4927],
-  ["Esher and Walton","Con",5829,13541,32134,3039],
-  ["Exeter","Lab",19942,10581,17221,4503],
-  ["Fareham","Con",7719,12945,30037,3644],
-  ["Faversham and Kent Mid","Con",7748,9162,26250,3552],
-  ["Feltham and Heston","Lab",21174,6669,16516,3482],
-  ["Filton and Bradley Stoke","Con",12772,12197,19686,3646],
-  ["Finchley and Golders Green","Con",15879,8036,21688,1554],
-  ["Folkestone and Hythe","Con",5719,15987,26109,4985],
-  ["Forest of Dean","Con",11789,10676,22853,3445],
-  ["Fylde","Con",8624,9641,22826,2599],
-  ["Gainsborough","Con",7701,13707,24266,3577],
-  ["Garston and Halewood","Lab",25493,8616,6908,1808],
-  ["Gateshead","Lab",20712,8163,5716,3666],
-  ["Gedling","Lab",19821,7350,17962,3057],
-  ["Gillingham and Rainham","Con",12944,8484,21624,3734],
-  ["Gloucester","Con",17847,9767,20267,2883],
-  ["Gosport","Con",7944,9887,24300,3984],
-  ["Grantham and Stamford","Con",9503,11726,26552,5018],
-  ["Gravesham","Con",13644,6293,22956,4410],
-  ["Great Grimsby","Lab",10777,7388,10063,4726],
-  ["Great Yarmouth","Con",14295,6188,18571,4003],
-  ["Greenwich and Woolwich","Lab",20262,7498,10109,3319],
-  ["Guildford","Con",2812,21836,29618,1301],
-  ["Hackney North and Stoke Newington","Lab",25553,11092,6759,2988],
-  ["Hackney South and Shoreditch","Lab",23888,9600,5800,3449],
-  ["Halesowen and Rowley Regis","Con",16092,6515,18115,3257],
-  ["Halifax","Lab",16278,8335,14806,4136],
-  ["Haltemprice and Howden","Con",7630,12884,24486,3737],
-  ["Halton","Lab",23843,5718,8339,3438],
-  ["Hammersmith","Lab",20810,7567,17261,1814],
-  ["Hampshire East","Con",4043,15640,29137,2497],
-  ["Hampshire North East","Con",5173,13478,32075,2213],
-  ["Hampshire North West","Con",6980,12489,31072,2751],
-  ["Hampstead and Kilburn","Lab",17332,16491,17290,1709],
-  ["Harborough","Con",6981,17097,26894,3973],
-  ["Harlow","Con",14766,5990,19691,3431],
-  ["Harrogate and Knaresborough","Con",3413,23266,24305,2150],
-  ["Harrow East","Con",18032,6850,21435,1689],
-  ["Harrow West","Lab",20111,7458,16968,1579],
-  ["Hartlepool","Lab",16267,6533,10758,4684],
-  ["Harwich and Essex North","Con",9774,11554,23001,4671],
-  ["Hastings and Rye","Con",18475,7825,20468,3046],
-  ["Havant","Con",7777,10273,22433,3420],
-  ["Hayes and Harlington","Lab",23377,3726,12553,2981],
-  ["Hazel Grove","Lib",5234,20485,14114,2148],
-  ["Hemel Hempstead","Con",10295,11315,24721,3140],
-  ["Hemsworth","Lab",20506,5667,10662,7005],
-  ["Hendon","Con",19529,5734,19635,1476],
-  ["Henley","Con",5835,13466,30054,4165],
-  ["Hereford and Herefordshire South","Con",3506,19885,22366,2624],
-  ["Herefordshire North","Con",3373,14744,24631,4820],
-  ["Hertford and Stortford","Con",7620,14373,29810,3249],
-  ["Hertfordshire North East","Con",8291,11801,26995,3129],
-  ["Hertfordshire South West","Con",6526,15853,30773,3598],
-  ["Hertsmere","Con",8871,8210,26476,3713],
-  ["Hexham","Con",8253,13007,18795,1454],
-  ["Heywood and Middleton","Lab",18499,10474,12528,4624],
-  ["High Peak","Con",15910,10993,20587,2847],
-  ["Hitchin and Harpenden","Con",7413,14598,29869,2718],
-  ["Holborn and St Pancras","Lab",25198,15256,11134,2965],
-  ["Hornchurch and Upminster","Con",11098,7426,27469,7397],
-  ["Hornsey and Wood Green","Lib",18720,25595,9174,1352],
-  ["Horsham","Con",4189,17987,29447,4218],
-  ["Houghton and Sunderland South","Lab",19137,5292,8147,5445],
-  ["Hove","Con",16426,11240,18294,3859],
-  ["Huddersfield","Lab",15725,10023,11253,3523],
-  ["Hull East","Lab",16387,7790,5667,4340],
-  ["Hull North","Lab",13044,12403,4365,3479],
-  ["Hull West and Hessle","Lab",13378,7636,6361,4130],
-  ["Huntingdon","Con",5982,15697,26516,6071],
-  ["Hyndburn","Lab",17531,5033,14441,5667],
-  ["Ilford North","Con",16102,5966,21506,3444],
-  ["Ilford South","Lab",25301,8679,14014,3197],
-  ["Ipswich","Con",16292,8556,18371,3629],
-  ["Isle of Wight","Con",8169,22283,32810,6738],
-  ["Islington North","Lab",24276,11875,6339,2064],
-  ["Islington South and Finsbury","Lab",18407,14838,8449,1861],
-  ["Jarrow","Lab",20910,7163,8002,2709],
-  ["Keighley","Con",17063,7059,20003,3567],
-  ["Kenilworth and Southam","Con",6949,13393,25945,2144],
-  ["Kensington","Con",8979,6872,17595,1704],
-  ["Kettering","Con",14153,7498,23247,2430],
-  ["Kingston and Surbiton","Lib",5337,28428,20868,2478],
-  ["Kingswood","Con",16917,8072,19362,3555],
-  ["Knowsley","Lab",31650,5964,4004,3040],
-  ["Lancashire West","Lab",21883,6573,17540,2477],
-  ["Lancaster and Fleetwood","Con",15071,8167,15404,4059],
-  ["Leeds Central","Lab",18434,7789,7541,3630],
-  ["Leeds East","Lab",19056,6618,8763,3376],
-  ["Leeds North East","Lab",20287,9310,15742,2196],
-  ["Leeds North West","Lib",9132,20653,11550,2148],
-  ["Leeds West","Lab",16389,9373,7641,5349],
-  ["Leicester East","Lab",25804,6817,11722,3652],
-  ["Leicester South","Lab",21479,12671,10066,2908],
-  ["Leicester West","Lab",13745,8107,9728,4058],
-  ["Leicestershire North West","Con",15636,8639,23147,4530],
-  ["Leicestershire South","Con",11392,11476,27000,4709],
-  ["Leigh","Lab",21295,8049,9284,4716],
-  ["Lewes","Lib",2508,26048,18401,3131],
-  ["Lewisham Deptford","Lab",22132,9633,5551,3904],
-  ["Lewisham East","Lab",17966,11750,9850,2153],
-  ["Lewisham West and Penge","Lab",18501,12673,11489,2365],
-  ["Leyton and Wanstead","Lab",17511,11095,8928,2625],
-  ["Lichfield","Con",10230,10365,28048,2920],
-  ["Lincoln","Con",16105,9256,17163,3197],
-  ["Liverpool Riverside","Lab",22998,8825,4243,2735],
-  ["Liverpool Walton","Lab",24709,4891,2241,2494],
-  ["Liverpool Wavertree","Lab",20132,12965,2830,1987],
-  ["Liverpool West Derby","Lab",22953,4486,3311,5034],
-  ["Loughborough","Con",18227,9675,21971,2965],
-  ["Louth and Horncastle","Con",8760,11194,25065,5475],
-  ["Ludlow","Con",3272,15971,25720,3769],
-  ["Luton North","Lab",21192,4784,13672,3370],
-  ["Luton South","Lab",14725,9567,12396,4671],
-  ["Macclesfield","Con",10164,11544,23503,4848],
-  ["Maidenhead","Con",3795,15168,31937,2820],
-  ["Maidstone and The Weald","Con",4769,17602,23491,3066],
-  ["Makerfield","Lab",20700,7082,8210,4355],
-  ["Maldon","Con",6070,9254,28661,3910],
-  ["Manchester Central","Lab",21059,10620,4704,3544],
-  ["Manchester Gorton","Lab",19211,12508,4224,2382],
-  ["Manchester Withington","Lib",18216,20110,5005,1553],
-  ["Mansfield","Lab",18753,7469,12741,9432],
-  ["Meon Valley","Con",3266,16693,28818,2461],
-  ["Meriden","Con",10703,9278,26956,5225],
-  ["Middlesbrough","Lab",15351,6662,6283,5159],
-  ["Middlesbrough South and Cleveland East","Lab",18138,7340,16461,4275],
-  ["Milton Keynes North","Con",14458,11894,23419,4117],
-  ["Milton Keynes South","Con",17833,9787,23034,4679],
-  ["Mitcham and Morden","Lab",24722,5202,11056,2662],
-  ["Mole Valley","Con",3804,15610,31263,3647],
-  ["Morecambe and Lunesdale","Con",17169,5971,18035,2441],
-  ["Morley and Outwood","Lab",18365,8186,17264,5041],
-  ["New Forest East","Con",4915,15136,26443,3542],
-  ["New Forest West","Con",4666,11084,27980,3842],
-  ["Newark","Con",11438,10246,27590,1954],
-  ["Newbury","Con",2505,20809,33057,2218],
-  ["Newcastle-under-Lyme","Lab",16393,8466,14841,3491],
-  ["Newcastle upon Tyne Central","Lab",15694,8228,6611,3624],
-  ["Newcastle upon Tyne East","Lab",17043,12590,6068,2139],
-  ["Newcastle upon Tyne North","Lab",17950,14536,7966,3494],
-  ["Newton Abbot","Con",3387,20251,20774,3871],
-  ["Norfolk Mid","Con",8857,11267,25123,5518],
-  ["Norfolk North","Lib",2896,27554,15928,3283],
-  ["Norfolk North West","Con",6353,11106,25916,4425],
-  ["Norfolk South","Con",7252,16193,27133,4415],
-  ["Norfolk South West","Con",9119,10613,23753,5665],
-  ["Normanton, Pontefract and Castleford","Lab",22293,7585,11314,5047],
-  ["Northampton North","Con",11799,11250,13735,3153],
-  ["Northampton South","Con",9913,7579,15917,3327],
-  ["Northamptonshire South","Con",10380,12603,33081,3826],
-  ["Norwich North","Con",13379,7783,17280,4131],
-  ["Norwich South","Lib",13650,13960,10902,9039],
-  ["Nottingham East","Lab",15022,8053,7846,2191],
-  ["Nottingham North","Lab",16646,5849,8508,3282],
-  ["Nottingham South","Lab",15209,9406,13437,2737],
-  ["Nuneaton","Con",16467,6846,18536,2797],
-  ["Old Bexley and Sidcup","Con",8768,6996,24625,5103],
-  ["Oldham East and Saddleworth","Lab",14186,14083,11773,4478],
-  ["Oldham West and Royton","Lab",19503,8193,10151,5063],
-  ["Orpington","Con",4400,12000,29200,3311],
-  ["Oxford East","Lab",21938,17357,9727,2629],
-  ["Oxford West and Abingdon","Con",5999,23730,23906,2845],
-  ["Pendle","Con",13927,9095,17512,4511],
-  ["Penistone and Stocksbridge","Lab",17565,9800,14516,4635],
-  ["Penrith and The Border","Con",5834,12830,24071,2352],
-  ["Peterborough","Con",13272,8816,18133,4706],
-  ["Plymouth Moor View","Lab",15433,7016,13845,5232],
-  ["Plymouth Sutton and Devonport","Con",13901,10829,15050,4114],
-  ["Poole","Con",6041,14991,22532,3872],
-  ["Poplar and Limehouse","Lab",18679,5209,12649,9703],
-  ["Portsmouth North","Con",12244,8874,19533,3467],
-  ["Portsmouth South","Lib",5640,18921,13721,2982],
-  ["Preston","Lab",15668,7935,7060,1842],
-  ["Pudsey","Con",17215,10224,18874,2770],
-  ["Putney","Con",11170,6907,21223,1485],
-  ["Rayleigh and Wickford","Con",7577,7919,30257,6590],
-  ["Reading East","Con",12729,13664,21269,2212],
-  ["Reading West","Con",14519,9546,20523,2942],
-  ["Redcar","Lib",13741,18955,5790,3477],
-  ["Redditch","Con",13317,7750,19138,3813],
-  ["Reigate","Con",5672,13097,26688,4521],
-  ["Ribble Valley","Con",11529,10732,26298,3728],
-  ["Richmond Park","Con",2979,25370,29461,1458],
-  ["Richmond (Yorks)","Con",8150,10205,33541,1516],
-  ["Rochdale","Lab",16699,15810,8305,5093],
-  ["Rochester and Strood","Con",13651,7800,23604,2916],
-  ["Rochford and Southend East","Con",8459,8084,19509,5579],
-  ["Romford","Con",9077,5572,26031,5650],
-  ["Romsey and Southampton North","Con",3116,20189,24345,1289],
-  ["Rossendale and Darwen","Con",15198,8541,19691,3698],
-  ["Rother Valley","Lab",19147,8111,13281,6219],
-  ["Rotherham","Lab",16741,5994,6279,8492],
-  ["Rugby","Con",14901,9434,20901,2232],
-  ["Ruislip, Northwood and Pinner","Con",9806,8345,28866,3188],
-  ["Runnymede and Weybridge","Con",6446,10406,26915,4383],
-  ["Rushcliffe","Con",11128,11659,27470,3430],
-  ["Rutland and Melton","Con",7893,14228,28228,4871],
-  ["Saffron Walden","Con",5288,14913,30155,4013],
-  ["Salford and Eccles","Lab",16655,10930,8497,5451],
-  ["Salisbury","Con",3690,17893,23859,2782],
-  ["Scarborough and Whitby","Con",12978,11093,21108,4103],
-  ["Scunthorpe","Lab",14640,6774,12091,3529],
-  ["Sedgefield","Lab",18141,8033,9445,4603],
-  ["Sefton Central","Lab",20307,9656,16445,2055],
-  ["Selby and Ainsty","Con",13297,9180,25562,3689],
-  ["Sevenoaks","Con",6541,10561,28076,4230],
-  ["Sheffield Brightside and Hillsborough","Lab",21400,7768,4468,5278],
-  ["Sheffield Central","Lab",17138,16973,4206,3151],
-  ["Sheffield Hallam","Lib",8228,27324,12040,3543],
-  ["Sheffield Heeley","Lab",17409,11602,7081,4779],
-  ["Sheffield South East","Lab",20169,9664,7202,4373],
-  ["Sherwood","Con",18997,7283,19211,3463],
-  ["Shipley","Con",14058,9890,24002,1477],
-  ["Shrewsbury and Atcham","Con",10915,15369,23313,3448],
-  ["Shropshire North","Con",9406,10864,26692,4907],
-  ["Sittingbourne and Sheppey","Con",11930,7943,24313,4392],
-  ["Skipton and Ripon","Con",5498,17735,27685,3806],
-  ["Sleaford and North Hykeham","Con",10051,10814,30719,7946],
-  ["Slough","Lab",21884,6943,16361,2554],
-  ["Solihull","Lib",4891,23635,23460,3143],
-  ["Somerset North","Con",6448,20687,28549,2257],
-  ["Somerset North East","Con",16216,11433,21130,2424],
-  ["Somerton and Frome","Lib",2675,28793,26976,2168],
-  ["South Holland and The Deepings","Con",7024,7759,29639,5766],
-  ["South Ribble","Con",17842,7271,23396,2949],
-  ["South Shields","Lab",18995,5189,7886,3403],
-  ["Southampton Itchen","Lab",16326,9256,16134,2696],
-  ["Southampton Test","Lab",17001,9865,14588,2733],
-  ["Southend West","Con",5850,12816,20086,4854],
-  ["Southport","Lib",4116,21707,15683,2251],
-  ["Spelthorne","Con",7789,12242,22261,5012],
-  ["St Albans","Con",9288,19228,21533,2786],
-  ["St Austell and Newquay","Lib",3386,20189,18877,4786],
-  ["St Helens North","Lab",23041,8992,9940,2583],
-  ["St Helens South and Whiston","Lab",24364,10242,8209,3266],
-  ["St Ives","Lib",3751,19619,17900,4651],
-  ["Stafford","Con",16587,8211,22047,3394],
-  ["Staffordshire Moorlands","Con",13104,7338,19793,3580],
-  ["Staffordshire South","Con",10244,8427,26834,4935],
-  ["Stalybridge and Hyde","Lab",16189,6965,13445,4280],
-  ["Stevenage","Con",14913,7432,18491,3815],
-  ["Stockport","Lab",16697,9778,9913,2740],
-  ["Stockton North","Lab",16923,6342,10247,5986],
-  ["Stockton South","Con",19245,7600,19577,3862],
-  ["Stoke-on-Trent Central","Lab",12605,7039,6833,4635],
-  ["Stoke-on-Trent North","Lab",17815,7120,9580,5681],
-  ["Stoke-on-Trent South","Lab",15446,6323,11316,6767],
-  ["Stone","Con",9770,10598,23890,2971],
-  ["Stourbridge","Con",14989,7733,20153,4359],
-  ["Stratford-on-Avon","Con",4809,14706,26052,4975],
-  ["Streatham","Lab",20037,16778,8578,1444],
-  ["Stretford and Urmston","Lab",21821,7601,12886,2602],
-  ["Stroud","Con",22380,8955,23679,2959],
-  ["Suffolk Central and Ipswich North","Con",8636,13339,27125,4320],
-  ["Suffolk Coastal","Con",8812,16347,25475,4259],
-  ["Suffolk South","Con",7368,15861,24550,3637],
-  ["Suffolk West","Con",7089,11262,24312,5426],
-  ["Sunderland Central","Lab",19495,7191,12770,3007],
-  ["Surrey East","Con",4925,14133,31007,4575],
-  ["Surrey Heath","Con",5552,14037,31326,3432],
-  ["Surrey South West","Con",3419,17287,33605,2948],
-  ["Sussex Mid","Con",3689,20927,28329,2910],
-  ["Sutton and Cheam","Lib",3376,22156,20548,2428],
-  ["Sutton Coldfield","Con",10298,9117,27303,3871],
-  ["Swindon North","Con",15348,8668,22408,3871],
-  ["Swindon South","Con",16143,8305,19687,2984],
-  ["Tamworth","Con",15148,7516,21238,2488],
-  ["Tatton","Con",7803,10200,24687,2541],
-  ["Taunton Deane","Lib",2967,28531,24538,2114],
-  ["Telford","Lab",15974,6399,14996,3941],
-  ["Tewkesbury","Con",6253,19162,25472,3074],
-  ["Thanet North","Con",9298,8400,22826,2819],
-  ["Thanet South","Con",14426,6935,22043,2529],
-  ["Thornbury and Yate","Lib",3385,25032,17916,1893],
-  ["Thurrock","Con",16777,4901,16869,7274],
-  ["Tiverton and Honiton","Con",4907,18294,27614,4079],
-  ["Tonbridge and Malling","Con",6476,11545,29723,3570],
-  ["Tooting","Lab",22038,7509,19514,1594],
-  ["Torbay","Lib",3231,23126,19048,3805],
-  ["Totnes","Con",3538,17013,21940,4962],
-  ["Tottenham","Lab",24128,7197,6064,3155],
-  ["Truro and Falmouth","Con",4697,19914,20349,3808],
-  ["Tunbridge Wells","Con",5448,12726,28302,3844],
-  ["Twickenham","Lib",4583,32483,20343,2312],
-  ["Tynemouth","Lab",23860,7845,18121,2842],
-  ["Tyneside North","Lab",23505,10621,8514,3765],
-  ["Uxbridge and Ruislip South","Con",10542,8995,21758,3781],
-  ["Vauxhall","Lab",21498,10847,9301,1545],
-  ["Wakefield","Lab",17454,7256,15841,3893],
-  ["Wallasey","Lab",21578,5693,13071,1312],
-  ["Walsall North","Lab",13385,4754,12395,5653],
-  ["Walsall South","Lab",16211,5880,14456,4335],
-  ["Walthamstow","Lab",21252,11774,5734,2234],
-  ["Wansbeck","Lab",17548,10517,6714,3494],
-  ["Wantage","Con",7855,15737,29284,3465],
-  ["Warley","Lab",20240,5929,9484,2617],
-  ["Warrington North","Lab",20135,9196,13364,1516],
-  ["Warrington South","Con",18088,15094,19641,2051],
-  ["Warwick and Leamington","Con",17363,8977,20876,1816],
-  ["Warwickshire North","Con",18939,5481,18993,3852],
-  ["Washington and Sunderland West","Lab",19615,6382,8157,3180],
-  ["Watford","Con",14750,17866,19291,3301],
-  ["Waveney","Con",19802,6811,20571,3957],
-  ["Wealden","Con",5266,13911,31090,4702],
-  ["Weaver Vale","Con",15962,8196,16953,2476],
-  ["Wellingborough","Con",13131,8848,24918,4524],
-  ["Wells","Lib",4198,24560,23760,3346],
-  ["Welwyn Hatfield","Con",10471,8010,27894,2597],
-  ["Wentworth and Dearne","Lab",21316,6787,7396,6607],
-  ["West Bromwich East","Lab",17657,4993,10961,4339],
-  ["West Bromwich West","Lab",16263,4336,10612,4960],
-  ["West Ham","Lab",29422,5392,6888,4004],
-  ["Westminster North","Lab",17377,5513,15251,1356],
-  ["Westmorland and Lonsdale","Lib",1158,30896,18632,801],
-  ["Weston-Super-Mare","Con",5772,20665,23356,2923],
-  ["Wigan","Lab",21404,6797,10917,5022],
-  ["Wiltshire North","Con",3239,17631,25114,2715],
-  ["Wiltshire South West","Con",5613,14954,25321,3130],
-  ["Wimbledon","Con",10550,11849,23257,1739],
-  ["Winchester","Con",3051,24107,27155,1642],
-  ["Windsor","Con",4910,11118,30172,3388],
-  ["Wirral South","Lab",16276,6611,15745,1274],
-  ["Wirral West","Con",14290,6630,16726,1726],
-  ["Witham","Con",8656,9252,24448,4479],
-  ["Witney","Con",7511,11233,33973,4735],
-  ["Woking","Con",4246,19744,26551,2245],
-  ["Wokingham","Con",5516,15262,28754,2656],
-  ["Wolverhampton North East","Lab",14448,4711,11964,3771],
-  ["Wolverhampton South East","Lab",16505,5277,9912,3013],
-  ["Wolverhampton South West","Con",15653,6430,16344,1733],
-  ["Worcester","Con",16376,9525,19358,3586],
-  ["Worcestershire Mid","Con",7613,11906,27770,3642],
-  ["Worcestershire West","Con",3661,20459,27213,2760],
-  ["Workington","Lab",17865,5318,13290,2786],
-  ["Worsley and Eccles South","Lab",17892,6883,13555,3371],
-  ["Worthing East and Shoreham","Con",8087,12353,23458,4499],
-  ["Worthing West","Con",5800,13687,25416,4220],
-  ["Wrekin, The","Con",12472,8019,21922,3555],
-  ["Wycombe","Con",8326,13863,23423,2311],
-  ["Wyre and Preston North","Con",10932,11033,26877,2466],
-  ["Wyre Forest","Con",7298,6040,18793,18768],
-  ["Wythenshawe and Sale East","Lab",17987,9107,10412,3245],
-  ["Yeovil","Lib",2991,31843,18807,3519],
-  ["York Central","Lab",18573,11694,12122,4094],
-  ["York Outer","Con",9108,19224,22912,2056],
-  ["Yorkshire East","Con",10401,10842,24328,5683]
-]
+// 2010 election results by constituency
+{
+	"Aldershot": {
+		"lab": 5489,
+		"lib": 15617,
+		"con": 21203,
+		"oth": 3075
+	},
+	"Aldridge-Brownhills": {
+		"lab": 7647,
+		"lib": 6833,
+		"con": 22913,
+		"oth": 1241
+	},
+	"Altrincham and Sale West": {
+		"lab": 11073,
+		"lib": 12581,
+		"con": 24176,
+		"oth": 1563
+	},
+	"Amber Valley": {
+		"lab": 17210,
+		"lib": 6636,
+		"con": 17746,
+		"oth": 4366
+	},
+	"Arundel and South Downs": {
+		"lab": 4835,
+		"lib": 15642,
+		"con": 32333,
+		"oth": 3172
+	},
+	"Ashfield": {
+		"lab": 16239,
+		"lib": 16047,
+		"con": 10698,
+		"oth": 5212
+	},
+	"Ashford": {
+		"lab": 9204,
+		"lib": 12581,
+		"con": 29878,
+		"oth": 3522
+	},
+	"Ashton Under Lyne": {
+		"lab": 18604,
+		"lib": 5703,
+		"con": 9510,
+		"oth": 4615
+	},
+	"Aylesbury": {
+		"lab": 6695,
+		"lib": 15118,
+		"con": 27736,
+		"oth": 3613
+	},
+	"Banbury": {
+		"lab": 10773,
+		"lib": 11476,
+		"con": 29703,
+		"oth": 4289
+	},
+	"Barking": {
+		"lab": 24628,
+		"lib": 3719,
+		"con": 8073,
+		"oth": 8923
+	},
+	"Barnsley Central": {
+		"lab": 17487,
+		"lib": 6394,
+		"con": 6388,
+		"oth": 6000
+	},
+	"Barnsley East": {
+		"lab": 18059,
+		"lib": 6969,
+		"con": 6329,
+		"oth": 6317
+	},
+	"Barrow and Furness": {
+		"lab": 21226,
+		"lib": 4424,
+		"con": 16018,
+		"oth": 2456
+	},
+	"Basildon and Billericay": {
+		"lab": 9584,
+		"lib": 6538,
+		"con": 21922,
+		"oth": 3525
+	},
+	"Basildon South and Thurrock East": {
+		"lab": 13852,
+		"lib": 5977,
+		"con": 19624,
+		"oth": 5282
+	},
+	"Basingstoke": {
+		"lab": 10327,
+		"lib": 12414,
+		"con": 25590,
+		"oth": 2323
+	},
+	"Bassetlaw": {
+		"lab": 25018,
+		"lib": 5570,
+		"con": 16803,
+		"oth": 2186
+	},
+	"Bath": {
+		"lab": 3251,
+		"lib": 26651,
+		"con": 14768,
+		"oth": 2416
+	},
+	"Batley and Spen": {
+		"lab": 21565,
+		"lib": 8095,
+		"con": 17159,
+		"oth": 4290
+	},
+	"Battersea": {
+		"lab": 17126,
+		"lib": 7176,
+		"con": 23103,
+		"oth": 1387
+	},
+	"Beaconsfield": {
+		"lab": 6135,
+		"lib": 10271,
+		"con": 32053,
+		"oth": 4031
+	},
+	"Beckenham": {
+		"lab": 6893,
+		"lib": 9813,
+		"con": 27597,
+		"oth": 3383
+	},
+	"Bedford": {
+		"lab": 16193,
+		"lib": 8957,
+		"con": 17546,
+		"oth": 2406
+	},
+	"Bedfordshire Mid": {
+		"lab": 8108,
+		"lib": 13663,
+		"con": 28815,
+		"oth": 4311
+	},
+	"Bedfordshire North East": {
+		"lab": 8957,
+		"lib": 12047,
+		"con": 30989,
+		"oth": 3559
+	},
+	"Bedfordshire South West": {
+		"lab": 9948,
+		"lib": 10166,
+		"con": 26815,
+		"oth": 3845
+	},
+	"Bermondsey and Old Southwark": {
+		"lab": 13060,
+		"lib": 21590,
+		"con": 7638,
+		"oth": 2363
+	},
+	"Berwick-upon-Tweed": {
+		"lab": 5061,
+		"lib": 16806,
+		"con": 14116,
+		"oth": 2456
+	},
+	"Bethnal Green and Bow": {
+		"lab": 21784,
+		"lib": 10210,
+		"con": 7071,
+		"oth": 11286
+	},
+	"Beverley and Holderness": {
+		"lab": 11224,
+		"lib": 12076,
+		"con": 25063,
+		"oth": 4836
+	},
+	"Bexhill and Battle": {
+		"lab": 6524,
+		"lib": 15267,
+		"con": 28147,
+		"oth": 4649
+	},
+	"Bexleyheath and Crayford": {
+		"lab": 11450,
+		"lib": 5502,
+		"con": 21794,
+		"oth": 4436
+	},
+	"Birkenhead": {
+		"lab": 22082,
+		"lib": 6554,
+		"con": 6687,
+		"oth": 0
+	},
+	"Birmingham Edgbaston": {
+		"lab": 16894,
+		"lib": 6387,
+		"con": 15620,
+		"oth": 2670
+	},
+	"Birmingham Erdington": {
+		"lab": 14869,
+		"lib": 5742,
+		"con": 11592,
+		"oth": 3343
+	},
+	"Birmingham Hall Green": {
+		"lab": 16039,
+		"lib": 11988,
+		"con": 7320,
+		"oth": 13380
+	},
+	"Birmingham Hodge Hill": {
+		"lab": 22077,
+		"lib": 11775,
+		"con": 4936,
+		"oth": 3684
+	},
+	"Birmingham Ladywood": {
+		"lab": 19950,
+		"lib": 9845,
+		"con": 4277,
+		"oth": 1761
+	},
+	"Birmingham Northfield": {
+		"lab": 16841,
+		"lib": 6550,
+		"con": 14059,
+		"oth": 4364
+	},
+	"Birmingham Perry Barr": {
+		"lab": 21142,
+		"lib": 9234,
+		"con": 8960,
+		"oth": 2709
+	},
+	"Birmingham Selly Oak": {
+		"lab": 17950,
+		"lib": 10371,
+		"con": 14468,
+		"oth": 3774
+	},
+	"Birmingham Yardley": {
+		"lab": 13160,
+		"lib": 16162,
+		"con": 7836,
+		"oth": 3692
+	},
+	"Bishop Auckland": {
+		"lab": 16023,
+		"lib": 9189,
+		"con": 10805,
+		"oth": 5119
+	},
+	"Blackburn": {
+		"lab": 21751,
+		"lib": 6918,
+		"con": 11895,
+		"oth": 4697
+	},
+	"Blackley and Broughton": {
+		"lab": 18563,
+		"lib": 4861,
+		"con": 6260,
+		"oth": 4520
+	},
+	"Blackpool North and Cleveleys": {
+		"lab": 14814,
+		"lib": 5400,
+		"con": 16964,
+		"oth": 3413
+	},
+	"Blackpool South": {
+		"lab": 14448,
+		"lib": 5082,
+		"con": 12597,
+		"oth": 3064
+	},
+	"Blaydon": {
+		"lab": 22297,
+		"lib": 13180,
+		"con": 7159,
+		"oth": 2277
+	},
+	"Blyth Valley": {
+		"lab": 17156,
+		"lib": 10488,
+		"con": 6412,
+		"oth": 4510
+	},
+	"Bognor Regis and Littlehampton": {
+		"lab": 6580,
+		"lib": 11024,
+		"con": 24087,
+		"oth": 5161
+	},
+	"Bolsover": {
+		"lab": 21994,
+		"lib": 6821,
+		"con": 10812,
+		"oth": 4361
+	},
+	"Bolton North East": {
+		"lab": 19870,
+		"lib": 5624,
+		"con": 15786,
+		"oth": 1997
+	},
+	"Bolton South East": {
+		"lab": 18782,
+		"lib": 6289,
+		"con": 10148,
+		"oth": 4385
+	},
+	"Bolton West": {
+		"lab": 18327,
+		"lib": 8177,
+		"con": 18235,
+		"oth": 2837
+	},
+	"Bootle": {
+		"lab": 27426,
+		"lib": 6245,
+		"con": 3678,
+		"oth": 3928
+	},
+	"Boston and Skegness": {
+		"lab": 8899,
+		"lib": 6371,
+		"con": 21325,
+		"oth": 6530
+	},
+	"Bosworth": {
+		"lab": 8674,
+		"lib": 18100,
+		"con": 23132,
+		"oth": 4368
+	},
+	"Bournemouth East": {
+		"lab": 5836,
+		"lib": 13592,
+		"con": 21320,
+		"oth": 3276
+	},
+	"Bournemouth West": {
+		"lab": 6171,
+		"lib": 13225,
+		"con": 18808,
+		"oth": 3455
+	},
+	"Bracknell": {
+		"lab": 8755,
+		"lib": 11623,
+		"con": 27327,
+		"oth": 4435
+	},
+	"Bradford East": {
+		"lab": 13272,
+		"lib": 13637,
+		"con": 10860,
+		"oth": 2313
+	},
+	"Bradford South": {
+		"lab": 15682,
+		"lib": 6948,
+		"con": 11060,
+		"oth": 4305
+	},
+	"Bradford West": {
+		"lab": 18401,
+		"lib": 4732,
+		"con": 12638,
+		"oth": 4805
+	},
+	"Braintree": {
+		"lab": 9780,
+		"lib": 9247,
+		"con": 25901,
+		"oth": 4275
+	},
+	"Brent Central": {
+		"lab": 18681,
+		"lib": 20026,
+		"con": 5068,
+		"oth": 1549
+	},
+	"Brent North": {
+		"lab": 24514,
+		"lib": 8879,
+		"con": 16486,
+		"oth": 1685
+	},
+	"Brentford and Isleworth": {
+		"lab": 18064,
+		"lib": 12718,
+		"con": 20022,
+		"oth": 2961
+	},
+	"Brentwood and Ongar": {
+		"lab": 4992,
+		"lib": 11872,
+		"con": 28793,
+		"oth": 4935
+	},
+	"Bridgwater and Somerset West": {
+		"lab": 9332,
+		"lib": 15426,
+		"con": 24675,
+		"oth": 5060
+	},
+	"Brigg and Goole": {
+		"lab": 14533,
+		"lib": 6414,
+		"con": 19680,
+		"oth": 3247
+	},
+	"Brighton Kemptown": {
+		"lab": 14889,
+		"lib": 7691,
+		"con": 16217,
+		"oth": 3908
+	},
+	"Brighton Pavilion": {
+		"lab": 14986,
+		"lib": 7159,
+		"con": 12275,
+		"oth": 17414
+	},
+	"Bristol East": {
+		"lab": 16471,
+		"lib": 10993,
+		"con": 12749,
+		"oth": 4804
+	},
+	"Bristol North West": {
+		"lab": 13059,
+		"lib": 15841,
+		"con": 19115,
+		"oth": 2321
+	},
+	"Bristol South": {
+		"lab": 18600,
+		"lib": 13866,
+		"con": 11086,
+		"oth": 4825
+	},
+	"Bristol West": {
+		"lab": 15227,
+		"lib": 26593,
+		"con": 10169,
+		"oth": 3358
+	},
+	"Broadland": {
+		"lab": 7287,
+		"lib": 17046,
+		"con": 24338,
+		"oth": 4005
+	},
+	"Bromley and Chislehurst": {
+		"lab": 7295,
+		"lib": 9669,
+		"con": 23569,
+		"oth": 3504
+	},
+	"Bromsgrove": {
+		"lab": 11250,
+		"lib": 10124,
+		"con": 22558,
+		"oth": 7362
+	},
+	"Broxbourne": {
+		"lab": 8040,
+		"lib": 6107,
+		"con": 26844,
+		"oth": 4667
+	},
+	"Broxtowe": {
+		"lab": 20196,
+		"lib": 8907,
+		"con": 20585,
+		"oth": 3039
+	},
+	"Burnley": {
+		"lab": 13114,
+		"lib": 14932,
+		"con": 6950,
+		"oth": 4973
+	},
+	"Burton": {
+		"lab": 15884,
+		"lib": 7891,
+		"con": 22188,
+		"oth": 3860
+	},
+	"Bury North": {
+		"lab": 15827,
+		"lib": 7645,
+		"con": 18070,
+		"oth": 3419
+	},
+	"Bury South": {
+		"lab": 19508,
+		"lib": 8796,
+		"con": 16216,
+		"oth": 3747
+	},
+	"Bury St Edmunds": {
+		"lab": 9776,
+		"lib": 15519,
+		"con": 27899,
+		"oth": 5524
+	},
+	"Calder Valley": {
+		"lab": 13966,
+		"lib": 13037,
+		"con": 20397,
+		"oth": 4186
+	},
+	"Camberwell and Peckham": {
+		"lab": 27619,
+		"lib": 10432,
+		"con": 6080,
+		"oth": 2435
+	},
+	"Camborne and Redruth": {
+		"lab": 6945,
+		"lib": 15903,
+		"con": 15969,
+		"oth": 3676
+	},
+	"Cambridge": {
+		"lab": 12174,
+		"lib": 19621,
+		"con": 12829,
+		"oth": 5506
+	},
+	"Cambridgeshire North East": {
+		"lab": 9274,
+		"lib": 10437,
+		"con": 26862,
+		"oth": 5691
+	},
+	"Cambridgeshire North West": {
+		"lab": 9877,
+		"lib": 12748,
+		"con": 29425,
+		"oth": 6233
+	},
+	"Cambridgeshire South": {
+		"lab": 6024,
+		"lib": 20157,
+		"con": 27995,
+		"oth": 4880
+	},
+	"Cambridgeshire South East": {
+		"lab": 4380,
+		"lib": 21683,
+		"con": 27629,
+		"oth": 3910
+	},
+	"Cannock Chase": {
+		"lab": 15076,
+		"lib": 7732,
+		"con": 18271,
+		"oth": 4100
+	},
+	"Canterbury": {
+		"lab": 7940,
+		"lib": 16002,
+		"con": 22050,
+		"oth": 3217
+	},
+	"Carlisle": {
+		"lab": 15736,
+		"lib": 6567,
+		"con": 16589,
+		"oth": 3308
+	},
+	"Carshalton and Wallington": {
+		"lab": 4015,
+		"lib": 22180,
+		"con": 16920,
+		"oth": 2803
+	},
+	"Castle Point": {
+		"lab": 6609,
+		"lib": 4232,
+		"con": 19806,
+		"oth": 14379
+	},
+	"Charnwood": {
+		"lab": 10536,
+		"lib": 11531,
+		"con": 26560,
+		"oth": 4915
+	},
+	"Chatham and Aylesford": {
+		"lab": 14161,
+		"lib": 5832,
+		"con": 20230,
+		"oth": 3584
+	},
+	"Cheadle": {
+		"lab": 4920,
+		"lib": 24717,
+		"con": 21445,
+		"oth": 1430
+	},
+	"Chelmsford": {
+		"lab": 5980,
+		"lib": 20097,
+		"con": 25207,
+		"oth": 3309
+	},
+	"Chelsea and Fulham": {
+		"lab": 7371,
+		"lib": 6473,
+		"con": 24093,
+		"oth": 1919
+	},
+	"Cheltenham": {
+		"lab": 2703,
+		"lib": 26659,
+		"con": 21739,
+		"oth": 1685
+	},
+	"Chesham and Amersham": {
+		"lab": 2942,
+		"lib": 14948,
+		"con": 31658,
+		"oth": 2896
+	},
+	"Chester, City of": {
+		"lab": 16412,
+		"lib": 8930,
+		"con": 18995,
+		"oth": 2453
+	},
+	"Chesterfield": {
+		"lab": 17891,
+		"lib": 17342,
+		"con": 7214,
+		"oth": 3392
+	},
+	"Chichester": {
+		"lab": 5937,
+		"lib": 15550,
+		"con": 31427,
+		"oth": 3873
+	},
+	"Chingford and Woodford Green": {
+		"lab": 9780,
+		"lib": 7242,
+		"con": 22743,
+		"oth": 3139
+	},
+	"Chippenham": {
+		"lab": 3620,
+		"lib": 23970,
+		"con": 21500,
+		"oth": 3295
+	},
+	"Chipping Barnet": {
+		"lab": 12773,
+		"lib": 10202,
+		"con": 24700,
+		"oth": 2933
+	},
+	"Chorley": {
+		"lab": 21515,
+		"lib": 6957,
+		"con": 18922,
+		"oth": 2380
+	},
+	"Christchurch": {
+		"lab": 4849,
+		"lib": 12478,
+		"con": 27888,
+		"oth": 4201
+	},
+	"Cities of London and Westminster": {
+		"lab": 8188,
+		"lib": 7574,
+		"con": 19264,
+		"oth": 1807
+	},
+	"Clacton": {
+		"lab": 10799,
+		"lib": 5577,
+		"con": 22867,
+		"oth": 3880
+	},
+	"Cleethorpes": {
+		"lab": 14641,
+		"lib": 8192,
+		"con": 18939,
+		"oth": 3194
+	},
+	"Colchester": {
+		"lab": 5680,
+		"lib": 22151,
+		"con": 15169,
+		"oth": 3139
+	},
+	"Colne Valley": {
+		"lab": 14589,
+		"lib": 15603,
+		"con": 20440,
+		"oth": 4664
+	},
+	"Congleton": {
+		"lab": 8747,
+		"lib": 16187,
+		"con": 23250,
+		"oth": 2320
+	},
+	"Copeland": {
+		"lab": 19699,
+		"lib": 4365,
+		"con": 15866,
+		"oth": 2857
+	},
+	"Corby": {
+		"lab": 20991,
+		"lib": 7834,
+		"con": 22886,
+		"oth": 2525
+	},
+	"Cornwall North": {
+		"lab": 1971,
+		"lib": 22512,
+		"con": 19531,
+		"oth": 2830
+	},
+	"Cornwall South East": {
+		"lab": 3507,
+		"lib": 19170,
+		"con": 22390,
+		"oth": 4550
+	},
+	"Cotswolds, The": {
+		"lab": 5886,
+		"lib": 16211,
+		"con": 29075,
+		"oth": 3660
+	},
+	"Coventry North East": {
+		"lab": 21384,
+		"lib": 7210,
+		"con": 9609,
+		"oth": 5180
+	},
+	"Coventry North West": {
+		"lab": 19936,
+		"lib": 8344,
+		"con": 13648,
+		"oth": 4632
+	},
+	"Coventry South": {
+		"lab": 19197,
+		"lib": 8278,
+		"con": 15352,
+		"oth": 3097
+	},
+	"Crawley": {
+		"lab": 15336,
+		"lib": 6844,
+		"con": 21264,
+		"oth": 4060
+	},
+	"Crewe and Nantwich": {
+		"lab": 17374,
+		"lib": 7656,
+		"con": 23420,
+		"oth": 2634
+	},
+	"Croydon Central": {
+		"lab": 16688,
+		"lib": 6553,
+		"con": 19657,
+		"oth": 3620
+	},
+	"Croydon North": {
+		"lab": 28949,
+		"lib": 7226,
+		"con": 12466,
+		"oth": 3037
+	},
+	"Croydon South": {
+		"lab": 11287,
+		"lib": 12866,
+		"con": 28684,
+		"oth": 3485
+	},
+	"Dagenham and Rainham": {
+		"lab": 17813,
+		"lib": 3806,
+		"con": 15183,
+		"oth": 7430
+	},
+	"Darlington": {
+		"lab": 16891,
+		"lib": 10046,
+		"con": 13503,
+		"oth": 2456
+	},
+	"Dartford": {
+		"lab": 13800,
+		"lib": 7361,
+		"con": 24428,
+		"oth": 4491
+	},
+	"Daventry": {
+		"lab": 8168,
+		"lib": 10064,
+		"con": 29252,
+		"oth": 4290
+	},
+	"Denton and Reddish": {
+		"lab": 19191,
+		"lib": 6727,
+		"con": 9360,
+		"oth": 2357
+	},
+	"Derby North": {
+		"lab": 14896,
+		"lib": 12638,
+		"con": 14283,
+		"oth": 3263
+	},
+	"Derby South": {
+		"lab": 17851,
+		"lib": 8430,
+		"con": 11729,
+		"oth": 3178
+	},
+	"Derbyshire Dales": {
+		"lab": 9061,
+		"lib": 10512,
+		"con": 24378,
+		"oth": 2829
+	},
+	"Derbyshire Mid": {
+		"lab": 11585,
+		"lib": 9711,
+		"con": 22877,
+		"oth": 3169
+	},
+	"Derbyshire North East": {
+		"lab": 17948,
+		"lib": 10947,
+		"con": 15503,
+		"oth": 2636
+	},
+	"Derbyshire South": {
+		"lab": 15807,
+		"lib": 8012,
+		"con": 22935,
+		"oth": 3665
+	},
+	"Devizes": {
+		"lab": 4711,
+		"lib": 12514,
+		"con": 25519,
+		"oth": 3596
+	},
+	"Devon Central": {
+		"lab": 3715,
+		"lib": 18507,
+		"con": 27737,
+		"oth": 3914
+	},
+	"Devon East": {
+		"lab": 5721,
+		"lib": 16548,
+		"con": 25662,
+		"oth": 5161
+	},
+	"Devon North": {
+		"lab": 2671,
+		"lib": 24305,
+		"con": 18484,
+		"oth": 5861
+	},
+	"Devon South West": {
+		"lab": 6193,
+		"lib": 12034,
+		"con": 27908,
+		"oth": 3725
+	},
+	"Devon West and Torridge": {
+		"lab": 2917,
+		"lib": 22273,
+		"con": 25230,
+		"oth": 4837
+	},
+	"Dewsbury": {
+		"lab": 17372,
+		"lib": 9150,
+		"con": 18898,
+		"oth": 8588
+	},
+	"Don Valley": {
+		"lab": 16472,
+		"lib": 7422,
+		"con": 12877,
+		"oth": 6659
+	},
+	"Doncaster Central": {
+		"lab": 16569,
+		"lib": 8795,
+		"con": 10340,
+		"oth": 6041
+	},
+	"Doncaster North": {
+		"lab": 19637,
+		"lib": 6174,
+		"con": 8728,
+		"oth": 6944
+	},
+	"Dorset Mid and Poole North": {
+		"lab": 2748,
+		"lib": 21100,
+		"con": 20831,
+		"oth": 2109
+	},
+	"Dorset North": {
+		"lab": 2910,
+		"lib": 20015,
+		"con": 27640,
+		"oth": 3576
+	},
+	"Dorset South": {
+		"lab": 15224,
+		"lib": 9557,
+		"con": 22667,
+		"oth": 2862
+	},
+	"Dorset West": {
+		"lab": 3815,
+		"lib": 23364,
+		"con": 27287,
+		"oth": 2871
+	},
+	"Dover": {
+		"lab": 16900,
+		"lib": 7962,
+		"con": 22174,
+		"oth": 3349
+	},
+	"Dudley North": {
+		"lab": 14923,
+		"lib": 4066,
+		"con": 14274,
+		"oth": 5339
+	},
+	"Dudley South": {
+		"lab": 12594,
+		"lib": 5989,
+		"con": 16450,
+		"oth": 3132
+	},
+	"Dulwich and West Norwood": {
+		"lab": 22461,
+		"lib": 13096,
+		"con": 10684,
+		"oth": 1973
+	},
+	"Durham, City of": {
+		"lab": 20496,
+		"lib": 17429,
+		"con": 6146,
+		"oth": 2181
+	},
+	"Durham North": {
+		"lab": 20698,
+		"lib": 8617,
+		"con": 8622,
+		"oth": 3030
+	},
+	"Durham North West": {
+		"lab": 18539,
+		"lib": 10927,
+		"con": 8766,
+		"oth": 5583
+	},
+	"Ealing Central and Acton": {
+		"lab": 14228,
+		"lib": 13041,
+		"con": 17944,
+		"oth": 1987
+	},
+	"Ealing North": {
+		"lab": 24023,
+		"lib": 6283,
+		"con": 14722,
+		"oth": 2650
+	},
+	"Ealing Southall": {
+		"lab": 22024,
+		"lib": 6383,
+		"con": 12733,
+		"oth": 1616
+	},
+	"Easington": {
+		"lab": 20579,
+		"lib": 5597,
+		"con": 4790,
+		"oth": 3948
+	},
+	"East Ham": {
+		"lab": 35471,
+		"lib": 5849,
+		"con": 7645,
+		"oth": 1408
+	},
+	"Eastbourne": {
+		"lab": 2497,
+		"lib": 24658,
+		"con": 21223,
+		"oth": 2318
+	},
+	"Eastleigh": {
+		"lab": 5153,
+		"lib": 24966,
+		"con": 21102,
+		"oth": 2429
+	},
+	"Eddisbury": {
+		"lab": 9794,
+		"lib": 10217,
+		"con": 23472,
+		"oth": 1931
+	},
+	"Edmonton": {
+		"lab": 21665,
+		"lib": 4252,
+		"con": 12052,
+		"oth": 2408
+	},
+	"Ellesmere Port and Neston": {
+		"lab": 19750,
+		"lib": 6663,
+		"con": 15419,
+		"oth": 2401
+	},
+	"Elmet and Rothwell": {
+		"lab": 19257,
+		"lib": 9109,
+		"con": 23778,
+		"oth": 3645
+	},
+	"Eltham": {
+		"lab": 17416,
+		"lib": 5299,
+		"con": 15753,
+		"oth": 3496
+	},
+	"Enfield North": {
+		"lab": 17112,
+		"lib": 5403,
+		"con": 18804,
+		"oth": 3134
+	},
+	"Enfield Southgate": {
+		"lab": 14302,
+		"lib": 6124,
+		"con": 21928,
+		"oth": 1998
+	},
+	"Epping Forest": {
+		"lab": 6641,
+		"lib": 10017,
+		"con": 25148,
+		"oth": 4778
+	},
+	"Epsom and Ewell": {
+		"lab": 6538,
+		"lib": 14734,
+		"con": 30868,
+		"oth": 2815
+	},
+	"Erewash": {
+		"lab": 16304,
+		"lib": 8343,
+		"con": 18805,
+		"oth": 4190
+	},
+	"Erith and Thamesmead": {
+		"lab": 19068,
+		"lib": 5116,
+		"con": 13365,
+		"oth": 4927
+	},
+	"Esher and Walton": {
+		"lab": 5829,
+		"lib": 13541,
+		"con": 32134,
+		"oth": 3039
+	},
+	"Exeter": {
+		"lab": 19942,
+		"lib": 10581,
+		"con": 17221,
+		"oth": 4503
+	},
+	"Fareham": {
+		"lab": 7719,
+		"lib": 12945,
+		"con": 30037,
+		"oth": 3644
+	},
+	"Faversham and Kent Mid": {
+		"lab": 7748,
+		"lib": 9162,
+		"con": 26250,
+		"oth": 3552
+	},
+	"Feltham and Heston": {
+		"lab": 21174,
+		"lib": 6669,
+		"con": 16516,
+		"oth": 3482
+	},
+	"Filton and Bradley Stoke": {
+		"lab": 12772,
+		"lib": 12197,
+		"con": 19686,
+		"oth": 3646
+	},
+	"Finchley and Golders Green": {
+		"lab": 15879,
+		"lib": 8036,
+		"con": 21688,
+		"oth": 1554
+	},
+	"Folkestone and Hythe": {
+		"lab": 5719,
+		"lib": 15987,
+		"con": 26109,
+		"oth": 4985
+	},
+	"Forest of Dean": {
+		"lab": 11789,
+		"lib": 10676,
+		"con": 22853,
+		"oth": 3445
+	},
+	"Fylde": {
+		"lab": 8624,
+		"lib": 9641,
+		"con": 22826,
+		"oth": 2599
+	},
+	"Gainsborough": {
+		"lab": 7701,
+		"lib": 13707,
+		"con": 24266,
+		"oth": 3577
+	},
+	"Garston and Halewood": {
+		"lab": 25493,
+		"lib": 8616,
+		"con": 6908,
+		"oth": 1808
+	},
+	"Gateshead": {
+		"lab": 20712,
+		"lib": 8163,
+		"con": 5716,
+		"oth": 3666
+	},
+	"Gedling": {
+		"lab": 19821,
+		"lib": 7350,
+		"con": 17962,
+		"oth": 3057
+	},
+	"Gillingham and Rainham": {
+		"lab": 12944,
+		"lib": 8484,
+		"con": 21624,
+		"oth": 3734
+	},
+	"Gloucester": {
+		"lab": 17847,
+		"lib": 9767,
+		"con": 20267,
+		"oth": 2883
+	},
+	"Gosport": {
+		"lab": 7944,
+		"lib": 9887,
+		"con": 24300,
+		"oth": 3984
+	},
+	"Grantham and Stamford": {
+		"lab": 9503,
+		"lib": 11726,
+		"con": 26552,
+		"oth": 5018
+	},
+	"Gravesham": {
+		"lab": 13644,
+		"lib": 6293,
+		"con": 22956,
+		"oth": 4410
+	},
+	"Great Grimsby": {
+		"lab": 10777,
+		"lib": 7388,
+		"con": 10063,
+		"oth": 4726
+	},
+	"Great Yarmouth": {
+		"lab": 14295,
+		"lib": 6188,
+		"con": 18571,
+		"oth": 4003
+	},
+	"Greenwich and Woolwich": {
+		"lab": 20262,
+		"lib": 7498,
+		"con": 10109,
+		"oth": 3319
+	},
+	"Guildford": {
+		"lab": 2812,
+		"lib": 21836,
+		"con": 29618,
+		"oth": 1301
+	},
+	"Hackney North and Stoke Newington": {
+		"lab": 25553,
+		"lib": 11092,
+		"con": 6759,
+		"oth": 2988
+	},
+	"Hackney South and Shoreditch": {
+		"lab": 23888,
+		"lib": 9600,
+		"con": 5800,
+		"oth": 3449
+	},
+	"Halesowen and Rowley Regis": {
+		"lab": 16092,
+		"lib": 6515,
+		"con": 18115,
+		"oth": 3257
+	},
+	"Halifax": {
+		"lab": 16278,
+		"lib": 8335,
+		"con": 14806,
+		"oth": 4136
+	},
+	"Haltemprice and Howden": {
+		"lab": 7630,
+		"lib": 12884,
+		"con": 24486,
+		"oth": 3737
+	},
+	"Halton": {
+		"lab": 23843,
+		"lib": 5718,
+		"con": 8339,
+		"oth": 3438
+	},
+	"Hammersmith": {
+		"lab": 20810,
+		"lib": 7567,
+		"con": 17261,
+		"oth": 1814
+	},
+	"Hampshire East": {
+		"lab": 4043,
+		"lib": 15640,
+		"con": 29137,
+		"oth": 2497
+	},
+	"Hampshire North East": {
+		"lab": 5173,
+		"lib": 13478,
+		"con": 32075,
+		"oth": 2213
+	},
+	"Hampshire North West": {
+		"lab": 6980,
+		"lib": 12489,
+		"con": 31072,
+		"oth": 2751
+	},
+	"Hampstead and Kilburn": {
+		"lab": 17332,
+		"lib": 16491,
+		"con": 17290,
+		"oth": 1709
+	},
+	"Harborough": {
+		"lab": 6981,
+		"lib": 17097,
+		"con": 26894,
+		"oth": 3973
+	},
+	"Harlow": {
+		"lab": 14766,
+		"lib": 5990,
+		"con": 19691,
+		"oth": 3431
+	},
+	"Harrogate and Knaresborough": {
+		"lab": 3413,
+		"lib": 23266,
+		"con": 24305,
+		"oth": 2150
+	},
+	"Harrow East": {
+		"lab": 18032,
+		"lib": 6850,
+		"con": 21435,
+		"oth": 1689
+	},
+	"Harrow West": {
+		"lab": 20111,
+		"lib": 7458,
+		"con": 16968,
+		"oth": 1579
+	},
+	"Hartlepool": {
+		"lab": 16267,
+		"lib": 6533,
+		"con": 10758,
+		"oth": 4684
+	},
+	"Harwich and Essex North": {
+		"lab": 9774,
+		"lib": 11554,
+		"con": 23001,
+		"oth": 4671
+	},
+	"Hastings and Rye": {
+		"lab": 18475,
+		"lib": 7825,
+		"con": 20468,
+		"oth": 3046
+	},
+	"Havant": {
+		"lab": 7777,
+		"lib": 10273,
+		"con": 22433,
+		"oth": 3420
+	},
+	"Hayes and Harlington": {
+		"lab": 23377,
+		"lib": 3726,
+		"con": 12553,
+		"oth": 2981
+	},
+	"Hazel Grove": {
+		"lab": 5234,
+		"lib": 20485,
+		"con": 14114,
+		"oth": 2148
+	},
+	"Hemel Hempstead": {
+		"lab": 10295,
+		"lib": 11315,
+		"con": 24721,
+		"oth": 3140
+	},
+	"Hemsworth": {
+		"lab": 20506,
+		"lib": 5667,
+		"con": 10662,
+		"oth": 7005
+	},
+	"Hendon": {
+		"lab": 19529,
+		"lib": 5734,
+		"con": 19635,
+		"oth": 1476
+	},
+	"Henley": {
+		"lab": 5835,
+		"lib": 13466,
+		"con": 30054,
+		"oth": 4165
+	},
+	"Hereford and Herefordshire South": {
+		"lab": 3506,
+		"lib": 19885,
+		"con": 22366,
+		"oth": 2624
+	},
+	"Herefordshire North": {
+		"lab": 3373,
+		"lib": 14744,
+		"con": 24631,
+		"oth": 4820
+	},
+	"Hertford and Stortford": {
+		"lab": 7620,
+		"lib": 14373,
+		"con": 29810,
+		"oth": 3249
+	},
+	"Hertfordshire North East": {
+		"lab": 8291,
+		"lib": 11801,
+		"con": 26995,
+		"oth": 3129
+	},
+	"Hertfordshire South West": {
+		"lab": 6526,
+		"lib": 15853,
+		"con": 30773,
+		"oth": 3598
+	},
+	"Hertsmere": {
+		"lab": 8871,
+		"lib": 8210,
+		"con": 26476,
+		"oth": 3713
+	},
+	"Hexham": {
+		"lab": 8253,
+		"lib": 13007,
+		"con": 18795,
+		"oth": 1454
+	},
+	"Heywood and Middleton": {
+		"lab": 18499,
+		"lib": 10474,
+		"con": 12528,
+		"oth": 4624
+	},
+	"High Peak": {
+		"lab": 15910,
+		"lib": 10993,
+		"con": 20587,
+		"oth": 2847
+	},
+	"Hitchin and Harpenden": {
+		"lab": 7413,
+		"lib": 14598,
+		"con": 29869,
+		"oth": 2718
+	},
+	"Holborn and St Pancras": {
+		"lab": 25198,
+		"lib": 15256,
+		"con": 11134,
+		"oth": 2965
+	},
+	"Hornchurch and Upminster": {
+		"lab": 11098,
+		"lib": 7426,
+		"con": 27469,
+		"oth": 7397
+	},
+	"Hornsey and Wood Green": {
+		"lab": 18720,
+		"lib": 25595,
+		"con": 9174,
+		"oth": 1352
+	},
+	"Horsham": {
+		"lab": 4189,
+		"lib": 17987,
+		"con": 29447,
+		"oth": 4218
+	},
+	"Houghton and Sunderland South": {
+		"lab": 19137,
+		"lib": 5292,
+		"con": 8147,
+		"oth": 5445
+	},
+	"Hove": {
+		"lab": 16426,
+		"lib": 11240,
+		"con": 18294,
+		"oth": 3859
+	},
+	"Huddersfield": {
+		"lab": 15725,
+		"lib": 10023,
+		"con": 11253,
+		"oth": 3523
+	},
+	"Hull East": {
+		"lab": 16387,
+		"lib": 7790,
+		"con": 5667,
+		"oth": 4340
+	},
+	"Hull North": {
+		"lab": 13044,
+		"lib": 12403,
+		"con": 4365,
+		"oth": 3479
+	},
+	"Hull West and Hessle": {
+		"lab": 13378,
+		"lib": 7636,
+		"con": 6361,
+		"oth": 4130
+	},
+	"Huntingdon": {
+		"lab": 5982,
+		"lib": 15697,
+		"con": 26516,
+		"oth": 6071
+	},
+	"Hyndburn": {
+		"lab": 17531,
+		"lib": 5033,
+		"con": 14441,
+		"oth": 5667
+	},
+	"Ilford North": {
+		"lab": 16102,
+		"lib": 5966,
+		"con": 21506,
+		"oth": 3444
+	},
+	"Ilford South": {
+		"lab": 25301,
+		"lib": 8679,
+		"con": 14014,
+		"oth": 3197
+	},
+	"Ipswich": {
+		"lab": 16292,
+		"lib": 8556,
+		"con": 18371,
+		"oth": 3629
+	},
+	"Isle of Wight": {
+		"lab": 8169,
+		"lib": 22283,
+		"con": 32810,
+		"oth": 6738
+	},
+	"Islington North": {
+		"lab": 24276,
+		"lib": 11875,
+		"con": 6339,
+		"oth": 2064
+	},
+	"Islington South and Finsbury": {
+		"lab": 18407,
+		"lib": 14838,
+		"con": 8449,
+		"oth": 1861
+	},
+	"Jarrow": {
+		"lab": 20910,
+		"lib": 7163,
+		"con": 8002,
+		"oth": 2709
+	},
+	"Keighley": {
+		"lab": 17063,
+		"lib": 7059,
+		"con": 20003,
+		"oth": 3567
+	},
+	"Kenilworth and Southam": {
+		"lab": 6949,
+		"lib": 13393,
+		"con": 25945,
+		"oth": 2144
+	},
+	"Kensington": {
+		"lab": 8979,
+		"lib": 6872,
+		"con": 17595,
+		"oth": 1704
+	},
+	"Kettering": {
+		"lab": 14153,
+		"lib": 7498,
+		"con": 23247,
+		"oth": 2430
+	},
+	"Kingston and Surbiton": {
+		"lab": 5337,
+		"lib": 28428,
+		"con": 20868,
+		"oth": 2478
+	},
+	"Kingswood": {
+		"lab": 16917,
+		"lib": 8072,
+		"con": 19362,
+		"oth": 3555
+	},
+	"Knowsley": {
+		"lab": 31650,
+		"lib": 5964,
+		"con": 4004,
+		"oth": 3040
+	},
+	"Lancashire West": {
+		"lab": 21883,
+		"lib": 6573,
+		"con": 17540,
+		"oth": 2477
+	},
+	"Lancaster and Fleetwood": {
+		"lab": 15071,
+		"lib": 8167,
+		"con": 15404,
+		"oth": 4059
+	},
+	"Leeds Central": {
+		"lab": 18434,
+		"lib": 7789,
+		"con": 7541,
+		"oth": 3630
+	},
+	"Leeds East": {
+		"lab": 19056,
+		"lib": 6618,
+		"con": 8763,
+		"oth": 3376
+	},
+	"Leeds North East": {
+		"lab": 20287,
+		"lib": 9310,
+		"con": 15742,
+		"oth": 2196
+	},
+	"Leeds North West": {
+		"lab": 9132,
+		"lib": 20653,
+		"con": 11550,
+		"oth": 2148
+	},
+	"Leeds West": {
+		"lab": 16389,
+		"lib": 9373,
+		"con": 7641,
+		"oth": 5349
+	},
+	"Leicester East": {
+		"lab": 25804,
+		"lib": 6817,
+		"con": 11722,
+		"oth": 3652
+	},
+	"Leicester South": {
+		"lab": 21479,
+		"lib": 12671,
+		"con": 10066,
+		"oth": 2908
+	},
+	"Leicester West": {
+		"lab": 13745,
+		"lib": 8107,
+		"con": 9728,
+		"oth": 4058
+	},
+	"Leicestershire North West": {
+		"lab": 15636,
+		"lib": 8639,
+		"con": 23147,
+		"oth": 4530
+	},
+	"Leicestershire South": {
+		"lab": 11392,
+		"lib": 11476,
+		"con": 27000,
+		"oth": 4709
+	},
+	"Leigh": {
+		"lab": 21295,
+		"lib": 8049,
+		"con": 9284,
+		"oth": 4716
+	},
+	"Lewes": {
+		"lab": 2508,
+		"lib": 26048,
+		"con": 18401,
+		"oth": 3131
+	},
+	"Lewisham Deptford": {
+		"lab": 22132,
+		"lib": 9633,
+		"con": 5551,
+		"oth": 3904
+	},
+	"Lewisham East": {
+		"lab": 17966,
+		"lib": 11750,
+		"con": 9850,
+		"oth": 2153
+	},
+	"Lewisham West and Penge": {
+		"lab": 18501,
+		"lib": 12673,
+		"con": 11489,
+		"oth": 2365
+	},
+	"Leyton and Wanstead": {
+		"lab": 17511,
+		"lib": 11095,
+		"con": 8928,
+		"oth": 2625
+	},
+	"Lichfield": {
+		"lab": 10230,
+		"lib": 10365,
+		"con": 28048,
+		"oth": 2920
+	},
+	"Lincoln": {
+		"lab": 16105,
+		"lib": 9256,
+		"con": 17163,
+		"oth": 3197
+	},
+	"Liverpool Riverside": {
+		"lab": 22998,
+		"lib": 8825,
+		"con": 4243,
+		"oth": 2735
+	},
+	"Liverpool Walton": {
+		"lab": 24709,
+		"lib": 4891,
+		"con": 2241,
+		"oth": 2494
+	},
+	"Liverpool Wavertree": {
+		"lab": 20132,
+		"lib": 12965,
+		"con": 2830,
+		"oth": 1987
+	},
+	"Liverpool West Derby": {
+		"lab": 22953,
+		"lib": 4486,
+		"con": 3311,
+		"oth": 5034
+	},
+	"Loughborough": {
+		"lab": 18227,
+		"lib": 9675,
+		"con": 21971,
+		"oth": 2965
+	},
+	"Louth and Horncastle": {
+		"lab": 8760,
+		"lib": 11194,
+		"con": 25065,
+		"oth": 5475
+	},
+	"Ludlow": {
+		"lab": 3272,
+		"lib": 15971,
+		"con": 25720,
+		"oth": 3769
+	},
+	"Luton North": {
+		"lab": 21192,
+		"lib": 4784,
+		"con": 13672,
+		"oth": 3370
+	},
+	"Luton South": {
+		"lab": 14725,
+		"lib": 9567,
+		"con": 12396,
+		"oth": 4671
+	},
+	"Macclesfield": {
+		"lab": 10164,
+		"lib": 11544,
+		"con": 23503,
+		"oth": 4848
+	},
+	"Maidenhead": {
+		"lab": 3795,
+		"lib": 15168,
+		"con": 31937,
+		"oth": 2820
+	},
+	"Maidstone and The Weald": {
+		"lab": 4769,
+		"lib": 17602,
+		"con": 23491,
+		"oth": 3066
+	},
+	"Makerfield": {
+		"lab": 20700,
+		"lib": 7082,
+		"con": 8210,
+		"oth": 4355
+	},
+	"Maldon": {
+		"lab": 6070,
+		"lib": 9254,
+		"con": 28661,
+		"oth": 3910
+	},
+	"Manchester Central": {
+		"lab": 21059,
+		"lib": 10620,
+		"con": 4704,
+		"oth": 3544
+	},
+	"Manchester Gorton": {
+		"lab": 19211,
+		"lib": 12508,
+		"con": 4224,
+		"oth": 2382
+	},
+	"Manchester Withington": {
+		"lab": 18216,
+		"lib": 20110,
+		"con": 5005,
+		"oth": 1553
+	},
+	"Mansfield": {
+		"lab": 18753,
+		"lib": 7469,
+		"con": 12741,
+		"oth": 9432
+	},
+	"Meon Valley": {
+		"lab": 3266,
+		"lib": 16693,
+		"con": 28818,
+		"oth": 2461
+	},
+	"Meriden": {
+		"lab": 10703,
+		"lib": 9278,
+		"con": 26956,
+		"oth": 5225
+	},
+	"Middlesbrough": {
+		"lab": 15351,
+		"lib": 6662,
+		"con": 6283,
+		"oth": 5159
+	},
+	"Middlesbrough South and Cleveland East": {
+		"lab": 18138,
+		"lib": 7340,
+		"con": 16461,
+		"oth": 4275
+	},
+	"Milton Keynes North": {
+		"lab": 14458,
+		"lib": 11894,
+		"con": 23419,
+		"oth": 4117
+	},
+	"Milton Keynes South": {
+		"lab": 17833,
+		"lib": 9787,
+		"con": 23034,
+		"oth": 4679
+	},
+	"Mitcham and Morden": {
+		"lab": 24722,
+		"lib": 5202,
+		"con": 11056,
+		"oth": 2662
+	},
+	"Mole Valley": {
+		"lab": 3804,
+		"lib": 15610,
+		"con": 31263,
+		"oth": 3647
+	},
+	"Morecambe and Lunesdale": {
+		"lab": 17169,
+		"lib": 5971,
+		"con": 18035,
+		"oth": 2441
+	},
+	"Morley and Outwood": {
+		"lab": 18365,
+		"lib": 8186,
+		"con": 17264,
+		"oth": 5041
+	},
+	"New Forest East": {
+		"lab": 4915,
+		"lib": 15136,
+		"con": 26443,
+		"oth": 3542
+	},
+	"New Forest West": {
+		"lab": 4666,
+		"lib": 11084,
+		"con": 27980,
+		"oth": 3842
+	},
+	"Newark": {
+		"lab": 11438,
+		"lib": 10246,
+		"con": 27590,
+		"oth": 1954
+	},
+	"Newbury": {
+		"lab": 2505,
+		"lib": 20809,
+		"con": 33057,
+		"oth": 2218
+	},
+	"Newcastle-under-Lyme": {
+		"lab": 16393,
+		"lib": 8466,
+		"con": 14841,
+		"oth": 3491
+	},
+	"Newcastle upon Tyne Central": {
+		"lab": 15694,
+		"lib": 8228,
+		"con": 6611,
+		"oth": 3624
+	},
+	"Newcastle upon Tyne East": {
+		"lab": 17043,
+		"lib": 12590,
+		"con": 6068,
+		"oth": 2139
+	},
+	"Newcastle upon Tyne North": {
+		"lab": 17950,
+		"lib": 14536,
+		"con": 7966,
+		"oth": 3494
+	},
+	"Newton Abbot": {
+		"lab": 3387,
+		"lib": 20251,
+		"con": 20774,
+		"oth": 3871
+	},
+	"Norfolk Mid": {
+		"lab": 8857,
+		"lib": 11267,
+		"con": 25123,
+		"oth": 5518
+	},
+	"Norfolk North": {
+		"lab": 2896,
+		"lib": 27554,
+		"con": 15928,
+		"oth": 3283
+	},
+	"Norfolk North West": {
+		"lab": 6353,
+		"lib": 11106,
+		"con": 25916,
+		"oth": 4425
+	},
+	"Norfolk South": {
+		"lab": 7252,
+		"lib": 16193,
+		"con": 27133,
+		"oth": 4415
+	},
+	"Norfolk South West": {
+		"lab": 9119,
+		"lib": 10613,
+		"con": 23753,
+		"oth": 5665
+	},
+	"Normanton, Pontefract and Castleford": {
+		"lab": 22293,
+		"lib": 7585,
+		"con": 11314,
+		"oth": 5047
+	},
+	"Northampton North": {
+		"lab": 11799,
+		"lib": 11250,
+		"con": 13735,
+		"oth": 3153
+	},
+	"Northampton South": {
+		"lab": 9913,
+		"lib": 7579,
+		"con": 15917,
+		"oth": 3327
+	},
+	"Northamptonshire South": {
+		"lab": 10380,
+		"lib": 12603,
+		"con": 33081,
+		"oth": 3826
+	},
+	"Norwich North": {
+		"lab": 13379,
+		"lib": 7783,
+		"con": 17280,
+		"oth": 4131
+	},
+	"Norwich South": {
+		"lab": 13650,
+		"lib": 13960,
+		"con": 10902,
+		"oth": 9039
+	},
+	"Nottingham East": {
+		"lab": 15022,
+		"lib": 8053,
+		"con": 7846,
+		"oth": 2191
+	},
+	"Nottingham North": {
+		"lab": 16646,
+		"lib": 5849,
+		"con": 8508,
+		"oth": 3282
+	},
+	"Nottingham South": {
+		"lab": 15209,
+		"lib": 9406,
+		"con": 13437,
+		"oth": 2737
+	},
+	"Nuneaton": {
+		"lab": 16467,
+		"lib": 6846,
+		"con": 18536,
+		"oth": 2797
+	},
+	"Old Bexley and Sidcup": {
+		"lab": 8768,
+		"lib": 6996,
+		"con": 24625,
+		"oth": 5103
+	},
+	"Oldham East and Saddleworth": {
+		"lab": 14186,
+		"lib": 14083,
+		"con": 11773,
+		"oth": 4478
+	},
+	"Oldham West and Royton": {
+		"lab": 19503,
+		"lib": 8193,
+		"con": 10151,
+		"oth": 5063
+	},
+	"Orpington": {
+		"lab": 4400,
+		"lib": 12000,
+		"con": 29200,
+		"oth": 3311
+	},
+	"Oxford East": {
+		"lab": 21938,
+		"lib": 17357,
+		"con": 9727,
+		"oth": 2629
+	},
+	"Oxford West and Abingdon": {
+		"lab": 5999,
+		"lib": 23730,
+		"con": 23906,
+		"oth": 2845
+	},
+	"Pendle": {
+		"lab": 13927,
+		"lib": 9095,
+		"con": 17512,
+		"oth": 4511
+	},
+	"Penistone and Stocksbridge": {
+		"lab": 17565,
+		"lib": 9800,
+		"con": 14516,
+		"oth": 4635
+	},
+	"Penrith and The Border": {
+		"lab": 5834,
+		"lib": 12830,
+		"con": 24071,
+		"oth": 2352
+	},
+	"Peterborough": {
+		"lab": 13272,
+		"lib": 8816,
+		"con": 18133,
+		"oth": 4706
+	},
+	"Plymouth Moor View": {
+		"lab": 15433,
+		"lib": 7016,
+		"con": 13845,
+		"oth": 5232
+	},
+	"Plymouth Sutton and Devonport": {
+		"lab": 13901,
+		"lib": 10829,
+		"con": 15050,
+		"oth": 4114
+	},
+	"Poole": {
+		"lab": 6041,
+		"lib": 14991,
+		"con": 22532,
+		"oth": 3872
+	},
+	"Poplar and Limehouse": {
+		"lab": 18679,
+		"lib": 5209,
+		"con": 12649,
+		"oth": 9703
+	},
+	"Portsmouth North": {
+		"lab": 12244,
+		"lib": 8874,
+		"con": 19533,
+		"oth": 3467
+	},
+	"Portsmouth South": {
+		"lab": 5640,
+		"lib": 18921,
+		"con": 13721,
+		"oth": 2982
+	},
+	"Preston": {
+		"lab": 15668,
+		"lib": 7935,
+		"con": 7060,
+		"oth": 1842
+	},
+	"Pudsey": {
+		"lab": 17215,
+		"lib": 10224,
+		"con": 18874,
+		"oth": 2770
+	},
+	"Putney": {
+		"lab": 11170,
+		"lib": 6907,
+		"con": 21223,
+		"oth": 1485
+	},
+	"Rayleigh and Wickford": {
+		"lab": 7577,
+		"lib": 7919,
+		"con": 30257,
+		"oth": 6590
+	},
+	"Reading East": {
+		"lab": 12729,
+		"lib": 13664,
+		"con": 21269,
+		"oth": 2212
+	},
+	"Reading West": {
+		"lab": 14519,
+		"lib": 9546,
+		"con": 20523,
+		"oth": 2942
+	},
+	"Redcar": {
+		"lab": 13741,
+		"lib": 18955,
+		"con": 5790,
+		"oth": 3477
+	},
+	"Redditch": {
+		"lab": 13317,
+		"lib": 7750,
+		"con": 19138,
+		"oth": 3813
+	},
+	"Reigate": {
+		"lab": 5672,
+		"lib": 13097,
+		"con": 26688,
+		"oth": 4521
+	},
+	"Ribble Valley": {
+		"lab": 11529,
+		"lib": 10732,
+		"con": 26298,
+		"oth": 3728
+	},
+	"Richmond Park": {
+		"lab": 2979,
+		"lib": 25370,
+		"con": 29461,
+		"oth": 1458
+	},
+	"Richmond (Yorks)": {
+		"lab": 8150,
+		"lib": 10205,
+		"con": 33541,
+		"oth": 1516
+	},
+	"Rochdale": {
+		"lab": 16699,
+		"lib": 15810,
+		"con": 8305,
+		"oth": 5093
+	},
+	"Rochester and Strood": {
+		"lab": 13651,
+		"lib": 7800,
+		"con": 23604,
+		"oth": 2916
+	},
+	"Rochford and Southend East": {
+		"lab": 8459,
+		"lib": 8084,
+		"con": 19509,
+		"oth": 5579
+	},
+	"Romford": {
+		"lab": 9077,
+		"lib": 5572,
+		"con": 26031,
+		"oth": 5650
+	},
+	"Romsey and Southampton North": {
+		"lab": 3116,
+		"lib": 20189,
+		"con": 24345,
+		"oth": 1289
+	},
+	"Rossendale and Darwen": {
+		"lab": 15198,
+		"lib": 8541,
+		"con": 19691,
+		"oth": 3698
+	},
+	"Rother Valley": {
+		"lab": 19147,
+		"lib": 8111,
+		"con": 13281,
+		"oth": 6219
+	},
+	"Rotherham": {
+		"lab": 16741,
+		"lib": 5994,
+		"con": 6279,
+		"oth": 8492
+	},
+	"Rugby": {
+		"lab": 14901,
+		"lib": 9434,
+		"con": 20901,
+		"oth": 2232
+	},
+	"Ruislip, Northwood and Pinner": {
+		"lab": 9806,
+		"lib": 8345,
+		"con": 28866,
+		"oth": 3188
+	},
+	"Runnymede and Weybridge": {
+		"lab": 6446,
+		"lib": 10406,
+		"con": 26915,
+		"oth": 4383
+	},
+	"Rushcliffe": {
+		"lab": 11128,
+		"lib": 11659,
+		"con": 27470,
+		"oth": 3430
+	},
+	"Rutland and Melton": {
+		"lab": 7893,
+		"lib": 14228,
+		"con": 28228,
+		"oth": 4871
+	},
+	"Saffron Walden": {
+		"lab": 5288,
+		"lib": 14913,
+		"con": 30155,
+		"oth": 4013
+	},
+	"Salford and Eccles": {
+		"lab": 16655,
+		"lib": 10930,
+		"con": 8497,
+		"oth": 5451
+	},
+	"Salisbury": {
+		"lab": 3690,
+		"lib": 17893,
+		"con": 23859,
+		"oth": 2782
+	},
+	"Scarborough and Whitby": {
+		"lab": 12978,
+		"lib": 11093,
+		"con": 21108,
+		"oth": 4103
+	},
+	"Scunthorpe": {
+		"lab": 14640,
+		"lib": 6774,
+		"con": 12091,
+		"oth": 3529
+	},
+	"Sedgefield": {
+		"lab": 18141,
+		"lib": 8033,
+		"con": 9445,
+		"oth": 4603
+	},
+	"Sefton Central": {
+		"lab": 20307,
+		"lib": 9656,
+		"con": 16445,
+		"oth": 2055
+	},
+	"Selby and Ainsty": {
+		"lab": 13297,
+		"lib": 9180,
+		"con": 25562,
+		"oth": 3689
+	},
+	"Sevenoaks": {
+		"lab": 6541,
+		"lib": 10561,
+		"con": 28076,
+		"oth": 4230
+	},
+	"Sheffield Brightside and Hillsborough": {
+		"lab": 21400,
+		"lib": 7768,
+		"con": 4468,
+		"oth": 5278
+	},
+	"Sheffield Central": {
+		"lab": 17138,
+		"lib": 16973,
+		"con": 4206,
+		"oth": 3151
+	},
+	"Sheffield Hallam": {
+		"lab": 8228,
+		"lib": 27324,
+		"con": 12040,
+		"oth": 3543
+	},
+	"Sheffield Heeley": {
+		"lab": 17409,
+		"lib": 11602,
+		"con": 7081,
+		"oth": 4779
+	},
+	"Sheffield South East": {
+		"lab": 20169,
+		"lib": 9664,
+		"con": 7202,
+		"oth": 4373
+	},
+	"Sherwood": {
+		"lab": 18997,
+		"lib": 7283,
+		"con": 19211,
+		"oth": 3463
+	},
+	"Shipley": {
+		"lab": 14058,
+		"lib": 9890,
+		"con": 24002,
+		"oth": 1477
+	},
+	"Shrewsbury and Atcham": {
+		"lab": 10915,
+		"lib": 15369,
+		"con": 23313,
+		"oth": 3448
+	},
+	"Shropshire North": {
+		"lab": 9406,
+		"lib": 10864,
+		"con": 26692,
+		"oth": 4907
+	},
+	"Sittingbourne and Sheppey": {
+		"lab": 11930,
+		"lib": 7943,
+		"con": 24313,
+		"oth": 4392
+	},
+	"Skipton and Ripon": {
+		"lab": 5498,
+		"lib": 17735,
+		"con": 27685,
+		"oth": 3806
+	},
+	"Sleaford and North Hykeham": {
+		"lab": 10051,
+		"lib": 10814,
+		"con": 30719,
+		"oth": 7946
+	},
+	"Slough": {
+		"lab": 21884,
+		"lib": 6943,
+		"con": 16361,
+		"oth": 2554
+	},
+	"Solihull": {
+		"lab": 4891,
+		"lib": 23635,
+		"con": 23460,
+		"oth": 3143
+	},
+	"Somerset North": {
+		"lab": 6448,
+		"lib": 20687,
+		"con": 28549,
+		"oth": 2257
+	},
+	"Somerset North East": {
+		"lab": 16216,
+		"lib": 11433,
+		"con": 21130,
+		"oth": 2424
+	},
+	"Somerton and Frome": {
+		"lab": 2675,
+		"lib": 28793,
+		"con": 26976,
+		"oth": 2168
+	},
+	"South Holland and The Deepings": {
+		"lab": 7024,
+		"lib": 7759,
+		"con": 29639,
+		"oth": 5766
+	},
+	"South Ribble": {
+		"lab": 17842,
+		"lib": 7271,
+		"con": 23396,
+		"oth": 2949
+	},
+	"South Shields": {
+		"lab": 18995,
+		"lib": 5189,
+		"con": 7886,
+		"oth": 3403
+	},
+	"Southampton Itchen": {
+		"lab": 16326,
+		"lib": 9256,
+		"con": 16134,
+		"oth": 2696
+	},
+	"Southampton Test": {
+		"lab": 17001,
+		"lib": 9865,
+		"con": 14588,
+		"oth": 2733
+	},
+	"Southend West": {
+		"lab": 5850,
+		"lib": 12816,
+		"con": 20086,
+		"oth": 4854
+	},
+	"Southport": {
+		"lab": 4116,
+		"lib": 21707,
+		"con": 15683,
+		"oth": 2251
+	},
+	"Spelthorne": {
+		"lab": 7789,
+		"lib": 12242,
+		"con": 22261,
+		"oth": 5012
+	},
+	"St Albans": {
+		"lab": 9288,
+		"lib": 19228,
+		"con": 21533,
+		"oth": 2786
+	},
+	"St Austell and Newquay": {
+		"lab": 3386,
+		"lib": 20189,
+		"con": 18877,
+		"oth": 4786
+	},
+	"St Helens North": {
+		"lab": 23041,
+		"lib": 8992,
+		"con": 9940,
+		"oth": 2583
+	},
+	"St Helens South and Whiston": {
+		"lab": 24364,
+		"lib": 10242,
+		"con": 8209,
+		"oth": 3266
+	},
+	"St Ives": {
+		"lab": 3751,
+		"lib": 19619,
+		"con": 17900,
+		"oth": 4651
+	},
+	"Stafford": {
+		"lab": 16587,
+		"lib": 8211,
+		"con": 22047,
+		"oth": 3394
+	},
+	"Staffordshire Moorlands": {
+		"lab": 13104,
+		"lib": 7338,
+		"con": 19793,
+		"oth": 3580
+	},
+	"Staffordshire South": {
+		"lab": 10244,
+		"lib": 8427,
+		"con": 26834,
+		"oth": 4935
+	},
+	"Stalybridge and Hyde": {
+		"lab": 16189,
+		"lib": 6965,
+		"con": 13445,
+		"oth": 4280
+	},
+	"Stevenage": {
+		"lab": 14913,
+		"lib": 7432,
+		"con": 18491,
+		"oth": 3815
+	},
+	"Stockport": {
+		"lab": 16697,
+		"lib": 9778,
+		"con": 9913,
+		"oth": 2740
+	},
+	"Stockton North": {
+		"lab": 16923,
+		"lib": 6342,
+		"con": 10247,
+		"oth": 5986
+	},
+	"Stockton South": {
+		"lab": 19245,
+		"lib": 7600,
+		"con": 19577,
+		"oth": 3862
+	},
+	"Stoke-on-Trent Central": {
+		"lab": 12605,
+		"lib": 7039,
+		"con": 6833,
+		"oth": 4635
+	},
+	"Stoke-on-Trent North": {
+		"lab": 17815,
+		"lib": 7120,
+		"con": 9580,
+		"oth": 5681
+	},
+	"Stoke-on-Trent South": {
+		"lab": 15446,
+		"lib": 6323,
+		"con": 11316,
+		"oth": 6767
+	},
+	"Stone": {
+		"lab": 9770,
+		"lib": 10598,
+		"con": 23890,
+		"oth": 2971
+	},
+	"Stourbridge": {
+		"lab": 14989,
+		"lib": 7733,
+		"con": 20153,
+		"oth": 4359
+	},
+	"Stratford-on-Avon": {
+		"lab": 4809,
+		"lib": 14706,
+		"con": 26052,
+		"oth": 4975
+	},
+	"Streatham": {
+		"lab": 20037,
+		"lib": 16778,
+		"con": 8578,
+		"oth": 1444
+	},
+	"Stretford and Urmston": {
+		"lab": 21821,
+		"lib": 7601,
+		"con": 12886,
+		"oth": 2602
+	},
+	"Stroud": {
+		"lab": 22380,
+		"lib": 8955,
+		"con": 23679,
+		"oth": 2959
+	},
+	"Suffolk Central and Ipswich North": {
+		"lab": 8636,
+		"lib": 13339,
+		"con": 27125,
+		"oth": 4320
+	},
+	"Suffolk Coastal": {
+		"lab": 8812,
+		"lib": 16347,
+		"con": 25475,
+		"oth": 4259
+	},
+	"Suffolk South": {
+		"lab": 7368,
+		"lib": 15861,
+		"con": 24550,
+		"oth": 3637
+	},
+	"Suffolk West": {
+		"lab": 7089,
+		"lib": 11262,
+		"con": 24312,
+		"oth": 5426
+	},
+	"Sunderland Central": {
+		"lab": 19495,
+		"lib": 7191,
+		"con": 12770,
+		"oth": 3007
+	},
+	"Surrey East": {
+		"lab": 4925,
+		"lib": 14133,
+		"con": 31007,
+		"oth": 4575
+	},
+	"Surrey Heath": {
+		"lab": 5552,
+		"lib": 14037,
+		"con": 31326,
+		"oth": 3432
+	},
+	"Surrey South West": {
+		"lab": 3419,
+		"lib": 17287,
+		"con": 33605,
+		"oth": 2948
+	},
+	"Sussex Mid": {
+		"lab": 3689,
+		"lib": 20927,
+		"con": 28329,
+		"oth": 2910
+	},
+	"Sutton and Cheam": {
+		"lab": 3376,
+		"lib": 22156,
+		"con": 20548,
+		"oth": 2428
+	},
+	"Sutton Coldfield": {
+		"lab": 10298,
+		"lib": 9117,
+		"con": 27303,
+		"oth": 3871
+	},
+	"Swindon North": {
+		"lab": 15348,
+		"lib": 8668,
+		"con": 22408,
+		"oth": 3871
+	},
+	"Swindon South": {
+		"lab": 16143,
+		"lib": 8305,
+		"con": 19687,
+		"oth": 2984
+	},
+	"Tamworth": {
+		"lab": 15148,
+		"lib": 7516,
+		"con": 21238,
+		"oth": 2488
+	},
+	"Tatton": {
+		"lab": 7803,
+		"lib": 10200,
+		"con": 24687,
+		"oth": 2541
+	},
+	"Taunton Deane": {
+		"lab": 2967,
+		"lib": 28531,
+		"con": 24538,
+		"oth": 2114
+	},
+	"Telford": {
+		"lab": 15974,
+		"lib": 6399,
+		"con": 14996,
+		"oth": 3941
+	},
+	"Tewkesbury": {
+		"lab": 6253,
+		"lib": 19162,
+		"con": 25472,
+		"oth": 3074
+	},
+	"Thanet North": {
+		"lab": 9298,
+		"lib": 8400,
+		"con": 22826,
+		"oth": 2819
+	},
+	"Thanet South": {
+		"lab": 14426,
+		"lib": 6935,
+		"con": 22043,
+		"oth": 2529
+	},
+	"Thornbury and Yate": {
+		"lab": 3385,
+		"lib": 25032,
+		"con": 17916,
+		"oth": 1893
+	},
+	"Thurrock": {
+		"lab": 16777,
+		"lib": 4901,
+		"con": 16869,
+		"oth": 7274
+	},
+	"Tiverton and Honiton": {
+		"lab": 4907,
+		"lib": 18294,
+		"con": 27614,
+		"oth": 4079
+	},
+	"Tonbridge and Malling": {
+		"lab": 6476,
+		"lib": 11545,
+		"con": 29723,
+		"oth": 3570
+	},
+	"Tooting": {
+		"lab": 22038,
+		"lib": 7509,
+		"con": 19514,
+		"oth": 1594
+	},
+	"Torbay": {
+		"lab": 3231,
+		"lib": 23126,
+		"con": 19048,
+		"oth": 3805
+	},
+	"Totnes": {
+		"lab": 3538,
+		"lib": 17013,
+		"con": 21940,
+		"oth": 4962
+	},
+	"Tottenham": {
+		"lab": 24128,
+		"lib": 7197,
+		"con": 6064,
+		"oth": 3155
+	},
+	"Truro and Falmouth": {
+		"lab": 4697,
+		"lib": 19914,
+		"con": 20349,
+		"oth": 3808
+	},
+	"Tunbridge Wells": {
+		"lab": 5448,
+		"lib": 12726,
+		"con": 28302,
+		"oth": 3844
+	},
+	"Twickenham": {
+		"lab": 4583,
+		"lib": 32483,
+		"con": 20343,
+		"oth": 2312
+	},
+	"Tynemouth": {
+		"lab": 23860,
+		"lib": 7845,
+		"con": 18121,
+		"oth": 2842
+	},
+	"Tyneside North": {
+		"lab": 23505,
+		"lib": 10621,
+		"con": 8514,
+		"oth": 3765
+	},
+	"Uxbridge and Ruislip South": {
+		"lab": 10542,
+		"lib": 8995,
+		"con": 21758,
+		"oth": 3781
+	},
+	"Vauxhall": {
+		"lab": 21498,
+		"lib": 10847,
+		"con": 9301,
+		"oth": 1545
+	},
+	"Wakefield": {
+		"lab": 17454,
+		"lib": 7256,
+		"con": 15841,
+		"oth": 3893
+	},
+	"Wallasey": {
+		"lab": 21578,
+		"lib": 5693,
+		"con": 13071,
+		"oth": 1312
+	},
+	"Walsall North": {
+		"lab": 13385,
+		"lib": 4754,
+		"con": 12395,
+		"oth": 5653
+	},
+	"Walsall South": {
+		"lab": 16211,
+		"lib": 5880,
+		"con": 14456,
+		"oth": 4335
+	},
+	"Walthamstow": {
+		"lab": 21252,
+		"lib": 11774,
+		"con": 5734,
+		"oth": 2234
+	},
+	"Wansbeck": {
+		"lab": 17548,
+		"lib": 10517,
+		"con": 6714,
+		"oth": 3494
+	},
+	"Wantage": {
+		"lab": 7855,
+		"lib": 15737,
+		"con": 29284,
+		"oth": 3465
+	},
+	"Warley": {
+		"lab": 20240,
+		"lib": 5929,
+		"con": 9484,
+		"oth": 2617
+	},
+	"Warrington North": {
+		"lab": 20135,
+		"lib": 9196,
+		"con": 13364,
+		"oth": 1516
+	},
+	"Warrington South": {
+		"lab": 18088,
+		"lib": 15094,
+		"con": 19641,
+		"oth": 2051
+	},
+	"Warwick and Leamington": {
+		"lab": 17363,
+		"lib": 8977,
+		"con": 20876,
+		"oth": 1816
+	},
+	"Warwickshire North": {
+		"lab": 18939,
+		"lib": 5481,
+		"con": 18993,
+		"oth": 3852
+	},
+	"Washington and Sunderland West": {
+		"lab": 19615,
+		"lib": 6382,
+		"con": 8157,
+		"oth": 3180
+	},
+	"Watford": {
+		"lab": 14750,
+		"lib": 17866,
+		"con": 19291,
+		"oth": 3301
+	},
+	"Waveney": {
+		"lab": 19802,
+		"lib": 6811,
+		"con": 20571,
+		"oth": 3957
+	},
+	"Wealden": {
+		"lab": 5266,
+		"lib": 13911,
+		"con": 31090,
+		"oth": 4702
+	},
+	"Weaver Vale": {
+		"lab": 15962,
+		"lib": 8196,
+		"con": 16953,
+		"oth": 2476
+	},
+	"Wellingborough": {
+		"lab": 13131,
+		"lib": 8848,
+		"con": 24918,
+		"oth": 4524
+	},
+	"Wells": {
+		"lab": 4198,
+		"lib": 24560,
+		"con": 23760,
+		"oth": 3346
+	},
+	"Welwyn Hatfield": {
+		"lab": 10471,
+		"lib": 8010,
+		"con": 27894,
+		"oth": 2597
+	},
+	"Wentworth and Dearne": {
+		"lab": 21316,
+		"lib": 6787,
+		"con": 7396,
+		"oth": 6607
+	},
+	"West Bromwich East": {
+		"lab": 17657,
+		"lib": 4993,
+		"con": 10961,
+		"oth": 4339
+	},
+	"West Bromwich West": {
+		"lab": 16263,
+		"lib": 4336,
+		"con": 10612,
+		"oth": 4960
+	},
+	"West Ham": {
+		"lab": 29422,
+		"lib": 5392,
+		"con": 6888,
+		"oth": 4004
+	},
+	"Westminster North": {
+		"lab": 17377,
+		"lib": 5513,
+		"con": 15251,
+		"oth": 1356
+	},
+	"Westmorland and Lonsdale": {
+		"lab": 1158,
+		"lib": 30896,
+		"con": 18632,
+		"oth": 801
+	},
+	"Weston-Super-Mare": {
+		"lab": 5772,
+		"lib": 20665,
+		"con": 23356,
+		"oth": 2923
+	},
+	"Wigan": {
+		"lab": 21404,
+		"lib": 6797,
+		"con": 10917,
+		"oth": 5022
+	},
+	"Wiltshire North": {
+		"lab": 3239,
+		"lib": 17631,
+		"con": 25114,
+		"oth": 2715
+	},
+	"Wiltshire South West": {
+		"lab": 5613,
+		"lib": 14954,
+		"con": 25321,
+		"oth": 3130
+	},
+	"Wimbledon": {
+		"lab": 10550,
+		"lib": 11849,
+		"con": 23257,
+		"oth": 1739
+	},
+	"Winchester": {
+		"lab": 3051,
+		"lib": 24107,
+		"con": 27155,
+		"oth": 1642
+	},
+	"Windsor": {
+		"lab": 4910,
+		"lib": 11118,
+		"con": 30172,
+		"oth": 3388
+	},
+	"Wirral South": {
+		"lab": 16276,
+		"lib": 6611,
+		"con": 15745,
+		"oth": 1274
+	},
+	"Wirral West": {
+		"lab": 14290,
+		"lib": 6630,
+		"con": 16726,
+		"oth": 1726
+	},
+	"Witham": {
+		"lab": 8656,
+		"lib": 9252,
+		"con": 24448,
+		"oth": 4479
+	},
+	"Witney": {
+		"lab": 7511,
+		"lib": 11233,
+		"con": 33973,
+		"oth": 4735
+	},
+	"Woking": {
+		"lab": 4246,
+		"lib": 19744,
+		"con": 26551,
+		"oth": 2245
+	},
+	"Wokingham": {
+		"lab": 5516,
+		"lib": 15262,
+		"con": 28754,
+		"oth": 2656
+	},
+	"Wolverhampton North East": {
+		"lab": 14448,
+		"lib": 4711,
+		"con": 11964,
+		"oth": 3771
+	},
+	"Wolverhampton South East": {
+		"lab": 16505,
+		"lib": 5277,
+		"con": 9912,
+		"oth": 3013
+	},
+	"Wolverhampton South West": {
+		"lab": 15653,
+		"lib": 6430,
+		"con": 16344,
+		"oth": 1733
+	},
+	"Worcester": {
+		"lab": 16376,
+		"lib": 9525,
+		"con": 19358,
+		"oth": 3586
+	},
+	"Worcestershire Mid": {
+		"lab": 7613,
+		"lib": 11906,
+		"con": 27770,
+		"oth": 3642
+	},
+	"Worcestershire West": {
+		"lab": 3661,
+		"lib": 20459,
+		"con": 27213,
+		"oth": 2760
+	},
+	"Workington": {
+		"lab": 17865,
+		"lib": 5318,
+		"con": 13290,
+		"oth": 2786
+	},
+	"Worsley and Eccles South": {
+		"lab": 17892,
+		"lib": 6883,
+		"con": 13555,
+		"oth": 3371
+	},
+	"Worthing East and Shoreham": {
+		"lab": 8087,
+		"lib": 12353,
+		"con": 23458,
+		"oth": 4499
+	},
+	"Worthing West": {
+		"lab": 5800,
+		"lib": 13687,
+		"con": 25416,
+		"oth": 4220
+	},
+	"Wrekin, The": {
+		"lab": 12472,
+		"lib": 8019,
+		"con": 21922,
+		"oth": 3555
+	},
+	"Wycombe": {
+		"lab": 8326,
+		"lib": 13863,
+		"con": 23423,
+		"oth": 2311
+	},
+	"Wyre and Preston North": {
+		"lab": 10932,
+		"lib": 11033,
+		"con": 26877,
+		"oth": 2466
+	},
+	"Wyre Forest": {
+		"lab": 7298,
+		"lib": 6040,
+		"con": 18793,
+		"oth": 18768
+	},
+	"Wythenshawe and Sale East": {
+		"lab": 17987,
+		"lib": 9107,
+		"con": 10412,
+		"oth": 3245
+	},
+	"Yeovil": {
+		"lab": 2991,
+		"lib": 31843,
+		"con": 18807,
+		"oth": 3519
+	},
+	"York Central": {
+		"lab": 18573,
+		"lib": 11694,
+		"con": 12122,
+		"oth": 4094
+	},
+	"York Outer": {
+		"lab": 9108,
+		"lib": 19224,
+		"con": 22912,
+		"oth": 2056
+	},
+	"Yorkshire East": {
+		"lab": 10401,
+		"lib": 10842,
+		"con": 24328,
+		"oth": 5683
+	}
+}
