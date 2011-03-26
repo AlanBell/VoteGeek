@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<script>
+function render(){
+// "circle" may be any tag name
+var shape = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+// Set any attributes as desired
+shape.setAttribute("cx", 692.0);
+shape.setAttribute("cy", 34.64);
+shape.setAttribute("r",  20);
+shape.setAttribute("fill", "green");
+// Add to a parent node; document.documentElement should be the root svg element.
+// Acquiring a parent element with document.getElementById() would be safest.
+triangle=document.getElementById("Render").getSVGDocument().lastChild;
+triangle.appendChild(shape);
+}
+</script>
+    
+  </head>
+
+  
+
+  <body>
+    <h1>VoteGeek</h1>
+<input value="Calculate" type="button" onclick="javascript:render()"/>
+<br />
+<EMBED ID="Render" SRC="empty.svg" width="780" height="650"><br />
+
+  </body>
+</html>
+
+
