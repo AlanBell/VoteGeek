@@ -23,7 +23,7 @@ function reporterror(str) {
 }
 
 function debug(str) {
-    //   document.getElementById("avcrdebug").innerHTML += str+"<br>";
+   // document.getElementById("avcrdebug").innerHTML += str+"<br>";
 }
 
 function fieldOrder() {
@@ -658,15 +658,15 @@ constituencies
 ["Yorkshire East","Con",10401,10842,24328,5683]
        ];
 
-function setNewBase() {
-    newbase['Con'] = parseFloat(document.getElementById("fpcon").value);
-    newbase['Lab'] = parseFloat(document.getElementById("fplab").value);
-    newbase['Lib'] = parseFloat(document.getElementById("fplib").value);
-    newbase['Oth'] = parseFloat(document.getElementById("fpoth").innerHTML);
+function setNewBase(con,lab,lib,oth) {
+    newbase['Con'] = con;
+    newbase['Lab'] = lab;
+    newbase['Lib'] = lib;
+    newbase['Oth'] = oth;
+
 }
 
 function setUPS() {
-    setNewBase();
     for (idx in parties) {
 	party = parties[idx];
 	ups[party] = newbase[party] / base[party];
@@ -683,61 +683,95 @@ function setTransfers() {
 		elid = "tf"+pfrom.toLowerCase()+pto.toLowerCase();
 		el = document.getElementById(elid);
 		transfers[pfrom][pto] = parseFloat(el.value)/100;
-		debug("Transfers from "+pfrom+" to "+pto+" are at "+transfers[pfrom][pto]);
+		//debug("Transfers from "+pfrom+" to "+pto+" are at "+transfers[pfrom][pto]);
 	    }
 	}
     }
 }
 
 function swingometer() {
-    document.getElementById("avcrchanges").innerHTML="";
-
-    setUPS();
+    //need to loop through all possible vote shares between the three main parties
+    //
     setTransfers();
+    for(con=1;con<89;con++){
+        for(lab=1;lab<(90-con);lab++){
+            //probably should assume other is not actually 10%
+            oth=10;
+            lib=100-lab-con-oth;
+            setNewBase(con,lab,lib,oth);
+
+            setUPS();
+
     
-    results = new Object;
-    results['Con'] = [296,0,0,0];
-    results['Lab'] = [191,0,0,0];
-    results['Lib'] = [43,0,0,0];
-    results['Oth'] = [1,0,0,0];
+            results = new Object;
+            results['Con'] = [296,0,0,0];
+            results['Lab'] = [191,0,0,0];
+            results['Lib'] = [43,0,0,0];
+            results['Oth'] = [1,0,0,0];
 
-    for (idx in constituencies) {
-	constituency = constituencies[idx];
-	previous = constituency[1];
-	fptp = fptpCount(constituency);
-	av = avCount(constituency);
-	results[previous][0]--;
-	results[av][0]++;
-	results[previous][1]--;
-	results[av][1]++;
-	results[previous][2]--;
-	results[fptp][2]++;	
-	results[fptp][3]--;
-	results[av][3]++;	
+            for (idx in constituencies) {
+	            constituency = constituencies[idx];
+	            previous = constituency[1];
+	            fptp = fptpCount(constituency);
+	            av = avCount(constituency);
+	            results[previous][0]--;
+	            results[av][0]++;
+	            results[previous][1]--;
+	            results[av][1]++;
+	            results[previous][2]--;
+	            results[fptp][2]++;	
+	            results[fptp][3]--;
+	            results[av][3]++;	
 
-	if (previous != av) {
-	    document.getElementById("avcrchanges").innerHTML += ("<strong>"+constituency[0]+"</strong>: "+av+" gain from "+previous+"<br>");
-	}
+	            if (previous != av) {
+	                //document.getElementById("avcrchanges").innerHTML += ("<strong>"+constituency[0]+"</strong>: "+av+" gain from "+previous+"<br>");
+	            }
+            }
+
+            showResults(results);
+        }
     }
-
-    showResults(results);
-    permalink();
-    return false;
+    return false;//don't actually submit the form anywhere
 }
 
 function showResults(results) {
-    for (idx in parties) {
-	party = parties[idx];
-	pyid = party.toLowerCase();
-
-	document.getElementById("r"+pyid+"seat").innerHTML = results[party][0];
-	document.getElementById("r"+pyid+"change").innerHTML = printDelta(results[party][1]);
-	document.getElementById("r"+pyid+"ups").innerHTML = printDelta(results[party][2]);
-	document.getElementById("r"+pyid+"ut").innerHTML = printDelta(results[party][3]);
-
-    }
-    window.location.hash = "avcresults";
+    conseats=(results['Con'][0]);
+    labseats=(results['Lab'][0]);
+    libseats=(results['Lib'][0]);
+    othseats=(results['Oth'][0]);
+        if(conseats>265){
+            fill="blue";
+        }else if(labseats>265){
+            fill="red";
+        }else if(libseats>265){
+            fill="yellow";
+        }else if(conseats>libseats && conseats>labseats){
+            fill="#0000AA";
+        }else if(labseats>libseats && labseats>conseats){
+            fill="#AA0000";
+        }else if(libseats>labseats && libseats>conseats){
+            fill="#AAAA00";
+        }else{
+            fill="white";
+        }
+    plot(newbase['Con'],newbase['Lab'],newbase['Lib'],fill)
 }
+function plot(con,lab,lib,fill){
+    rad=3.5;
+    triangle=document.getElementById("Render").getSVGDocument().lastChild;
+    var shape = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+    cx=(lab*(rad)*2)+con*(rad);
+    cy=con*(rad)*2*.866;
+    shape.setAttribute("cx", cx);
+    shape.setAttribute("cy", cy);
+    shape.setAttribute("r",  4);
+    shape.setAttribute("fill", fill);
+    // Add to a parent node; document.documentElement should be the root svg element.
+    // Acquiring a parent element with document.getElementById() would be safest.
+
+    triangle.appendChild(shape);
+}
+
 
 function printDelta(n) {
     if (n > 0) {
@@ -795,13 +829,13 @@ function avTransfer(shares) {
 	    smallest = party;
 	}
     }
-    debug("Smallest: "+smallest);
+    //debug("Smallest: "+smallest);
 
     for (idx in parties) {
 	party = parties[idx];
 	if (shares[party] > 0 && party != smallest) {
 	    shares[party] += shares[smallest]*transfers[smallest][party];
-	    debug(party+" now has "+shares[party]);
+	    //debug(party+" now has "+shares[party]);
 	}
     }
 
@@ -817,16 +851,7 @@ function avTransfer(shares) {
 
 <form style='width: 60%' action='#' id='avctransferform' onsubmit='swingometer(); return false' method='get'>
 <div id='errorbox'></div>
-<fieldset><legend>First preferences</legend>
-<p>To approximate English figures from a GB-wide poll, add 2.5% to the Conservative total and subtract 2.0% from the Labour total.</p>
-<table>
-    <tr><th><label for='fpcon'>Conservative</label></th><td><input onchange='updatefpoth()' id='fpcon' name='fpcon' value='39.6' size='6'></td></tr>
-<tr><th><label for='fplab'>Labour</label></th><td><input onchange='updatefpoth()' id='fplab' name='fplab'' value='28.1' size='6'></td></tr>
-<tr><th><label for='fplib'>Lib Dem</label></th><td><input onchange='updatefpoth()' id='fplib' name='fplib' value='24.2' size='6'></td></tr>
-<tr><th>Other</th><td id='fpoth'>8.1</td></tr>
 
-</table>
-</fieldset>
 
 <fieldset><legend>Transfer percentages</legend>
 <table>
@@ -846,34 +871,9 @@ function avTransfer(shares) {
 </fieldset>
 </form>
 
-<div id='avcresults'>
-<h4>Results</h4>
-<p id='avcrpermalink'></p>
-<table id='avcrsummary'>
-<caption>Summary of English Seats Won</caption>
-<tr><th>Party</th><th>Seats won</th><th>Change</th><th>UPS component</th><th>UT component</th></tr>
 
-<tr><td>Conservative</td><td id='rconseat'>276</td><td id='rconchange'>-20</td><td id='rconups'>0</td><td id='rconut'>-20</td></tr>
-<tr><td>Labour</td><td id='rlabseat'>193</td><td id='rlabchange'>+2</td><td id='rlabups'>0</td><td id='rlabut'>+2</td></tr>
-<tr><td>Lib Dem</td><td id='rlibseat'>61</td><td id='rlibchange'>+18</td><td id='rlibups'>0</td><td id='rlibut'>+18</td></tr>
 
-<tr><td>Other</td><td id='rothseat'>1</td><td id='rothchange'>0</td><td id='rothups'>0</td><td id='rothut'>0</td></tr>
-</table>
-
-changes:
-<div id='avcrchanges'>
-
-</div>
-debug:
-<div id='avcrdebug'>
-
-</div>
-
-</div>
-<script type='text/javascript'>
-querystringSet();
-</script>
-
+<EMBED ID="Render" SRC="empty.svg" width="780" height="650"><br />
 
 </body>
 </html>

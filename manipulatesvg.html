@@ -6,10 +6,9 @@ function render(){
     // "circle" may be any tag name
     triangle=document.getElementById("Render").getSVGDocument().lastChild;
     rad=4;
-count=0;
     for(con=1;con<89;con++){
         for(lab=1;lab<(90-con);lab++){
-count++;
+
             var shape = document.createElementNS("http://www.w3.org/2000/svg", "circle");
             cx=(lab*(rad)*2)+con*(rad);
             cy=con*(rad)*2*.866;
@@ -23,7 +22,6 @@ count++;
             triangle.appendChild(shape);
         }
     }
-window.alert(count);
 }
 </script>
     
