@@ -3,17 +3,27 @@
   <head>
 <script>
 function render(){
-// "circle" may be any tag name
-var shape = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-// Set any attributes as desired
-shape.setAttribute("cx", 692.0);
-shape.setAttribute("cy", 34.64);
-shape.setAttribute("r",  20);
-shape.setAttribute("fill", "green");
-// Add to a parent node; document.documentElement should be the root svg element.
-// Acquiring a parent element with document.getElementById() would be safest.
-triangle=document.getElementById("Render").getSVGDocument().lastChild;
-triangle.appendChild(shape);
+    // "circle" may be any tag name
+    triangle=document.getElementById("Render").getSVGDocument().lastChild;
+    rad=4;
+count=0;
+    for(con=1;con<89;con++){
+        for(lab=1;lab<(90-con);lab++){
+count++;
+            var shape = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+            cx=(lab*(rad)*2)+con*(rad);
+            cy=con*(rad)*2*.866;
+            shape.setAttribute("cx", cx);
+            shape.setAttribute("cy", cy);
+            shape.setAttribute("r",  4);
+            shape.setAttribute("fill", "green");
+            // Add to a parent node; document.documentElement should be the root svg element.
+            // Acquiring a parent element with document.getElementById() would be safest.
+ 
+            triangle.appendChild(shape);
+        }
+    }
+window.alert(count);
 }
 </script>
     
